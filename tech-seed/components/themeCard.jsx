@@ -1,24 +1,24 @@
-"use client"
-import {useState} from 'react'
+"use client";
+import { useState } from "react";
+import { ChevronRight } from "lucide-react";
 
-
-export default function ThemeCard({title, icon, description}) {
-    const [selected, setSelected] = useState(true)
+export default function ThemeCard({ title, icon, description }) {
+  const [selected, setSelected] = useState(false);
   return (
-    <div className={`${selected? "bg-[#4AC8AE] text-white" : "bg[#FFFFFF]"} rounded-lg p-8 w-fit`}>
-        <div className="flex w-fit items-center text-xl font-bold">
-        <img src={icon} alt="" className='w-10 h-10'/>
+    <div
+      className={
+        "group rounded-lg p-6 w-fit hover:bg-[#4AC8AE] hover:text-white duration-300 shadow shadow-[#D8D8D8]"
+      }
+    >
+      <div className="flex w-fit items-center text-xl font-bold">
+        <img src={icon} alt="" className="w-10 h-10 mr-4" />
         {title}
-        </div>
-        <p className='w-[250px] text-[0.8em]'>
-            {description}
-        </p>
-        <span className='flex'>
-            Learn more
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            <img src="arrowRight.png" alt="" className='text-white'/>
-        </span>
-      
+      </div>
+      <p className="w-[250px] text-[0.8em] my-4">{description}</p>
+      <span className="flex text-[#4AC8AE] group-hover:text-white ">
+        Learn more
+        <ChevronRight />
+      </span>
     </div>
-  )
+  );
 }
