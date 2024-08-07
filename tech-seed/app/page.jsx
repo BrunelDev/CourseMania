@@ -38,6 +38,12 @@ export default function Home() {
               bgColor={"bg-[#EAFFF9] shadow-lg shadow-[#1018280c] py-4"}
               textColor={"text-[#3BC49A]"}
             />
+            <div className="my-10">
+              <span className="flex">
+                <img src="speaker.svg" alt="" className="w-[28px] h-[28px]" />
+                Public Speaking
+              </span>
+            </div>
           </div>
 
           <div className="relative">
