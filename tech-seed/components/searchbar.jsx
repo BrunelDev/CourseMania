@@ -1,5 +1,4 @@
 import React from "react";
-import icons from "../assets/icons";
 import Button from "./button";
 export default function SearchBar() {
   return (

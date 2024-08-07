@@ -40,7 +40,27 @@ export default function Home() {
             />
             <div className="my-10">
               <span className="flex">
-                <img src="speaker.svg" alt="" className="w-[28px] h-[28px]" />
+                <img
+                  src="speaker.svg"
+                  alt=""
+                  className="w-[28px] h-[28px] mr-3"
+                />
+                Public Speaking
+              </span>
+              <span className="flex">
+                <img
+                  src="speaker.svg"
+                  alt=""
+                  className="w-[28px] h-[28px] mr-3"
+                />
+                Public Speaking
+              </span>{" "}
+              <span className="flex">
+                <img
+                  src="speaker.svg"
+                  alt=""
+                  className="w-[28px] h-[28px] mr-3"
+                />
                 Public Speaking
               </span>
             </div>
