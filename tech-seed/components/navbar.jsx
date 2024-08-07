@@ -15,7 +15,7 @@ export default function Navbar() {
         <span className="mr-4">Sign in</span>
         <Button
           title={"Créer un compte gratuitement"}
-          bgColor={"#20B486"}
+          bgColor={"bg-[#20B486]"}
           textColor={"text-white"}
         />
       </div>
