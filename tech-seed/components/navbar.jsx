@@ -16,7 +16,7 @@ export default function Navbar() {
         <Button
           title={"Créer un compte gratuitement"}
           bgColor={"#20B486"}
-          textColor={"white"}
+          textColor={"text-white"}
         />
       </div>
     </div>
