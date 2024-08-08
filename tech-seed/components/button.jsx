@@ -14,7 +14,7 @@ export default function Button({
     <span
       className={`${textColor} hover:${hoverTextColor} hover:${bgColor} py-2 px-3 text-center rounded-md ${bgColor} w-fit h-fit cursor-pointer`}
       onClick={() => {
-        action;
+        action();
       }}
     >
       {title}

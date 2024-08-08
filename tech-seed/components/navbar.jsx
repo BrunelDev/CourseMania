@@ -1,3 +1,5 @@
+"use client";
+import { Router } from "next/router";
 import Button from "./button";
 import SearchBar from "./searchbar";
 export default function Navbar() {
@@ -14,6 +16,7 @@ export default function Navbar() {
       <div>
         <span className="mr-4">Sign in</span>
         <Button
+          action={() => {}}
           title={"Créer un compte gratuitement"}
           bgColor={"bg-[#20B486]"}
           textColor={"text-white"}
