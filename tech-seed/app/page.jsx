@@ -14,7 +14,7 @@ export default function Home() {
         <Navbar />
       </header>
       <div className="">
-        <div className="flex flex-row justify-between px-[110px] bg-gradient-to-t from-[#24bb8b1b] from-0% to-[#24bb8b00] to-100% ">
+        <div className="flex flex-row justify-between px-[110px] py-10 bg-gradient-to-tl from-[#24bb8b1b] from-0% to-[#24bb8b00] to-100% ">
           <div className=" w-1/2">
             <img
               src="spiral.svg"
@@ -105,7 +105,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className=" flex flex-col items-center px-[110px]">
+        <div className=" flex flex-col items-center px-[110px] py-10">
           <span className="text-[#20B486] font-semibold">Nos Services</span>
           <span className="font-bold text-3xl w-2/3 text-center mt-4 mb-8">
             Favoriser un environnement d’apprentissage ludique et engageant
@@ -190,7 +190,8 @@ export default function Home() {
             Etudiante a l'université Nationale de Abomey-Calavi
           </span>
         </div>
-        <div className="px-[110px]">
+        <div className="px-[110px] py-10">
+          <span className="font-bold text-3xl">Nos derniers blogs</span>
           <div className="my-5">
             <BlogCard
               image={"computer.png"}
