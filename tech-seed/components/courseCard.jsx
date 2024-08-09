@@ -18,9 +18,7 @@ export default function CourseCard({
   return (
     <div className="flex flex-col justify-center px-6 shadow-lg shadow-[#D8D8D8] rounded-lg w-fit py-6">
       <div className="relative mb-8">
-        <div className="absolute top-2 right-2">
-          <DurationBox duration={"08hr12mins"} />
-        </div>
+        <DurationBox duration={"08hr12mins"} />
         <img src={image} alt="" className="w-[336px] h-[240px]" />
       </div>
       <h6 className="text-[#1A906B]">Design</h6>

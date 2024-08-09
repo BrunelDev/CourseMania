@@ -10,8 +10,10 @@ import BlogCard from "@/components/blogCard";
 export default function Home() {
   return (
     <main className="bg-[#24bb8b05]">
-      <header className="mb-24">
-        <Navbar />
+      <header>
+        <div className="mb-24">
+          <Navbar />
+        </div>
       </header>
       <div className="">
         <div className="flex flex-row justify-between px-[110px] py-10 bg-gradient-to-tl from-[#24bb8b1b] from-0% to-[#24bb8b00] to-100% ">
@@ -76,11 +78,11 @@ export default function Home() {
                 <img
                   src="studentPicture.png"
                   alt=""
-                  className="w-[266px] h-[332px] absolute bottom-0 left-1/2 -translate-x-1/2"
+                  className="w-[444px] h-[444px] absolute -bottom-10 left-1/2 -translate-x-1/2"
                 />
               }
             </div>
-            <div className="absolute top-1/3 left-0">
+            <div className="absolute top-0 left-0">
               <StatsBox
                 stat="5k+"
                 title={"Cours en ligne"}
