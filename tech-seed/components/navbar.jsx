@@ -1,5 +1,4 @@
 "use client";
-import { Router } from "next/router";
 import Button from "./button";
 import SearchBar from "./searchbar";
 export default function Navbar() {
