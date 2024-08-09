@@ -57,7 +57,7 @@ export function Connexion() {
                     <div className="">
                         <img src="https://floatui.com/logo.svg" width={150} className="lg:hidden" />
                         <div className="mt-5 space-y-2">
-                            <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">Sign up</h3>
+                            <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">Sign in</h3>
                             <p className="">Already have an account? <a href="javascript:void(0)" className="font-medium text-indigo-600 hover:text-indigo-500">Log in</a></p>
                         </div>
                     </div>
