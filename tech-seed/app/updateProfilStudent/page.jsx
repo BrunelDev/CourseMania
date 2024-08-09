@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import AvatarDemo from "@/components/avatarDemo";
+import Icone from "@/components/icone";
 
 export default function UpdateProfileStudent() {
   return (
@@ -11,7 +11,7 @@ export default function UpdateProfileStudent() {
       </header>
       <div className="bg-white p-8 shadow-md rounded-lg w-full max-w-lg">
         <div className="flex justify-center mb-8">
-          <AvatarDemo className="w-32 h-32 rounded-full" />
+          <Icone icone={"avatarStudent.png"} className="w-32 h-32 rounded-full" />
         </div>
         
         <h3 className="text-2xl font-semibold text-center mb-6">Edit my profile</h3>
