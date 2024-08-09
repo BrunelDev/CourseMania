@@ -11,7 +11,7 @@ export default function SearchBar() {
         />
 
         <input
-          className="text-[16px] ml-6 text-[#667085] focus:border-none focus:outline-none"
+          className="bg-transparent text-[16px] ml-6 text-[#667085] focus:border-none focus:outline-none"
           type="text"
           placeholder="Que voulez-vous apprendre ?"
         />
