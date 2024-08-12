@@ -1,0 +1,84 @@
+"use client";
+import React from "react";
+import Button from "@/components/button";
+import Title from "../../components/title";
+import Description from "../../components/description";
+import CardFavoris from "../../components/cardFavoris";
+import { Combobox } from "../../components/combobox";
+import Favoris from '@/components/favoris';
+import Footer from "@/components/footer";
+import {Nav} from '@/components/Nav';
+
+
+export default function CourseFavoris() {
+  const videos = [
+    {
+      image: "videoPlaceholder1.png",
+      title: "Java Programming Beginner",
+      tutor: "Kitani studio",
+      status: "Not Yet started",
+    },
+    {
+      image: "videoPlaceholder1.png",
+      title: "Java Programming Beginner",
+      tutor: "Kitani studio",
+      status: "Not Yet started",
+    },
+    {
+      image: "videoPlaceholder1.png",
+      title: "Java Programming Beginner",
+      tutor: "Kitani studio",
+      status: "Not Yet started",
+    },
+    {
+      image: "videoPlaceholder1.png",
+      title: "Java Programming Beginner",
+      tutor: "Kitani studio",
+      status: "Not Yet started",
+    },
+    {
+      image: "videoPlaceholder1.png",
+      title: "Java Programming Beginner",
+      tutor: "Kitani studio",
+      status: "Not Yet started",
+    },
+    {
+      image: "videoPlaceholder1.png",
+      title: "Java Programming Beginner",
+      tutor: "Kitani studio",
+      status: "Not Yet started",
+    },
+  ];
+  return (
+    <>
+      <div className="px-10 my-24">
+        <div className="flex flex-row justify-between mt-20">
+          <div className="flex flex-col text-center ml-[600px]">
+            <Title title={"Mes cours"} />
+          </div>
+        </div>
+        <div className="">
+            <Nav/>
+        </div>
+        <div className="grid grid-flow-row grid-cols-4 mx-10">
+          {videos.map((video) => {
+            return (
+              <CardFavoris
+                image={video.image}
+                title={video.title}
+                tutorName={video.tutor}
+                status={video.status}
+              />
+
+            );
+          })}
+        </div>
+        <div className="ml-[660px]">
+          <span className="mt-[-400px] w-20"><Button title={"Explore courses"} bgColor={"bg-[#3DCBB1]"} /></span>
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+}
+

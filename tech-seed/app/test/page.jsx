@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-
 export default function Test() {
   const [nom, setNom] = useState("");
   const [prenom, setPrenom] = useState("");
