@@ -13,8 +13,8 @@ export default function UpdateProfileStudent() {
         <div>
             <div>
                 <div>
-                    <h3>Hello Name 👋</h3>
-                    <p>Let's learn something new today !</p>
+                    <h3>Salut name 👋</h3>
+                    <p>Apprenons quelque chose de nouveau aujourd'hui !</p>
                 </div>
                 <div className="relative">
                 <input

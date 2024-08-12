@@ -20,7 +20,7 @@ export default function Help() {
             <p>
               <h1 className='font-bold text-[80px]'>Helpers</h1>
               <span className='text-gray-500'>
-                Ask a teacher help for more comprehension
+                Demandez l'aide d'un professeur pour plus de compréhension
               </span>
             </p>
             <br />
