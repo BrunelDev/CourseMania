@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
 const config = {
@@ -79,7 +80,22 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    plugin(function ({ addUtilities }) {
+      const newUtilities = {
+        ".no-scrollbar": {
+          "-ms-overflow-style": "none" /* IE et Edge */,
+          "scrollbar-width": "none" /* Firefox */,
+        },
+        ".no-scrollbar::-webkit-scrollbar": {
+          display: "none" /* Chrome, Safari et Opera */,
+        },
+      };
+
+      addUtilities(newUtilities);
+    }),
+  ],
 } satisfies Config;
 
 export default config;
