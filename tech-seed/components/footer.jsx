@@ -2,14 +2,14 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className=" bg-[#101828] w-full py-4 px-32">
-      <div className="flex flex-row">
-        <span className="w-1/3 text-[#EAECF0]">
+    <footer className="bg-[#101828] w-full py-8 px-8 md:px-32">
+      <div className="flex flex-col md:flex-row">
+        <span className="w-full md:w-1/3 text-[#EAECF0] mb-6 md:mb-0">
           Des expériences d'apprentissage de premier ordre qui créent plus de
           talents dans le monde.
         </span>
-        <div className="flex text-[#EAECF0] justify-between w-full">
-          <ul className="text-[#EAECF0] font-medium">
+        <div className="flex flex-col md:flex-row text-[#EAECF0] justify-between w-full">
+          <ul className="mb-6 md:mb-0 text-[#EAECF0] font-medium">
             <li className="text-[#98A2B3] mb-3 font-semibold">
               <a href="#">Product</a>
             </li>
@@ -29,12 +29,12 @@ export default function Footer() {
               <a href="#">Tarifs</a>
             </li>
           </ul>
-          <ul className="text-[#EAECF0] font-medium">
-            <li className="text-[#98A2B3] font-semibold">
+          <ul className="mb-6 md:mb-0 text-[#EAECF0] font-medium">
+            <li className="text-[#98A2B3] mb-3 font-semibold">
               <a href="#">Company</a>
             </li>
             <li className="mb-3">
-              A <a href="#">propos</a>
+              <a href="#">À propos</a>
             </li>
             <li className="mb-3">
               <a href="#">Carrières</a>
@@ -46,7 +46,7 @@ export default function Footer() {
               <a href="#">Nouvelles</a>
             </li>
           </ul>
-          <ul className="text-[#EAECF0] font-medium">
+          <ul className="mb-6 md:mb-0 text-[#EAECF0] font-medium">
             <li className="text-[#98A2B3] mb-3 font-semibold">
               <a href="#">Social</a>
             </li>
@@ -54,7 +54,7 @@ export default function Footer() {
               <a href="#">Twitter</a>
             </li>
             <li className="mb-3">
-              <a href="#">Linkedin</a>
+              <a href="#">LinkedIn</a>
             </li>
             <li className="mb-3">
               <a href="#">GitHub</a>
@@ -82,9 +82,9 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <span className="text-[#98A2B3]">
-        © 2022 Ed-Circle. All rights reserved.
+      <span className="text-[#98A2B3] mt-6 block text-center md:text-left">
+        © 2022 Ed-Circle. Tous droits réservés.
       </span>
-    </div>
+    </footer>
   );
 }

@@ -1,26 +1,96 @@
 "use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useNavigationLink } from "@/lib/context";
 import Button from "./button";
 import SearchBar from "./searchbar";
+import { Connexion } from "@/components/connexion";
+
 export default function Navbar() {
+  const router = useRouter();
+  const {
+    selectLink,
+    isFaqsSelected,
+    isAboutUsSelected,
+    isCourseSelected,
+    isContactSelected,
+    isHomeSelected,
+  } = useNavigationLink();
+
   return (
-    <div className="flex w-full fixed top-0 left-0 items-center justify-between py-6 px-12 backdrop-blur-md z-50 mb-24">
+    <nav className="flex w-full fixed top-0 left-0 items-center justify-between py-6 px-12 backdrop-blur-md z-50 mb-24">
+      <span>Iziskill</span>
       <SearchBar />
       <ul className="flex space-x-4 text-[#101828] font-medium">
-        <li className="text-[#1A906B] font-semibold">Accueil</li>
-        <li>A propos</li>
-        <li>Cours</li>
-        <li>Contact</li>
-        <li>FAQs</li>
+        <li
+          className={`${
+            isHomeSelected && "text-[#1A906B] font-semibold"
+          } cursor-pointer`}
+          onClick={() => {
+            selectLink("home");
+            router.push("/");
+          }}
+        >
+          Accueil
+        </li>
+        <li
+          className={`cursor-pointer ${
+            isAboutUsSelected && "text-[#1A906B] font-semibold"
+          }`}
+          onClick={() => {
+            selectLink("about-us");
+            router.push("/about-us");
+          }}
+        >
+          A propos
+        </li>
+        <li
+          className={`cursor-pointer ${
+            isCourseSelected && "text-[#1A906B] font-semibold"
+          }`}
+          onClick={() => {
+            selectLink("courses");
+            router.push("/cours");
+          }}
+        >
+          Cours
+        </li>
+        <li
+          className={`cursor-pointer ${
+            isContactSelected && "text-[#1A906B] font-semibold"
+          }`}
+          onClick={() => {
+            selectLink("contact");
+            router.push("/contact");
+          }}
+        >
+          Contact
+        </li>
+        <li
+          className={`cursor-pointer ${
+            isFaqsSelected && "text-[#1A906B] font-semibold"
+          }`}
+          onClick={() => {
+            selectLink("faqs");
+            router.push("/faqs");
+          }}
+        >
+          FAQs
+        </li>
       </ul>
-      <div>
-        <span className="mr-4">Sign in</span>
-        <Button
-          action={() => {}}
-          title={"Créer un compte gratuitement"}
-          bgColor={"bg-[#20B486]"}
-          textColor={"text-white"}
+      <div className="flex items-center">
+        <span className="mr-4 cursor-pointer">Sign in</span>
+        <Connexion
+          button={
+            <Button
+              action={() => {}}
+              title={"Créer un compte gratuitement"}
+              bgColor={"bg-[#20B486]"}
+              textColor={"text-white"}
+            />
+          }
         />
       </div>
-    </div>
+    </nav>
   );
 }
