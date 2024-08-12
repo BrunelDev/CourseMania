@@ -8,51 +8,17 @@ import TableRow from "@mui/material/TableRow";
 import Title from "./Title";
 
 // Generate Order Data
-function createData(id, date, name, shipTo, paymentMethod, amount) {
-  return { id, date, name, shipTo, paymentMethod, amount };
+function createData(rank, name, courses, hours, points, evolution) {
+  return { rank, name, courses, hours, points, evolution };
 }
 
 const rows = [
-  createData(
-    0,
-    "16 Mar, 2019",
-    "Elvis Presley",
-    "Tupelo, MS",
-    "VISA ⠀•••• 3719",
-    312.44
-  ),
-  createData(
-    1,
-    "16 Mar, 2019",
-    "Paul McCartney",
-    "London, UK",
-    "VISA ⠀•••• 2574",
-    866.99
-  ),
-  createData(
-    2,
-    "16 Mar, 2019",
-    "Tom Scholz",
-    "Boston, MA",
-    "MC ⠀•••• 1253",
-    100.81
-  ),
-  createData(
-    3,
-    "16 Mar, 2019",
-    "Michael Jackson",
-    "Gary, IN",
-    "AMEX ⠀•••• 2000",
-    654.39
-  ),
-  createData(
-    4,
-    "15 Mar, 2019",
-    "Bruce Springsteen",
-    "Long Branch, NJ",
-    "VISA ⠀•••• 5919",
-    212.79
-  ),
+  createData(1, "Charlie Rawal", "53", "250", "13450", false),
+  createData(2, "Charlie Rawal", "53", "250", "13450", true),
+  createData(3, "Charlie Rawal", "53", "250", "13450", true),
+  createData(4, "Charlie Rawal", "53", "250", "13450", true),
+  createData(5, "Charlie Rawal", "53", "250", "13450", false),
+  createData(6, "Charlie Rawal", "53", "250", "13450", true),
 ];
 
 function preventDefault(event) {
@@ -62,31 +28,45 @@ function preventDefault(event) {
 export default function Orders() {
   return (
     <React.Fragment>
-      <Title>Recent Orders</Title>
+      <Title>Leader Board</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell>Date</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell align="right">Sale Amount</TableCell>
+            <TableCell>Rang</TableCell>
+            <TableCell>Nom</TableCell>
+            <TableCell>Cours</TableCell>
+            <TableCell>Heures</TableCell>
+            <TableCell align="right">Points</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
+              <TableCell>
+                <div className="flex space-x-3">
+                  <div className="bg-[#F5F7F9] rounded-md h-6 w-6 flex justify-center items-center">
+                    {row.rank}
+                  </div>
+                  {row.evolution ? (
+                    <img src="greenTriangle.svg" alt="" />
+                  ) : (
+                    <img src="redTriangle.svg" alt="" />
+                  )}
+                </div>
+              </TableCell>
               <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{`$${row.amount}`}</TableCell>
+              <TableCell>{row.courses}</TableCell>
+              <TableCell>{row.hours}</TableCell>
+              <TableCell
+                align="right"
+                className="text-[#3BAFA8]"
+              >{`${row.points}`}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
       <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-        See more orders
+        Voir plus
       </Link>
     </React.Fragment>
   );
