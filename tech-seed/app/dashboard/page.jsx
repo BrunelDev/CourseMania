@@ -22,7 +22,10 @@ import { mainListItems, secondaryListItems } from "./listItems";
 import Chart from "./Chart";
 import Deposits from "./Deposits";
 import Orders from "./Orders";
-
+import { ChartBar } from "@/components/chart";
+import { CalendarComponent } from "@/components/calendar";
+import { Todolist } from "@/components/todolist";
+import { AvatarComponent } from "@/components/avatar";
 function Copyright(props) {
   return (
     <Typography
@@ -170,29 +173,35 @@ export default function Dashboard() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
+              <Grid item xs={12} md={8} lg={8}>
                 <Paper
+                  className="w-full"
                   sx={{
                     p: 2,
                     display: "flex",
                     flexDirection: "column",
-                    height: 240,
+                    height: 400,
                   }}
                 >
-                  <Chart />
+                  <ChartBar />
                 </Paper>
               </Grid>
               {/* Recent Deposits */}
-              <Grid item xs={12} md={4} lg={3}>
+              <Grid item xs={12} md={4} lg={4}>
                 <Paper
+                  className="w-full"
                   sx={{
                     p: 2,
                     display: "flex",
                     flexDirection: "column",
-                    height: 240,
+                    height: 700,
                   }}
                 >
-                  <Deposits />
+                  <div className="mx-auto">
+                    <AvatarComponent initials={"AB"} />
+                  </div>
+                  <CalendarComponent />
+                  <Todolist />
                 </Paper>
               </Grid>
               {/* Recent Orders */}

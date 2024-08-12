@@ -6,7 +6,7 @@ import Footer from "@/components/footer";
 import Description from "@/components/description";
 import Title from "@/components/title";
 import VideosList from "@/components/videosList";
-import { Play } from "lucide-react";
+import VideoPlayer from "@/components/videoPlayer";
 export default function PaidOffline() {
   const chapters = [
     {
@@ -87,12 +87,13 @@ export default function PaidOffline() {
           </div>
           <div className="flex justify-between">
             <div className="w-fit relative">
-              <img src="computerScreen.png" alt="" />
+              <VideoPlayer />
+              {/*<img src="computerScreen.png" alt="" />
               <img
                 src="triangleLeft.svg"
                 alt=""
                 className="absolute left-1/2 top-1/2"
-              />
+              />*/}
             </div>
             <div className="flex flex-col">
               <Title title={"Chapter 1 : Preparations"} />

@@ -20,7 +20,6 @@ export default function Button({
   );
 }
 
-// Adding PropTypes for better validation
 Button.propTypes = {
   title: PropTypes.string.isRequired,
   bgColor: PropTypes.string,
