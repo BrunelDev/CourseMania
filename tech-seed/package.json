@@ -38,7 +38,11 @@
     "tailwind-merge": "^2.4.0",
     "tailwind-scrollbar-hide": "^1.1.7",
     "tailwindcss-animate": "^1.0.7",
+<<<<<<< HEAD
     
+=======
+    "tailwindcss": "^3.3.0",
+>>>>>>> f4ec7dae92a806b5477195338902b12f32f56422
     "zustand": "^4.5.4"
   },
   "devDependencies": {

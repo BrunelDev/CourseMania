@@ -333,7 +333,7 @@ export function Chat() {
 
   return (
     <div className="flex h-[100vh] w-full">
-      <div className="h-full w-1/3">
+      <div className="h-full w-full">
         <ConversationList className="100vh border border-gray-400">
           <div className="px-8 my-2 pb-2 border-b">
             <ChatSearchBar />

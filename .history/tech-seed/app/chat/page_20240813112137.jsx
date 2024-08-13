@@ -8,7 +8,7 @@ export default function ChatPage() {
   const [isScheduleSelected, setIsScheduleSelected] = useState(false);
   return (
     <div className="flex w-full">
-      <div className="h-full w-1/4">
+      <div className="h-full  w-fit">
         <Lateralenavmentor />
       </div>
       <Chat />

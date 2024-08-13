@@ -1,9 +1,9 @@
 "use client"
-import { CheckboxDemo } from "../../components/checkbox"
+import Input from "../../components/messageInput"
 export default function Test(){
     return(
         <div>
-                <CheckboxDemo/>
+                <Input/>
         </div>
     )
 }

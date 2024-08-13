@@ -7,12 +7,11 @@ export default function ChatPage() {
   const [isChatSelected, setIsChatSelected] = useState(false);
   const [isScheduleSelected, setIsScheduleSelected] = useState(false);
   return (
-    <div className="flex w-full">
+    <div>
       <div className="h-full w-1/4">
         <Lateralenavmentor />
       </div>
       <Chat />
-      <div></div>
     </div>
   );
 }

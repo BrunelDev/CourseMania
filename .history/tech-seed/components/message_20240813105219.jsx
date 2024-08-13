@@ -332,8 +332,11 @@ export function Chat() {
   };
 
   return (
-    <div className="flex h-[100vh] w-full">
-      <div className="h-full w-1/3">
+    <div className="flex h-[100vh]">
+      <div className="h-full w-1/4">
+        <Lateralenavmentor />
+      </div>
+      <div className="h-full w-1/4">
         <ConversationList className="100vh border border-gray-400">
           <div className="px-8 my-2 pb-2 border-b">
             <ChatSearchBar />
@@ -420,7 +423,7 @@ export function Chat() {
           </Conversation>
         </ConversationList>
       </div>
-      <div className="w-full h-[100vh]">
+      <div className="w-2/4 h-[100vh]">
         <ChatContainer className="h-[100vh]">
           <ConversationHeader>
             <ConversationHeader.Back />

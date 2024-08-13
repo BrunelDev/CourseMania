@@ -9,7 +9,6 @@ import {
   ConversationList,
   Conversation,
 } from "@chatscope/chat-ui-kit-react";
-import { ConversationHeader } from "@chatscope/chat-ui-kit-react";
 import Lateralenavmentor from "@/components/lateralenavmentor";
 import { Avatar } from "@chatscope/chat-ui-kit-react";
 import { TypingIndicator } from "@chatscope/chat-ui-kit-react";
@@ -332,10 +331,13 @@ export function Chat() {
   };
 
   return (
-    <div className="flex h-[100vh] w-full">
-      <div className="h-full w-1/3">
+    <div className="flex h-[100vh]">
+      <div className="h-full w-1/4">
+        <Lateralenavmentor />
+      </div>
+      <div className="h-full w-1/4">
         <ConversationList className="100vh border border-gray-400">
-          <div className="px-8 my-2 pb-2 border-b">
+          <div className="px-8 my-2 pb-1 border-b">
             <ChatSearchBar />
           </div>
           <Conversation
@@ -420,19 +422,8 @@ export function Chat() {
           </Conversation>
         </ConversationList>
       </div>
-      <div className="w-full h-[100vh]">
+      <div className="w-2/4 h-[100vh]">
         <ChatContainer className="h-[100vh]">
-          <ConversationHeader>
-            <ConversationHeader.Back />
-            <Avatar
-              name="Emily"
-              src="https://chatscope.io/storybook/react/assets/emily-xzL8sDL2.svg"
-            />
-            <ConversationHeader.Content
-              info="Active 10 mins ago"
-              userName="Emily"
-            />
-          </ConversationHeader>
           <div className="w-full h-[60px] border-b shadow-border shadow-md flex justify-between">
             <div>
               <Avatar />
