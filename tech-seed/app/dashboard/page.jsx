@@ -26,6 +26,7 @@ import { ChartBar } from "@/components/chart";
 import { CalendarComponent } from "@/components/calendar";
 import { Todolist } from "@/components/todolist";
 import { AvatarComponent } from "@/components/avatar";
+import Footer from "@/components/footer";
 function Copyright(props) {
   return (
     <Typography
@@ -212,7 +213,7 @@ export default function Dashboard() {
               </Grid>
               {/* Recent Orders */}
             </Grid>
-            <Copyright sx={{ pt: 4 }} />
+            {/*<Copyright sx={{ pt: 4 }} />*/}
           </Container>
         </Box>
       </Box>

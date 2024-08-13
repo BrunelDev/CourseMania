@@ -50,7 +50,7 @@ export function ChatBot() {
           Le ChatBot
         </span>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[400px] rounded-full">
+      <DialogContent className="sm:max-w-[400px]">
         <div className="relative w-[400px] h-[600px] bg-green-300 overflow-scroll scroll-hidden no-scrollbar">
           <header className="fixed z-50 left-0 top-0 w-[400px] bg-[#20B486] flex justify-between items-center">
             <div className="flex space-x-3">
