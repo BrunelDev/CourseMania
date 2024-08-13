@@ -36,10 +36,13 @@
     "recharts": "^2.12.7",
     "styled-components": "^6.1.12",
     "tailwind-merge": "^2.4.0",
+<<<<<<< HEAD
     "tailwind-scrollbar-hide": "^1.1.7",
+    "tailwindcss-animate": "^1.0.7"
+=======
     "tailwindcss-animate": "^1.0.7",
-    
     "zustand": "^4.5.4"
+>>>>>>> 68b4b9e4f058027638f347b217861b8510b4ddc2
   },
   "devDependencies": {
     "@types/node": "20.14.14",

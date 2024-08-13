@@ -1,7 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
-import { Plus } from "lucide-react";
+import React, { useState, useEffect } from "react";
+
 export default function Lateralenavmentor({ mentor }) {
+  // Utilisation des hooks useState et useEffect pour gérer les données du mentor
   const [mentorData, setMentorData] = useState({
     image: "avatarMentor.png",
     name: "Nom inconnu",
@@ -19,7 +20,7 @@ export default function Lateralenavmentor({ mentor }) {
   }, [mentor]);
 
   return (
-    <div className="w-full fixed top-0 left-0 h-full bg-white text- black p-4 border-r-2">
+    <div className="w-1/8 fixed top-0 left-0 h-full bg-white text- black p-4 border-r-2">
       <div className="flex items-center mb-6 mt-9">
         <img
           src={mentorData.image}
@@ -58,12 +59,9 @@ export default function Lateralenavmentor({ mentor }) {
           <span>My Account</span>
         </a>
       </nav>
-      <div className=" w-fit mt-8 px-8 py-6 bg-[#20B486] rounded-xl text-center cursor-pointer shadow-sm shadow-gray-400 hover:scale-105 duration-300">
-        <div className="bg-white rounded-full w-fit mx-auto">
-          <Plus color="#20B486" />
-        </div>
-
-        <p className="text-white">Ajouter vidéo</p>
+      <div className="mt-8 px-8 py-6 bg-[#20B486] rounded-xl text-center cursor-pointer">
+        <img src="add.png" alt="New Upload" className="w-12 h-12 inline-block mr-2" />
+        <p>New Upload</p>
       </div>
       <a href="#" className="flex items-center space-x-2 mt-8">
         <img src="logout.png" alt="Logout" className="w-6 h-6" />

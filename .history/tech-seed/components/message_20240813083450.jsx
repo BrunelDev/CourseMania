@@ -9,7 +9,6 @@ import {
   ConversationList,
   Conversation,
 } from "@chatscope/chat-ui-kit-react";
-import Lateralenavmentor from "@/components/lateralenavmentor";
 import { Avatar } from "@chatscope/chat-ui-kit-react";
 import { TypingIndicator } from "@chatscope/chat-ui-kit-react";
 import { MessageSeparator } from "@chatscope/chat-ui-kit-react";
@@ -331,11 +330,12 @@ export function Chat() {
 
   return (
     <div className="flex h-[100vh]">
-      <div className="h-full w-1/4">
-        <Lateralenavmentor />
-      </div>
-      <div className="h-full w-1/4">
-        <ConversationList className="100vh border border-gray-400">
+      <div className="h-full w-1/3">
+        <ConversationList
+          style={{
+            height: "340px",
+          }}
+        >
           <Conversation
             info="Yes i can do it for you"
             lastSenderName="Lilly"
@@ -418,17 +418,10 @@ export function Chat() {
           </Conversation>
         </ConversationList>
       </div>
-      <div className="w-2/4 h-[100vh]">
+      <div className="w-2/3 h-[800px]">
         <ChatContainer className="h-[100vh]">
-          <div className="w-full h-[60px] border-b shadow-border shadow-md flex justify-between">
-            <div>
-              <Avatar />
-              <span>Tony Tony</span>
-            </div>
-            <img src="loupe.png" alt="" />
-          </div>
           <MessageList
-            className="w-[80vh]"
+            style={{ height: "500px" }}
             typingIndicator={<TypingIndicator content="Eliot is typing" />}
           >
             {messagesList.map((m, i) =>

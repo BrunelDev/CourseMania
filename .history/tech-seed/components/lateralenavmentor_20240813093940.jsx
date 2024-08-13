@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Plus } from "lucide-react";
+
 export default function Lateralenavmentor({ mentor }) {
   const [mentorData, setMentorData] = useState({
     image: "avatarMentor.png",
@@ -58,12 +58,13 @@ export default function Lateralenavmentor({ mentor }) {
           <span>My Account</span>
         </a>
       </nav>
-      <div className=" w-fit mt-8 px-8 py-6 bg-[#20B486] rounded-xl text-center cursor-pointer shadow-sm shadow-gray-400 hover:scale-105 duration-300">
-        <div className="bg-white rounded-full w-fit mx-auto">
-          <Plus color="#20B486" />
-        </div>
-
-        <p className="text-white">Ajouter vidéo</p>
+      <div className="mt-8 px-8 py-6 bg-[#20B486] rounded-xl text-center cursor-pointer">
+        <img
+          src="add.png"
+          alt="New Upload"
+          className="w-12 h-12 inline-block mr-2"
+        />
+        <p>New Upload</p>
       </div>
       <a href="#" className="flex items-center space-x-2 mt-8">
         <img src="logout.png" alt="Logout" className="w-6 h-6" />
