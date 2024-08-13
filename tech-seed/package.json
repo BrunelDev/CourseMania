@@ -27,6 +27,7 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
+    "embla-carousel-react": "^8.1.8",
     "lucide-react": "^0.424.0",
     "next": "14.2.5",
     "react": "^18",
@@ -37,12 +38,8 @@
     "styled-components": "^6.1.12",
     "tailwind-merge": "^2.4.0",
     "tailwind-scrollbar-hide": "^1.1.7",
-    "tailwindcss-animate": "^1.0.7",
-<<<<<<< HEAD
-    
-=======
     "tailwindcss": "^3.3.0",
->>>>>>> f4ec7dae92a806b5477195338902b12f32f56422
+    "tailwindcss-animate": "^1.0.7",
     "zustand": "^4.5.4"
   },
   "devDependencies": {
