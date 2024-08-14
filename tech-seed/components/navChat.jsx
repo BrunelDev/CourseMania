@@ -27,19 +27,19 @@ export default function NavChat() {
                                 <div className="flex flex-col justify-between items-center">
                                     <span className="flex flex-row -ml-10 mt-8">
                                         <img src="Vector.png" alt="message" className=" -ml-4" />
-                                        <h3 className="text-white ml-4"><a href="#">etxtetefghfjdk</a></h3>
+                                        <h3 className="text-white ml-4"><a href="#">qu'est ce que ce chat bot</a></h3>
                                     </span>
                                 </div>
                                 <div className="flex flex-col justify-between items-center">
                                     <span className="flex flex-row -ml-10 mt-8">
                                         <img src="Vector.png" alt="message" className=" -ml-4" />
-                                        <h3 className="text-white ml-4"><a href="#">etxtetefghfjdk</a></h3>
+                                        <h3 className="text-white ml-4"><a href="#">qu'est ce que ce chat bot</a></h3>
                                     </span>
                                 </div>
                                 <div className="flex flex-col justify-between items-center">
                                     <span className="flex flex-row -ml-10 mt-8">
                                         <img src="Vector.png" alt="message" className=" -ml-4" />
-                                        <h3 className="text-white ml-4"><a href="#">etxtetefghfjdk</a></h3>
+                                        <h3 className="text-white ml-4"><a href="#">equ'est ce que ce chat bot</a></h3>
                                     </span>
                                 </div>
 
@@ -50,19 +50,19 @@ export default function NavChat() {
                                
                                     <span className="flex flex-row -ml-10 mt-8">
                                         <img src="Vector.png" alt="message" className=" -ml-4" />
-                                        <h3 className="text-white ml-4"><a href="#">etxtetefghfjdk</a></h3>
+                                        <h3 className="text-white ml-4"><a href="#">qu'est ce que ce chat bot</a></h3>
                                     </span>
                                 </div>
                                 <div className="flex flex-col justify-between items-center">
                                     <span className="flex flex-row -ml-10 mt-8">
                                         <img src="Vector.png" alt="message" className=" -ml-4" />
-                                        <h3 className="text-white ml-4"><a href="#">etxtetefghfjdk</a></h3>
+                                        <h3 className="text-white ml-4"><a href="#">discussion recente</a></h3>
                                     </span>
                                 </div>
                                 <div className="flex flex-col justify-between items-center">
                                     <span className="flex flex-row -ml-10 mt-8">
                                         <img src="Vector.png" alt="message" className=" -ml-4" />
-                                        <h3 className="text-white ml-4"><a href="#">etxtetefghfjdk</a></h3>
+                                        <h3 className="text-white ml-4"><a href="#">ancienne discussion</a></h3>
                                     </span>
                                 </div>
 
