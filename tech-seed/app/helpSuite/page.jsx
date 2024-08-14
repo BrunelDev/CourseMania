@@ -10,7 +10,7 @@ export default function Help1() {
                 </header>
                 <img src="Group 70.png" alt="..." className="deco" />
                 <div className="form ">
-                    <h1 className="text-center mt-80 font-bold  text-[80px]">Help</h1>
+                    <h1 className="text-center mt-80 font-bold  text-[80px]">?Aide?</h1>
                     <div className="formulaire">
                         <label className="mt-[-20px]" for="nom">Nom</label><br /><br />
                         <input type="text" id="nom" name="nom" placeholder="nom" required />
