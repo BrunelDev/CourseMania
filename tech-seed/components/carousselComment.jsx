@@ -1,5 +1,4 @@
 import * as React from "react"
-
 import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
@@ -21,7 +20,7 @@ export function CarouselDemo() {
         {Array.from({ length: 3}).map((_, index) => (
           <CarouselItem key={index +1} className="md:basis-1/2 lg:basis-1/3  ">
             <div className="p-1  ">
-              <Card className="w-[400px] h-[300px] justify-between -mt-3 ">
+              <Card className="w-[300px] h-[300px] justify-between -mt-3 ">
                 <CardContent className="flex aspect-square items-center justify-center p-6 ">
                   <div className="">
                     <img src="image 1.png" alt="" />
@@ -37,9 +36,8 @@ export function CarouselDemo() {
                     </span>
                     <br />
                     <br />
-                    <div className="-ml-40 w-56">Coucou comment vas Lorem ipsum dolor
+                    <div className="-ml-20 w-40">Coucou comment vas Lorem ipsum dolor
                       sit amet consectetur adipisicing elit. 
-                      Laudantium quae eligendi cupiditate rerum asperiores
                     </div>
                     </div>
                    
