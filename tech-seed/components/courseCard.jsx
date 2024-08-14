@@ -23,15 +23,10 @@ export default function CourseCard({
       </div>
       <h6 className="text-[#1A906B]">Design</h6>
       <div className="font-bold text-2xl my-3 text-[#101828] flex justify-between">
-        Building User Interface..
+        {title}
         <ArrowUpRight />
       </div>
-      <p className="w-[290px] text-[#667085]">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur
-        delectus distinctio commodi sequi laboriosam inventore qui esse in natus
-        cupiditate culpa ullam labore recusandae dolore illo, obcaecati nesciunt
-        quisquam optio!
-      </p>
+      <p className="w-[290px] text-[#667085]">{description}</p>
       <div className="flex">
         <span className="text-[#3FC89E] text-sm mr-3 my-4">4.3</span>
         <img src="star.svg" alt="" />

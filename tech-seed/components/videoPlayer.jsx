@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { Play, Pause } from "lucide-react";
 
 export default function VideoPlayer() {
   const videoRef = useRef(null);
@@ -72,7 +73,7 @@ export default function VideoPlayer() {
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white text-black rounded-full p-2"
             onClick={togglePlayPause}
           >
-            {isPlaying ? "Pause" : "Play"}
+            {isPlaying ? <Pause /> : <Play />}
           </button>
         </>
       )}

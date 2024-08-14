@@ -1,5 +1,5 @@
 "use client";
-import Button from "@/components/button";
+import React from "react";
 import {
   Dialog,
   DialogContent,
@@ -9,24 +9,20 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-
-export function Connexion({ button }) {
+export default function Sign_up() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <span
-          className={`cursor-pointer text-white bg-[#20B486] hover:bg-[#198764] py-2 px-3 text-center rounded-md  w-fit h-fit z-50`}
-        >
-          Créer un compte gratuitement
-        </span>
+        <span>Sign In</span>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[1000px]">
         <div className="h-[500px] grid gap-4 py-4">
           <main className="flex w-full space-x-3 justify-center items-center">
-            <div className="relative flex-1 items-center justify-center bg-[url('placeholder1.png')] bg-no-repeat bg-center bg-[length:500px_550px] h-full lg:flex">
-              <div className="relative z-10 w-full max-w-md">
+            <div className="relative flex-1 hidden items-center w-[800px] justify-center h-screen bg-[url('placeholder.png')] bg-no-repeat bg-center bg-[length:500px_750px] ml-80 lg:flex">
+              <div className="relative z-10  max-w-md">
+                <img src="" className="mt-2.5" width={150} />
                 <div className=" mt-16 -space-y-2 ml-28">
-                  <h3 className="text-white text-3xl font-bold -mt-7">
+                  <h3 className="text-black text-3xl font-bold -mt-7">
                     Start growing your business quickly
                   </h3>{" "}
                   <br />
@@ -51,7 +47,7 @@ export function Connexion({ button }) {
                       src="https://images.unsplash.com/photo-1510227272981-87123e259b17?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=3759e09a5b9fbe53088b23c615b6312e"
                       className="w-10 h-10 rounded-full border-2 border-white"
                     />
-                    <p className="text-sm text-gray-400 font-medium translate-x-5">
+                    <p className="text-sm text-slate-700-400 font-medium translate-x-5">
                       Join...users
                     </p>
                   </div>
@@ -66,10 +62,18 @@ export function Connexion({ button }) {
                 }}
               ></div>
             </div>
-            <div className="flex-1 flex items-center justify-items-center ml[-100px] ">
+            <div className="flex-1 flex items-center justify-items-center h-screen ml[-100px] ">
               <div className="w-full max-w-md space-y-8 px-4 bg-white text-gray-600 sm:px-0">
                 <div className="">
-                  <div className="space-y-2">
+                  <img
+                    src="https://floatui.com/logo.svg"
+                    width={150}
+                    className="lg:hidden"
+                  />
+                  <div className="mt-5 space-y-2 ml-40">
+                    <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl ">
+                      Sign up
+                    </h3>
                     <p className="">
                       Already have an account?{" "}
                       <a
@@ -189,27 +193,49 @@ export function Connexion({ button }) {
                   className="space-y-5"
                 >
                   <div>
-                    <label className="font-medium">Name</label>
+                    <label className="font-medium">Nom</label>
                     <input
                       type="text"
+                      placeholder="Nom"
                       required
                       className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                     />
                   </div>
+                  <div>
+                    <label className="font-medium">Prenom</label>
+                    <input
+                      type="text"
+                      placeholder="Prenom"
+                      required
+                      className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                    />
+                  </div>
+                  <div>
+                    <label className="font-medium">Niveau d'etude</label>
+                    <input
+                      type="text"
+                      placeholder="Niveau d'etude"
+                      required
+                      className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                    />
+                  </div>
+
                   <div>
                     <label className="font-medium">Email</label>
                     <input
                       type="email"
+                      placeholder="Email"
                       required
                       className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                     />
                   </div>
                   <div>
-                    <label className="font-medium">Password</label>
+                    <label className="font-medium">Mots de passe</label>
                     <input
                       type="password"
+                      placeholder="Mots de passe"
                       required
-                      className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                      className=" w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                     />
                   </div>
                   <button className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
@@ -219,7 +245,6 @@ export function Connexion({ button }) {
               </div>
             </div>
           </main>
-          {/* Fin de la partie connexion */}
         </div>
       </DialogContent>
     </Dialog>

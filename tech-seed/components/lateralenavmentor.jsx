@@ -20,7 +20,7 @@ export default function Lateralenavmentor({ mentor }) {
 
   return (
     <div className="w-full fixed top-0 left-0 h-full bg-white text- black p-4 border-r-2">
-      <div className="flex items-center mb-6 mt-9">
+      <div className="flex items-center pb-6 mb-8 mt-9 border-b">
         <img
           src={mentorData.image}
           alt="Mentor Avatar"
@@ -31,7 +31,7 @@ export default function Lateralenavmentor({ mentor }) {
           <p className="text-sm">{mentorData.profession}</p>
         </div>
       </div>
-      <hr className="border-gray-700 mb-8" />
+
       <nav className="space-y-4 my-8">
         <a href="#" className="flex items-center space-x-2">
           <img src="dashboard.png" alt="Dashboard" className="w-6 h-6" />
