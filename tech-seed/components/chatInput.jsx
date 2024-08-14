@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-
 export function ChatInput({ value, setValue, onSend }) {
   return (
     <div className="bg-[#E8EBF0] rounded-2xl px-[22px] py-4 flex items-center justify-between">

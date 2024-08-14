@@ -1,9 +1,9 @@
 "use client"
-import { CheckboxDemo } from "../../components/checkbox"
+import Lateralenavmentor from "@/components/lateralenavmentor";
 export default function Test(){
     return(
-        <div>
-                <CheckboxDemo/>
+        <div className="">
+                <Lateralenavmentor />
         </div>
     )
 }
