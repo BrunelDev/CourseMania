@@ -2,6 +2,8 @@ import Lateralnavmentor from "../../components/lateralenavmentor";
 import CourProgrammeM from "../../components/courProgrammeM";
 import AllCours from "../../components/allCours";
 import UpcomingEvent from "../../components/upcomingEvent";
+import PerformCours from "../../components/performCours";
+
 
 export default function CalendrierMentor(){
 return(
@@ -10,6 +12,7 @@ return(
            <Lateralnavmentor/>
            <AllCours/>
            <UpcomingEvent/>
+           <PerformCours/>
 
         </div>
         
