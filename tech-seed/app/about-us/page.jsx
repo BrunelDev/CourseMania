@@ -16,7 +16,7 @@ export default function About() {
                     {/* About description */}
                     <div className=" flex flex-col w-[600px] h-[600px] mt-[200px] py-0">
                         <section className="text-left" >
-                            <h1 className="text-3xl font-bold text-7xl text-[#1A906B]">A Propos</h1>
+                            <h1 className=" font-bold text-7xl text-[#1A906B]">A Propos</h1>
                         </section>
                         <br />
 
@@ -31,7 +31,7 @@ export default function About() {
                         <br />
 
                         <section>
-                            <p className="text-lg">
+                            <p className="">
                                 Weekend UX, is a UI/UX Design Academy in Delhi involved in User <br />
                                 Experience and User Interface Training and Consulting. It was started in <br />
                                 2023 and passionate towards User Interface Design/ User Experience <br />
@@ -55,7 +55,7 @@ export default function About() {
 
                     </div>
 
-                    <div className="w-80 h-80 bg-[#F2F2F2] mt-[360px] ml-[150px] rounded-md">
+                    <div className="w-80 h-80 bg-[#F2F2F2] mt-[360px] ml-[170px] rounded-md">
                         <div>
                             <img src="Rectangle 14.png" alt="" className="ml-44 -mt-12" />
                             <img src="Rectangle 13.png" alt="" className="-ml-44" />
@@ -71,7 +71,7 @@ export default function About() {
                             <img src="Section Img.png" alt="" className="w-[434px] h-[461px] mt-10 ml-4" />
                         </div>
                         <section className="ml-64">
-                            <h1 className="text-3xl font-bold text-3xl text-[#1A906B]">Feature</h1>
+                            <h1 className="font-bold text-3xl text-[#1A906B]">Feature</h1>
                             <p className="font-bold text-5xl">
                                 We are always working <br />
                                 to provide you best of <br />
@@ -79,7 +79,7 @@ export default function About() {
                                 aspects
                             </p>
                             <br />
-                            <p className="text-lg">
+                            <p className="">
                                 At WEEKENDUX the chief determination is to clear the minds of our <br />
                                 students about their goals, while making them consistent in their ambitions <br />
                                 and pushing them to be confident for their journey towards the course of <br />
@@ -88,7 +88,7 @@ export default function About() {
                             <br />
                             <br />
 
-                            <p className="text-lg">
+                            <p className="">
                                 You will find every little thing on the internet in just a click of hand, but here <br />
                                 we admire that without knowledge and practice the internet may even also <br />
                                 fail you in your life.
@@ -97,7 +97,7 @@ export default function About() {
                             <br />
                             <br />
                             <a href="" className="hover:bg-white-700 text-white font-bold" >
-                                <button className="text-white bg-[#22B286] w-[127px] h-[52px] rounded-full ">
+                                <button className="text-white bg-[#22B286] w-[137px] h-[52px] rounded-full ">
                                     <span className=" flex text-center ml-4">
                                         Learn More
                                         <MoveRight color="white" />
@@ -111,6 +111,7 @@ export default function About() {
                         <div className="flex flex-col text-center">
                             <div className="">
                                 <span className="text-[#22B286] font-semibold text-2xl">Our Benefics</span>
+                                <br />
                                 <br />
                                 <span className="font-bold text-4xl">
                                     By Joining WEEKENS UX Platform, <br />
