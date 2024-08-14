@@ -73,7 +73,7 @@ export default function NavChat() {
                         </div>
                     </div>
                 </div>
-                <div className=" bg-[#FAF1E4]  h-[1050px] -mt-16 ml-[-20px]">
+                <div className=" bg-[#FAF1E4]   h-[1050px] -mt-16 ml-[-20px]">
                     <div className="flex flex-row mt-[700px] ml-16 justify-start w-[500px] ">
                         <button className="mt-40 text-center text-white bg-[#22B286] rounded-full size-44 w-[184px] h-[30px]">
                             <span className=" text-white">Qu'est ce que l'art</span>
@@ -96,13 +96,13 @@ export default function NavChat() {
                             </h1>
                             <br /><br />
                             <div className="flex flex-row">
-                                <input type="text" className=" w-[280px] border-spacing-x-1 bg-inherit " />
-                                <a href="#"><img src="Vector (1).png" alt="" /></a>
+                                <input type="text" className=" w-[280px] border-spacing-x-1 bg-[#d0d1ce]" />
+                                <a href="#" className="ml-1 mt-1"><img src="Vector (1).png" alt="" /></a>
                             </div>
                             <br />
                             <div className="flex flex-row">
-                                <input type="text" className=" w-[280px] border-spacing-x-1 bg-inherit " />
-                                <a href="#"><img src="Vector (1).png" alt="" /></a>
+                                <input type="text" className=" w-[280px] border-spacing-x-1 bg-[#d0d1ce] " />
+                                <a href="#" className="ml-1 mt-1"><img src="Vector (1).png" alt="" /></a>
                             </div>
 
                         </div>
