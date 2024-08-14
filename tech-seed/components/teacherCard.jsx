@@ -6,16 +6,20 @@ export default function TeacherCard({ avatar, name, profession, description }) {
       <img src="profAvatar1.png" alt="" />
       <span className="text-center text-[#101828] font-medium mt-3">
         Theresa Webb
+        {/*{name}*/}
       </span>
       <span className="text-center text-[#22B286] my-2">
         Application Support Analyst Lead
+        {/*{profession}*/}
       </span>
       <span className="text-center text-[#667085]">
-        Former co-founder of Opendoor. Early staff at Spotify and Clearbit.
+        Ancien co-fondateur d'Opendoor. Premiers employés de Spotify et
+        Clearbit.
+        {/*{description}*/}
       </span>
       <div className="flex mt-3">
-        <img src="twitterIcon.svg" alt="" className="mr-4" />
-        <img src="linkedinIcon.svg" alt="" />
+        <img src="twitterIcon.svg" alt="" className="mr-4 cursor-pointer" />
+        <img src="linkedinIcon.svg" alt="" className="cursor-pointer" />
       </div>
     </div>
   );

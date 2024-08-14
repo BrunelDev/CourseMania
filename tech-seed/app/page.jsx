@@ -7,6 +7,7 @@ import Button from "@/components/button";
 import TeacherCard from "@/components/teacherCard";
 import Footer from "@/components/footer";
 import BlogCard from "@/components/blogCard";
+import { Chatbot } from "@/components/chatbot1";
 export default function Home() {
   return (
     <main className="bg-[#24bb8b05]">
@@ -112,26 +113,26 @@ export default function Home() {
           <span className="font-bold text-3xl w-2/3 text-center mt-4 mb-8">
             Favoriser un environnement d’apprentissage ludique et engageant
           </span>
-          <div className="flex justify-between w-full">
+          <div className="flex justify-center space-x-8 w-full flex-wrap">
             <ThemeCard
-              title={"Interaction Design"}
+              title={"Etudiants"}
               icon="interactionDesign.png"
               description={
-                "loremipsumdolor loremipsumdolor loremipsumdolorloremipsumdolor"
+                "Faites un grand pas vers votre pacours scolaire en suivant l’une de nos formations diplômantes."
               }
             />
             <ThemeCard
-              title={"Interaction Design"}
+              title={"Enseignants"}
               icon="interactionDesign.png"
               description={
-                "loremipsumdolor loremipsumdolor loremipsumdolorloremipsumdolor"
+                "Jouez un rôle clé en guidant et soutenant les apprenants quand rencontrent des obstacles.  Votre engagement et expertise sont précieux pour la réussite des apprenants."
               }
             />
             <ThemeCard
-              title={"Interaction Design"}
+              title={"Enseignants"}
               icon="interactionDesign.png"
               description={
-                "loremipsumdolor loremipsumdolor loremipsumdolorloremipsumdolor"
+                "Jouez un rôle clé en guidant et soutenant les apprenants quand rencontrent des obstacles.  Votre engagement et expertise sont précieux pour la réussite des apprenants."
               }
             />
           </div>
@@ -148,9 +149,25 @@ export default function Home() {
             seront certainement utiles.
           </span>
           <div className="mb-10 flex w-full justify-between">
-            <CourseCard image="userInterfacePic.png" />
-            <CourseCard image="userInterfacePic.png" />
-            <CourseCard image="userInterfacePic.png" />
+            <CourseCard
+              image="userInterfacePic.png"
+              title={"Figma UI UX Design.."}
+              description={`Utilisez Figma pour obtenir un emploi dans la conception d'interface utilisateur, l'interface utilisateur et la conception d'expérience utilisateur.`}
+            />
+            <CourseCard
+              image="userInterfacePic.png"
+              title={"Créer User Interface.."}
+              description={
+                "Use Figma to get a job in UI Design, User Interface, User Experience design."
+              }
+            />
+            <CourseCard
+              image="userInterfacePic.png"
+              title={"Figma UI UX Design.."}
+              description={
+                "Use Figma to get a job in UI Design, User Interface, User Experience design."
+              }
+            />
           </div>
           <div className="mx-auto">
             <Button
@@ -225,6 +242,9 @@ export default function Home() {
             />
           </div>
         </div>
+      </div>
+      <div className="fixed right-5 bottom-10">
+        <Chatbot />
       </div>
 
       <Footer />
