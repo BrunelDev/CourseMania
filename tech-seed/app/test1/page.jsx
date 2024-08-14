@@ -1,9 +1,9 @@
 "use client"
-import Input from "../../components/messageInput"
+import Lateralenavmentor from "@/components/lateralenavmentor";
 export default function Test(){
     return(
-        <div>
-                <Input/>
+        <div className="">
+                <Lateralenavmentor />
         </div>
     )
 }
