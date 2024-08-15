@@ -1,35 +1,43 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import "./help1.css"
+import InputDemo from "@/components/input"
 export default function Help1() {
     return (
-        <div className="container-help  bg-gradient-to-tl from-[#24bb8b1b] from-0% to-[#24bb8b00] to-100%">
-            <div className="container">
-                <header className="mb-24">
-                    <Navbar />
-                </header>
-                <img src="Group 70.png" alt="..." className="deco" />
-                <div className="form ">
-                    <h1 className="text-center mt-80 font-bold  text-[80px]">?Aide?</h1>
-                    <div className="formulaire">
-                        <label className="mt-[-20px]" for="nom">Nom</label><br /><br />
-                        <input type="text" id="nom" name="nom" placeholder="nom" required />
+        <div>
+            <div className="flex flex-col px-0 py-0">
+                <Navbar />
+                <div className="  bg-gradient-to-tl from-[#FFFFFF]  from-10% to-[#5FDFB7] to-100% h-full shadow-gray-950">
+
+                    <img src="Group 70.png" alt="" className="ml-[85%] mt-12" />
+                    <div className="w-[800px] h-[700px] bg-white mt-[] ml-[300px] flex flex-col justify-center ">
+                        <h1 className="text-center text-7xl font-bold">?Aide?</h1>
                         <br />
+                        <InputDemo />
                         <br />
-                        <input type="text" id="nom" name="nom" placeholder="Teacer s name ( Optional )" required />
-                        <textarea name="description" id="" placeholder="Description"></textarea>
-                        <input className="soumettre" type="submit" name="Send" id="" />
+                        <textarea name="" id="" placeholder="Votre probleme " className="w-[422px]  h-32 ml-52">
+                        </textarea>
+                        <br />
+                        <div className="ml-52">
+                            <a href="" className="hover:bg-white-700 text-white font-bold " >
+                                <button className="text-white bg-[#00A991] w-[422px] h-[52px]  ">
+                                    <span className=" text-center">
+                                        Envoyer
+                                    </span>
+                                </button>
+                            </a>
+                        </div>
                     </div>
-
+                    <img src="Group 70.png" alt="" className="ml-[200px] mt-[-80px]" />
                 </div>
-                <div className="decoration ">
-                    <img src="Group 81.png" alt="" className="green" />
-                    <img src="Group 82.png" alt="" className="green2" />
+                <div className="flex flex-row justify-between  w-full h-auto -mt-36">
+                    <img src="Group 81.png" alt="" />
+                    <img src="Group 82.png" alt="" />
                 </div>
-
-
+                <div className="-mt-16">
+                    <Footer />
+                </div>
             </div>
-            <Footer />
         </div>
+
     )
 }
