@@ -135,7 +135,7 @@ export default function PaidOffline() {
             Description
           </span>
           <span
-            className={`cursor-pointer ${
+            className={`cursor-pointer${
               isCoursesSelected ? "border-b-2 border-[#3DCBB1]" : null
             }`}
             onClick={() => {

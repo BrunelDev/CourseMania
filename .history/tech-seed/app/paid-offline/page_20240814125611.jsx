@@ -125,7 +125,7 @@ export default function PaidOffline() {
         {/*  */}
         <div className="flex space-x-2 w-fit">
           <span
-            className={`cursor-pointer ${
+            className={`${
               isDescriptionSelected ? "border-b-2 border-[#3DCBB1]" : null
             }`}
             onClick={() => {
@@ -135,7 +135,7 @@ export default function PaidOffline() {
             Description
           </span>
           <span
-            className={`cursor-pointer ${
+            className={`${
               isCoursesSelected ? "border-b-2 border-[#3DCBB1]" : null
             }`}
             onClick={() => {
@@ -145,7 +145,7 @@ export default function PaidOffline() {
             Cours
           </span>
           <span
-            className={`cursor-pointer ${
+            className={`${
               isReviewSelected ? "border-b-2 border-[#3DCBB1]" : null
             }`}
             onClick={() => {

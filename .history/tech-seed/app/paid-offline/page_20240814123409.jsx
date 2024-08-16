@@ -8,6 +8,7 @@ import Title from "@/components/title";
 import VideosList from "@/components/videosList";
 import VideoPlayer from "@/components/videoPlayer";
 import { useNavigation } from "@/lib/context";
+import { Span } from "next/dist/trace";
 export default function PaidOffline() {
   const chapters = [
     {
@@ -125,7 +126,7 @@ export default function PaidOffline() {
         {/*  */}
         <div className="flex space-x-2 w-fit">
           <span
-            className={`cursor-pointer ${
+            className={`${
               isDescriptionSelected ? "border-b-2 border-[#3DCBB1]" : null
             }`}
             onClick={() => {
@@ -135,7 +136,7 @@ export default function PaidOffline() {
             Description
           </span>
           <span
-            className={`cursor-pointer ${
+            className={`${
               isCoursesSelected ? "border-b-2 border-[#3DCBB1]" : null
             }`}
             onClick={() => {
@@ -145,7 +146,7 @@ export default function PaidOffline() {
             Cours
           </span>
           <span
-            className={`cursor-pointer ${
+            className={`${
               isReviewSelected ? "border-b-2 border-[#3DCBB1]" : null
             }`}
             onClick={() => {
