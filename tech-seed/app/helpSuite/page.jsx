@@ -14,7 +14,7 @@ export default function Help1() {
                         <br />
                         <InputDemo />
                         <br />
-                        <textarea name="" id="" placeholder="Votre probleme " className="w-[422px]  h-32 ml-52">
+                        <textarea name="" id="" placeholder="Votre probleme " className="w-[422px]  h-32 ml-52 border-gray-50 border-4">
                         </textarea>
                         <br />
                         <div className="ml-52">
