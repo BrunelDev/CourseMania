@@ -5,7 +5,7 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Title from "./Title2";
+import Title from "./Title";
 
 // Generate Order Data
 function createData(rank, name, courses, hours, points, evolution) {
@@ -25,7 +25,7 @@ function preventDefault(event) {
   event.preventDefault();
 }
 
-export function Leaderboard() {
+export default function Leaderboard() {
   return (
     <React.Fragment>
       <Title>Leader Board</Title>

@@ -5,7 +5,7 @@ import { useNavigationLink } from "@/lib/context";
 import Button from "./button";
 import SearchBar from "./searchbar";
 import { Connexion } from "@/components/connexion";
-
+import Sign_up from "@/components/sign-up";
 export default function Navbar() {
   const router = useRouter();
   const {
@@ -19,7 +19,12 @@ export default function Navbar() {
 
   return (
     <nav className="flex w-full fixed top-0 left-0 items-center justify-between py-6 px-12 backdrop-blur-md z-50 mb-24">
-      <span>Iziskill</span>
+      <span className="text-2xl font-semibold">
+        <span className="text-green-400">Izi</span>
+        <span>Ski</span>
+        <span className="text-orange-500">ll</span>
+      </span>
+
       <SearchBar />
       <ul className="flex space-x-4 text-[#101828] font-medium">
         <li
@@ -72,13 +77,14 @@ export default function Navbar() {
           }`}
           onClick={() => {
             selectLink("faqs");
-            router.push("/faqs");
+            router.push("/help");
           }}
         >
           FAQs
         </li>
       </ul>
       <div className="flex items-center">
+        {/*<Sign_up />*/}
         <span className="mr-4 cursor-pointer">Sign in</span>
         <Connexion
           button={

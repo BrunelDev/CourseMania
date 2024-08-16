@@ -1,43 +1,38 @@
-import React from 'react'
-import { Nav } from '../../components/Nav'
-import Button from '../../components/button'
+"use client";
+import React from "react";
+import { Nav } from "../../components/Nav";
 import Footer from "@/components/footer";
-import "./Help.css";
 export default function Help() {
-  return (
-    <div>
-      <div className='principal'>
-        <header className="mb-24">
-          <Nav />
-        </header>
-        <div className=" ml-40 flex  justify-between w-full">
-          <img
-            src="spiral.svg"
-            alt=""
-            className="absolute left-0 w-[350px] h-[350px]"
-          />
-          <div className="help">
-            <p>
-              <h1 className='font-bold text-[80px]'>Helpers</h1>
-              <span className='text-gray-500'>
-                Demandez l'aide d'un professeur pour plus de compréhension
-              </span>
-            </p>
-            <br />
-            <Button
-              title={"Ask for help"}
-              bgColor={"bg-[#00A991] shadow-lg shadow-[#1018280c] py-4"}
-              textColor={"text-[white]"}
-            />
-          </div>
-          <div className="Ask">
-            <img className='design' src="Design_image.png" alt="Design image" />
+    return (
+        <div className="scroll-py-16">
+            <Nav />
+            <div className="mt- w-full h-[800px] flex flex-row justify-between px-28 py-44 ">
+                <img
+                    src="spiral.svg"
+                    alt=""
+                    className="absolute left-0 w-[350px] h-[350px]"
+                />
+                <div className="flex flex-col mt-36">
+                    <h1 className="text-6xl font-bold">AIDE</h1>
+                    <h2 className="text-2xl text-[#4F5E71] ">Ask a teacher help for more <br /> comprehension</h2>
+                    <br />
+                    <br />
 
-          </div>
+                    <a href="" className="hover:bg-white-700 text-white font-bold" >
+                        <button className="text-white bg-[#00A991] w-[137px] h-[52px] rounded-full ">
+                            <span className=" flex text-center ml-4">
+                                Ask for Help
+                            </span>
+                        </button>
+                    </a>
+                    
+                </div>
+                <div className="w-[600px] h-[600px]">
+                    <img src="Untitled_Artwork 8 1.png" alt="" />
+                </div>
+                
+            </div>
+            <Footer />
         </div>
-
-      </div>
-      <Footer />
-    </div>
-  )
+    )
 }

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { useState } from "react";
 import Navbar from "@/components/navbar";
 import { ChapterList } from "@/components/chaptersList";
 import Footer from "@/components/footer";
@@ -7,6 +7,8 @@ import Description from "@/components/description";
 import Title from "@/components/title";
 import VideosList from "@/components/videosList";
 import VideoPlayer from "@/components/videoPlayer";
+import { useNavigation } from "@/lib/context";
+import { Span } from "next/dist/trace";
 export default function PaidOffline() {
   const chapters = [
     {
@@ -70,6 +72,13 @@ export default function PaidOffline() {
       ],
     },
   ];
+
+  const {
+    isCoursesSelected,
+    isDescriptionSelected,
+    isReviewSelected,
+    navigate,
+  } = useNavigation();
   return (
     <div>
       <div className="mb-24">
@@ -114,9 +123,48 @@ export default function PaidOffline() {
             </div>
           </div>
         </div>
-        <div className="rounded-xl overflow-hidden border w-fit mt-10">
-          <ChapterList chapters={chapters} />
+        {/*  */}
+        <div className="flex space-x-2 w-fit">
+          <span
+            className={`${
+              isDescriptionSelected ? "border-b-2 border-[#3DCBB1]" : null
+            }`}
+            onClick={() => {
+              navigate("description");
+            }}
+          >
+            Description
+          </span>
+          <span
+            className={`${
+              isCoursesSelected ? "border-b-2 border-[#3DCBB1]" : null
+            }`}
+            onClick={() => {
+              navigate("courses");
+            }}
+          >
+            Cours
+          </span>
+          <span
+            className={`${
+              isReviewSelected ? "border-b-2 border-[#3DCBB1]" : null
+            }`}
+            onClick={() => {
+              navigate("review");
+            }}
+          >
+            Commentaires
+          </span>
         </div>
+        {isCoursesSelected ? (
+          <div className="rounded-xl overflow-hidden border w-fit mt-10">
+            <ChapterList chapters={chapters} />
+          </div>
+        ) : isDescriptionSelected ? (
+          <span>description</span>
+        ) : isReviewSelected ? (
+          <span>Review</span>
+        ) : null}
       </div>
 
       <Footer />
