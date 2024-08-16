@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Send } from "lucide-react"
 
-export function InputWithButton() {
+export default function InputWithButton() {
     return (
-        <div className="flex w-full max-w-sm items-center space-x-2">
-            <Input type="email" placeholder="Email" />
-            <Button type="submit">
-                Subscribe
+        <div className="flex w-full  items-center space-x-2 bg-[#D6BC97]">
+            <Input type="text" placeholder="Entrez votre requête..." />
+            <Button type="submit  bg-[#22B286] ">
+            <Send />
             </Button>
         </div>
     )
