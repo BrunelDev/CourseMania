@@ -3,15 +3,17 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="bg-[#101828] w-full py-8 px-8 md:px-32">
-      <div className="flex flex-col md:flex-row md:justify-between">
+      <div className="flex flex-col md:grid md:grid-cols-2 gap-8">
         {/* Texte de description */}
-        <span className="w-full md:w-1/3 text-[#EAECF0] mb-6 md:mb-0 text-center md:text-left">
-          Des expériences d'apprentissage de premier ordre qui créent plus de
-          talents dans le monde.
-        </span>
+        <div className="text-[#EAECF0] text-center md:text-left mb-6 md:mb-0">
+          <span>
+            Des expériences d'apprentissage de premier ordre qui créent plus de
+            talents dans le monde.
+          </span>
+        </div>
         
         {/* Liens du footer */}
-        <div className="flex flex-col md:flex-row justify-between w-full md:w-2/3">
+        <div className="flex flex-col md:flex-row md:justify-between ">
           {/* Colonne 1 */}
           <ul className="mb-6 md:mb-0 text-[#EAECF0] font-medium text-center md:text-left">
             <li className="text-[#98A2B3] mb-3 font-semibold">
@@ -92,9 +94,14 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      
+
+      {/* Section pour le logo */}
+      <div className="flex justify-center mt-6">
+        <img src="logo.png" alt="Logo" className="w-24 h-auto" />
+      </div>
+
       {/* Texte de copyright */}
-      <span className="text-[#98A2B3] mt-6 block text-center md:text-left">
+      <span className="text-[#98A2B3] mt-6 block text-center">
         © 2022 Ed-Circle. Tous droits réservés.
       </span>
     </footer>
