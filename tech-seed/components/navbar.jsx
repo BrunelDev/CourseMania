@@ -5,7 +5,7 @@ import { useNavigationLink } from "@/lib/context";
 import Button from "./button";
 import SearchBar from "./searchbar";
 import { Connexion } from "@/components/connexion";
-import Sign_up from "@/components/sign-up";
+import { Inscription } from "@/components/Inscription";
 export default function Navbar() {
   const router = useRouter();
   const {
@@ -85,17 +85,8 @@ export default function Navbar() {
       </ul>
       <div className="flex items-center">
         {/*<Sign_up />*/}
-        <span className="mr-4 cursor-pointer">Sign in</span>
-        <Connexion
-          button={
-            <Button
-              action={() => {}}
-              title={"Créer un compte gratuitement"}
-              bgColor={"bg-[#20B486]"}
-              textColor={"text-white"}
-            />
-          }
-        />
+        <Inscription />
+        <Connexion />
       </div>
     </nav>
   );

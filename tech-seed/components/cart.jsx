@@ -16,10 +16,7 @@ import React from "react";
 
 export function Cart() {
   return (
-    <section
-      className="h-100 h-custom w-fit"
-      style={{ backgroundColor: "#eee" }}
-    >
+    <section className="h-100 h-custom w-fit">
       <MDBContainer className="h-100">
         <MDBRow className="justify-content-center align-items-center h-100">
           <MDBCol>
