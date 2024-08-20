@@ -5,8 +5,18 @@ import { useNavigationLink } from "@/lib/context";
 import Button from "./button";
 import SearchBar from "./searchbar";
 import { Connexion } from "@/components/connexion";
+<<<<<<< HEAD
 import { Inscription } from "@/components/Inscription";
+=======
+<<<<<<< HEAD
+import { Inscription } from "@/components/Inscription";
+=======
+import Sign_up from "@/components/sign-up";
+
+>>>>>>> 387d9764f5e3c8f937bf357632ca4bc78480c09b
+>>>>>>> 69de3465c5461c793f99a737e51a9aa66f2697f0
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
   const {
     selectLink,
@@ -18,15 +28,41 @@ export default function Navbar() {
   } = useNavigationLink();
 
   return (
-    <nav className="flex w-full fixed top-0 left-0 items-center justify-between py-6 px-12 backdrop-blur-md z-50 mb-24">
-      <span className="text-2xl font-semibold">
+    <nav className="flex w-full fixed top-0 left-0 items-center justify-between py-4 px-6 sm:px-12 backdrop-blur-md z-50 mb-24">
+      <span className="text-xl sm:text-2xl font-semibold">
         <span className="text-green-400">Izi</span>
         <span>Ski</span>
         <span className="text-orange-500">ll</span>
       </span>
 
-      <SearchBar />
-      <ul className="flex space-x-4 text-[#101828] font-medium">
+      <div className="flex items-center space-x-4">
+        <SearchBar className="hidden md:block" />
+        <button
+          className="md:hidden p-2 focus:outline-none"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+            />
+          </svg>
+        </button>
+      </div>
+
+      <ul
+        className={`${
+          isMenuOpen ? "flex" : "hidden"
+        } flex-col md:flex md:flex-row md:space-x-4 text-[#101828] font-medium absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent p-4 md:p-0`}
+      >
         <li
           className={`${
             isHomeSelected && "text-[#1A906B] font-semibold"
@@ -34,6 +70,7 @@ export default function Navbar() {
           onClick={() => {
             selectLink("home");
             router.push("/");
+            setIsMenuOpen(false);
           }}
         >
           Accueil
@@ -45,6 +82,7 @@ export default function Navbar() {
           onClick={() => {
             selectLink("about-us");
             router.push("/about-us");
+            setIsMenuOpen(false);
           }}
         >
           A propos
@@ -56,6 +94,7 @@ export default function Navbar() {
           onClick={() => {
             selectLink("courses");
             router.push("/cours");
+            setIsMenuOpen(false);
           }}
         >
           Cours
@@ -67,6 +106,7 @@ export default function Navbar() {
           onClick={() => {
             selectLink("contact");
             router.push("/contact");
+            setIsMenuOpen(false);
           }}
         >
           Contact
@@ -78,15 +118,48 @@ export default function Navbar() {
           onClick={() => {
             selectLink("faqs");
             router.push("/help");
+            setIsMenuOpen(false);
           }}
         >
           FAQs
         </li>
+        <li className="mt-4 md:mt-0 flex md:hidden items-center">
+          <span className="mr-4 cursor-pointer">Sign in</span>
+          <Connexion
+            button={
+              <Button
+                action={() => {}}
+                title={"Créer un compte gratuitement"}
+                bgColor={"bg-[#20B486]"}
+                textColor={"text-white"}
+              />
+            }
+          />
+        </li>
       </ul>
+<<<<<<< HEAD
       <div className="flex items-center">
         {/*<Sign_up />*/}
         <Inscription />
         <Connexion />
+<<<<<<< HEAD
+=======
+=======
+
+      <div className="hidden md:flex items-center">
+        <span className="mr-4 cursor-pointer">Sign in</span>
+        <Connexion
+          button={
+            <Button
+              action={() => {}}
+              title={"Créer un compte gratuitement"}
+              bgColor={"bg-[#20B486]"}
+              textColor={"text-white"}
+            />
+          }
+        />
+>>>>>>> 387d9764f5e3c8f937bf357632ca4bc78480c09b
+>>>>>>> 69de3465c5461c793f99a737e51a9aa66f2697f0
       </div>
     </nav>
   );

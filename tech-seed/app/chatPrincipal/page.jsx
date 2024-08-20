@@ -2,7 +2,10 @@
 import React from "react"
 import Lien from "@/components/lien";
 import Days from "@/components/days"
-import InputFile from "@/components/inputFichier"
+import {InputFile} from "@/components/inputFichier"
+import InputWithButton from "@/components/inputRequest"
+import { IterationCw } from "lucide-react";
+import { Plus } from "lucide-react";
 export default function PrincipalPage() {
     return (
         <div className="w-full">
@@ -20,7 +23,16 @@ export default function PrincipalPage() {
                         <br />
                         <br />
                         <hr />
+                        <a href="" className="hover:bg-white-700 text-white text-xl font-bold mt-2" >
+                            <button className="text-white bg-[#22B286] w-[258px] h-[52px] rounded-full ">
+                                <span className=" text-center flex flex-row ml-4">
+                                <Plus />
+                                Nouvelle Discussion
+                                </span>
+                            </button>
+                        </a>
                         <div>
+
                             <br />
                             <Days />
                             <br />
@@ -28,10 +40,11 @@ export default function PrincipalPage() {
                             <br />
                             <Days />
                         </div>
-                        <a href="" className="hover:bg-white-700 text-white font-bold mt-20" >
-                            <button className="text-black bg-[#FFEED6] w-[258px] h-[52px] rounded-full ">
+                        <a href="" className="hover:bg-white-700 text-white font-bold " >
+                            <button className="text-black bg-[#FFEED6] w-[258px] h-[52px] rounded-full -mt-0 ">
                                 <span className=" text-center">
                                     Upgrade
+
                                 </span>
                             </button>
                         </a>
@@ -45,7 +58,7 @@ export default function PrincipalPage() {
 
                         </div>
                         <div className="flex flex-col">
-                            <div className="flex flex-row justify-items-start mt-[650px]">
+                            <div className="flex flex-row justify-between mt-[650px]">
                                 <a href="" className="hover:bg-white-700 text-white font-bold mt-20" >
                                     <button className="text-black bg-[#22B286] w-[238px] h-[52px] rounded-full ">
                                         <span className=" text-center">
@@ -68,15 +81,16 @@ export default function PrincipalPage() {
                                     </button>
                                 </a>
                             </div>
-                            <div className="text-center mt-4 flex flex-col">
-                                <a href="" className="hover:bg-white-700 text-white font-bold " >
-                                    <button className="text-black bg-[#FFEED6] w-[258px] h-[52px] rounded-full ">
-                                        <span className=" text-center">
-                                            Regenerer
+                            <div className="text-center mt-4 flex flex-col ">
+                                <a href="" className="hover:bg-white-700 text-white font-bold  " >
+                                    <button className="text-black bg-[#FFEED6] w-[258px] h-[52px] rounded-full">
+                                        <span className=" text-center flex flex-row">
+                                        <IterationCw />
+                                            Regenerez
                                         </span>
                                     </button>
                                 </a>
-                                <input type="text" name="" id="" placeholder="Entrez votre requête..." className="mt-3 ml-3 h-9" />
+                                <InputWithButton />
                             </div>
 
 
@@ -89,15 +103,7 @@ export default function PrincipalPage() {
                         </h1>
                         <div className="flex flex-row">
                             <InputFile />
-                            <a href=""><img src="Vector (1).png" alt="" /></a>
                         </div>
-                        <br />
-                        <div className="flex flex-row">
-                            <input type="text" placeholder="saisis l'url de l'image" />
-                            <a href=""><img src="Vector (1).png" alt="" /></a>
-                        </div>
-
-
                     </div>
 
 
