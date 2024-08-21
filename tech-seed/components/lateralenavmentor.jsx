@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Plus } from "lucide-react";
+import { Plus, Clock, GraduationCap, MessageSquareText } from "lucide-react";
 export default function Lateralenavmentor({ mentor }) {
   const [mentorData, setMentorData] = useState({
     image: "avatarMentor.png",
@@ -38,15 +38,15 @@ export default function Lateralenavmentor({ mentor }) {
           <span>Dashboard</span>
         </a>
         <a href="#" className="flex items-center space-x-2">
-          <img src="myshedule.png" alt="My Schedule" className="w-6 h-6" />
+          <Clock className="w-6 h-6" />
           <span>My Schedule</span>
         </a>
         <a href="#" className="flex items-center space-x-2">
-          <img src="chat.png" alt="Chat" className="w-6 h-6" />
+          <MessageSquareText size={20} className="w-6 h-6"/>
           <span>Chat</span>
         </a>
         <a href="#" className="flex items-center space-x-2">
-          <img src="mycourses.png" alt="My Courses" className="w-6 h-6" />
+          <GraduationCap size={20} absoluteStrokeWidth className="w-6 h-6"/> 
           <span>My Courses</span>
         </a>
         <a href="#" className="flex items-center space-x-2">

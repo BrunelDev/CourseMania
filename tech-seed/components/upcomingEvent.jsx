@@ -23,7 +23,7 @@ export default function UpcomingEvent({ cour }) {
   }, [cour]);
 
   return (
-    <div className="relative p-4 w-[260px] h-[62px] gap-4 rounded-[10px] m-4 bg-[#A5B4CB33] shadow-md flex items-center">
+    <div className="relative p-4 w-full h-[62px] gap-4 rounded-[10px] m-4 bg-[#A5B4CB33] shadow-md flex items-center">
       {/* Menu Hamburger */}
       <Menu as="div" className="absolute top-2 right-2">
         <Menu.Button className="text-gray-500 focus:outline-none">
