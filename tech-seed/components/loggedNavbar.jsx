@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useNavigationLink } from "@/lib/context";
 import Button from "./button";
@@ -8,10 +8,9 @@ import { Connexion } from "@/components/connexion";
 
 import { Sign_up } from "@/components/sign-up";
 import { Inscription } from "@/components/Inscription";
-import { isLoggedIn } from "@/lib/functions";
 
-export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+export default function LoggedNavbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
   const {
     selectLink,
@@ -21,12 +20,7 @@ export default function Navbar() {
     isContactSelected,
     isHomeSelected,
   } = useNavigationLink();
-  const [isLogged, setIsLogged] = useState(isLoggedIn());
-  useEffect(() => {
-    if (!isLoggedIn()) {
-      router.push("/");
-    }
-  });
+
   return (
     <nav className="flex w-full fixed top-0 left-0 items-center justify-between py-4 px-6 sm:px-12 backdrop-blur-md z-50 mb-24">
       <span className="text-xl sm:text-2xl font-semibold">
@@ -140,15 +134,8 @@ export default function Navbar() {
         </li>
       </ul>
       <div className="flex items-center">
-        {/*<Sign_up />*/}
-        {isLogged ? (
-          "Deconnexion"
-        ) : (
-          <div>
-            <Inscription />
-            <Connexion />
-          </div>
-        )}
+        <Inscription />
+        <Connexion />
       </div>
     </nav>
   );

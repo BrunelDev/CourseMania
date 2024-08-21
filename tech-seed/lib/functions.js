@@ -1,12 +1,21 @@
 import axios from "axios";
-
+import { useLogin } from "@/lib/context";
 const api = axios.create({
-  baseURL: "http://192.168.1.104:8000/api",
+  baseURL: "http://192.168.100.18:8000/api",
   headers: {
     Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
     Accept: "application/json",
   },
 });
+export const isLoggedIn = () => {
+  const token = localStorage.getItem("accessToken");
+  return !!token;
+};
+export const logOut = () => {
+  const { isLogged, logIn, logOut } = useLogin();
+
+  localStorage.removeItem("accessToken");
+};
 
 // Fetch messages
 const getMessages = async () => {
@@ -25,6 +34,17 @@ const sendMessage = async (message) => {
     return response.data;
   } catch (error) {
     console.error("Error sending message:", error);
+  }
+};
+
+//Get user
+
+export const getUser = async () => {
+  try {
+    const response = await api.get(`/users/`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching user:", error);
   }
 };
 

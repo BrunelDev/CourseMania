@@ -2,12 +2,17 @@
 import Button from "@/components/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { useState } from "react";
-export function Connexion({ button }) {
+export function Connexion() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const login = () => {
-    fetch("http://192.168.1.104:8000/api/token/", {
+  const [password2, setPassword2] = useState("");
+  const [status, setStatus] = useState("apprenant");
+  const registration = () => {
+    if (password !== password2) {
+      return;
+    }
+    fetch("http://192.168.100.18:8000/api/users/register/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -15,15 +20,11 @@ export function Connexion({ button }) {
       },
       body: JSON.stringify({
         username: username,
+        email: email,
         password: password,
       }),
     })
-      .then((rsp) => {
-        const response = rsp.json();
-        localStorage.setItem("refreshToken", response.refresh);
-        localStorage.setItem("accessToken", response.access);
-        console.log(response);
-      })
+      .then((response) => console.log(response.json()))
       .catch((error) => {
         console.warn(error.message);
       });
@@ -32,19 +33,19 @@ export function Connexion({ button }) {
     <Dialog>
       <DialogTrigger asChild>
         <span
-          className={`cursor-pointer text-white bg-[#20B486] hover:bg-[#198764] py-2 px-3 text-center rounded-md  w-fit h-fit z-50`}
+          className={`cursor-pointer  hover:text-[#198764] py-2 px-3 text-center rounded-md  w-fit h-fit z-50`}
         >
-          Créer un compte gratuitement
+          Se connecter
         </span>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[1000px]">
-        <div className="h-[500px] grid gap-4 py-4">
-          <main className="flex w-full space-x-3 justify-center items-center">
+        <div className="grid gap-4 py-4">
+          <main className="flex w-full space-x-3 justify-center items-center h-full">
             <div className="relative flex-1 items-center justify-center bg-[url('placeholder1.png')] bg-no-repeat bg-center bg-[length:500px_550px] h-full lg:flex">
               <div className="relative z-10 w-full max-w-md">
                 <div className=" mt-16 -space-y-2 ml-28">
                   <h3 className="text-white text-3xl font-bold -mt-7">
-                    Start growing your business quickly
+                    Commencer a apprendre a moindre cout!
                   </h3>{" "}
                   <br />
                   <div className="flex items-center -space-x-2 overflow-hidden mt-80">
@@ -88,7 +89,7 @@ export function Connexion({ button }) {
                 <div className="">
                   <div className="space-y-2">
                     <p className="">
-                      Already have an account?{" "}
+                      Avez vous deja un compte ?
                       <a
                         href="javascript:void(0)"
                         className="font-medium text-indigo-600 hover:text-indigo-500"
@@ -204,7 +205,7 @@ export function Connexion({ button }) {
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
-                    login();
+                    registration();
                   }}
                   className="space-y-5"
                 >
@@ -223,12 +224,12 @@ export function Connexion({ button }) {
                   <div>
                     <label className="font-medium">Email</label>
                     <input
+                      type="email"
                       value={email}
+                      required
                       onChange={(e) => {
                         setEmail(e.target.value);
                       }}
-                      type="email"
-                      required
                       className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                     />
                   </div>
@@ -244,8 +245,20 @@ export function Connexion({ button }) {
                       className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                     />
                   </div>
+                  <div>
+                    <label className="font-medium">Password</label>
+                    <input
+                      value={password2}
+                      onChange={(e) => {
+                        setPassword2(e.target.value);
+                      }}
+                      type="password"
+                      required
+                      className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                    />
+                  </div>
                   <button className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
-                    Create account
+                    Créer un compte
                   </button>
                 </form>
               </div>

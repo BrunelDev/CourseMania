@@ -1,5 +1,5 @@
 import { create } from "zustand";
-
+import { isLoggedIn } from "@/lib/functions";
 export const useNavigationLink = create((set) => ({
   isHomeSelected: true,
   isAboutUsSelected: false,
@@ -26,4 +26,10 @@ export const useNavigation = create((set) => ({
       isCoursesSelected: link === "courses",
       isReviewSelected: link === "review",
     }),
+}));
+
+export const useLogin = create((set) => ({
+  isLogged: false,
+  logOut: () => set({ isLogged: false }),
+  logIn: () => set({ isLogged: true }),
 }));

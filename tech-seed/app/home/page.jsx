@@ -6,6 +6,9 @@ import Lateralenavmentor from "@/components/lateralenavmentor";
 import { Dashboard } from "@/components/dashboard";
 import Course from "@/components/courses";
 import { Profil } from "@/components/profil";
+import { logOut } from "@/lib/functions";
+import { useRouter } from "next/navigation";
+import { getUser } from "@/lib/functions";
 export default function ChatPage() {
   const [isDashboardSelected, setIsDashboardSelected] = useState(false);
   const [isChatSelected, setIsChatSelected] = useState(false);
@@ -36,6 +39,21 @@ export default function ChatPage() {
       });
     }
   }, [mentor]);
+  const router = useRouter();
+  const [UserName, setUsername] = useState("");
+  const [status, setStatus] = useState("");
+  const [pic, setPic] = useState("");
+  useEffect(() => {
+    getUser()
+      .then((data) => {
+        setUsername(data.username);
+        setStatus(data.status);
+        setPic(data.pic);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  });
   return (
     <div className="flex w-full flex-row">
       <div className="h-full w-1/5">
@@ -47,8 +65,8 @@ export default function ChatPage() {
               className="w-10 h-10 rounded-full mr-4"
             />
             <div>
-              <h3 className="text-lg font-semibold">{mentorData.name}</h3>
-              <p className="text-sm">{mentorData.profession}</p>
+              <h3 className="text-lg font-semibold">{UserName}</h3>
+              <p className="text-sm">{status}</p>
             </div>
           </div>
           <div className="px-4">
@@ -154,7 +172,14 @@ export default function ChatPage() {
             </div>
           </div>
 
-          <a href="#" className="flex items-center space-x-2 mt-8">
+          <a
+            href="#"
+            className="flex items-center space-x-2 mt-8"
+            onClick={() => {
+              logOut();
+              router.replace("/");
+            }}
+          >
             <img src="logout.png" alt="Logout" className="w-6 h-6" />
             <span>Logout</span>
           </a>
