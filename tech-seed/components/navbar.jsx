@@ -114,7 +114,7 @@ export default function Navbar() {
             button={
               <Button
                 action={() => { }}
-                title={"Créer un compte gratuitement"}
+                title={"Se connecter"}
                 bgColor={"bg-[#20B486]"}
                 textColor={"text-white"}
               />
@@ -122,11 +122,11 @@ export default function Navbar() {
           />
         </li>
       </ul>
-  <div className="flex items-center">
-    {/*<Sign_up />*/}
-    <Inscription />
-    <Connexion />
-    </div>
-  </nav>
+      <div className="flex items-center">
+        {/*<Sign_up />*/}
+        <Inscription />
+        <Connexion />
+      </div>
+    </nav>
   );
 }

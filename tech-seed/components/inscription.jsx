@@ -35,7 +35,7 @@ export function Inscription() {
         <span
           className={`cursor-pointer  hover:text-[#198764] py-2 px-3 text-center rounded-md  w-fit h-fit z-50`}
         >
-          Se connecter
+         Creer Un compte gratuitement
         </span>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[1000px]">

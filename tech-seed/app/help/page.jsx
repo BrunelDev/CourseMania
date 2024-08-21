@@ -1,12 +1,13 @@
 "use client";
+import Link from "next/link";
+import Navbar from "@/components/navbar";
 import React from "react";
-import { Nav } from "../../components/Nav";
 import Footer from "@/components/footer";
 
 export default function Help() {
   return (
     <div className="scroll-py-16">
-      <Nav />
+      <Navbar />
       <div className="mt-0 w-full min-h-screen flex flex-col md:flex-row justify-between px-6 md:px-28 py-20 md:scroll-py-2">
         <img
           src="spiral.svg"
@@ -20,13 +21,14 @@ export default function Help() {
           </h2>
           <br />
           <br />
-          <a href="#" className="hover:bg-white-700 text-white font-bold">
-            <button className="text-white bg-[#00A991] w-[120px] h-[42px] md:w-[137px] md:h-[52px] rounded-full">
-              <span className="flex justify-center">
-                Ask for Help
-              </span>
-            </button>
-          </a>
+          <Link href="helpSuite" >
+              <button className="text-white bg-[#00A991] w-[120px] h-[42px] md:w-[137px] md:h-[52px] rounded-full">
+                <span className="flex justify-center font-bold">
+                  Ask for Help
+                </span>
+              </button>
+          </Link>
+
         </div>
         <div className="w-[300px] h-[300px] md:w-[600px] md:h-[600px] mt-10 md:mt-0 z-10">
           <img src="Untitled_Artwork 8 1.png" alt="" />
