@@ -7,7 +7,7 @@ export default function ThemeCard({ title, icon, description }) {
   return (
     <div
       className={
-        "group rounded-lg p-6 w-fit hover:bg-[#4AC8AE] hover:text-white duration-300 shadow shadow-[#D8D8D8]"
+        "group rounded-lg mb-3 p-6 w-fit hover:bg-[#4AC8AE] hover:text-white duration-300 shadow shadow-[#D8D8D8]"
       }
     >
       <div className="flex w-fit items-center text-xl font-bold">

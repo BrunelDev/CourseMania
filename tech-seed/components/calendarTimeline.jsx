@@ -1,6 +1,6 @@
 import React from 'react';
 import CourProgrammeM from '@/components/CourProgrammeM';
-import TimelineMarkers from '@/components/calendartest';
+
 
 function CalendarTimeline({ currentDate }) {
   const days = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
@@ -48,7 +48,6 @@ function CalendarTimeline({ currentDate }) {
         </tbody>
       </table>
 
-      <TimelineMarkers/>
     </div>
   );
 }

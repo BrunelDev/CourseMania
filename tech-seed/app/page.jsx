@@ -108,12 +108,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className=" flex flex-col items-center px-[110px] py-10">
+        <div className=" flex flex-col items-center sm:px-[110px] py-10">
           <span className="text-[#20B486] font-semibold">Nos Services</span>
           <span className="font-bold text-3xl w-2/3 text-center mt-4 mb-8">
             Favoriser un environnement d’apprentissage ludique et engageant
           </span>
-          <div className="flex justify-center space-x-8 w-full flex-wrap">
+          <div className="flex justify-center lg:space-x-8 w-full flex-wrap">
             <ThemeCard
               title={"Etudiants"}
               icon="interactionDesign.png"
@@ -137,7 +137,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="flex flex-col justify-center px-[110px]">
+        <div className="flex flex-col justify-center xl:px-[110px] px-9">
           <span className="text-[#20B486] font-semibold mt-20 mb-6">
             Explorez les programmes
           </span>
@@ -148,7 +148,7 @@ export default function Home() {
             Rejoignons notre célèbre cours, les connaissances fournies vous
             seront certainement utiles.
           </span>
-          <div className="mb-10 flex w-full justify-between">
+          <div className="mb-10 flex overflow-x-auto space-x-4 w-full justify-between">
             <CourseCard
               image="userInterfacePic.png"
               title={"Figma UI UX Design.."}
@@ -178,26 +178,26 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="flex justify-center items-center flex-col px-[110px]">
+        <div className="flex justify-center items-center flex-col xl:px-[110px] px-6">
           <span className="text-[#22B286] font-semibold mt-[80px] mb-[20px]">
             Tuteurs
           </span>
           <span className="text-[#101828] font-semibold text-4xl">
             Rencontrez les héros.
           </span>
-          <span className="text-[#667085] text-center w-1/2 text-lg my-6">
+          <span className="text-[#667085] text-center sm:w-1/2 text-lg my-6">
             Sur VirtuClass, des instructeurs du monde entier instruisent des
             millions d'étudiants. Nous offrons les connaissances et les
             capacités.
           </span>
-          <div className="flex justify-between flex-wrap w-full mb-8">
+          <div className="flex overflow-x-auto space-x-4 w-full justify-between xl:w-full mb-8">
             <TeacherCard />
             <TeacherCard />
             <TeacherCard />
             <TeacherCard />
           </div>
         </div>
-        <div className="bg-[#F0FAF7] w-full py-20 px-[110px] flex flex-col justify-center items-center">
+        <div className="bg-[#F0FAF7] w-full py-20 px-8 flex flex-col justify-center items-center">
           <span className="text-center w-[90%] font-medium text-3xl text-[#101828]">
             Les cours étaient fantastiques ! Il s'agit d'une plateforme
             principale pour ceux qui cherchent à démarrer une nouvelle carrière
@@ -205,13 +205,13 @@ export default function Home() {
           </span>
           <img src="studentAvatar.png" alt="" className="py-5" />
           <span className="font-medium text-[#101828]">Jeanne Dossou</span>
-          <span className="text-[#667085] py-5">
+          <span className="text-[#667085] py-5 text-center">
             Etudiante a l'université Nationale de Abomey-Calavi
           </span>
         </div>
-        <div className="px-[110px] py-10">
+        <div className="px-[23px] md:px-[110px] py-10">
           <span className="font-bold text-3xl">Nos derniers blogs</span>
-          <div className="my-5">
+          <div className="my-5 flex-">
             <BlogCard
               image={"computer.png"}
               tagList={[

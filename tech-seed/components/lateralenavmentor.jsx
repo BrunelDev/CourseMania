@@ -19,8 +19,8 @@ export default function Lateralenavmentor({ mentor }) {
   }, [mentor]);
 
   return (
-    <div className="w-[260px] fixed top-0 left-0 h-full bg-white text- black p-4 border-r-2">
-      <div className="flex items-center mb-6 mt-9">
+    <div className="w-full fixed top-0 left-0 h-full bg-white text- black p-4 border-r-2">
+      <div className="flex items-center pb-6 mb-8 mt-9 border-b">
         <img
           src={mentorData.image}
           alt="Mentor Avatar"

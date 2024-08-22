@@ -3,7 +3,7 @@ import React from "react";
 export default function TeacherCard({ avatar, name, profession, description }) {
   return (
     <div className="bg-[#F9FAFB] flex flex-col justify-center items-center w-[300px] p-6">
-      <img src="profAvatar1.png" alt="" />
+      <img src="profAvatar1.png" alt="" className="mx-24"/>
       <span className="text-center text-[#101828] font-medium mt-3">
         Theresa Webb
         {/*{name}*/}
