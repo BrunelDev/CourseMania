@@ -33,7 +33,7 @@ export const Nav = () => {
 
       {/* Mobile Menu */}
       <div className={`fixed top-0 left-0 w-full h-screen bg-white flex flex-col items-center justify-center space-y-4 md:hidden transition-transform transform ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-        <a href=""><li className="text-[#1A906B] font-semibold" onClick={toggleMenu}>Accueil</li></a>
+        <a href=""><li className="text-[#1A906B] font-semibold" onClick={toggleMenu}> LiAccueil</li></a>
         <a href=""><li onClick={toggleMenu}>A propos</li></a>
         <a href=""><li onClick={toggleMenu}>Cours</li></a>
         <a href=""><li onClick={toggleMenu}>Contact</li></a>

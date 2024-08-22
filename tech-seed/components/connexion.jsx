@@ -34,7 +34,7 @@ export function Connexion({ button }) {
         <span
           className={`cursor-pointer text-white bg-[#20B486] hover:bg-[#198764] py-2 px-3 text-center rounded-md  w-fit h-fit z-50`}
         >
-          Créer un compte gratuitement
+         Se connecter
         </span>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[1000px]">
