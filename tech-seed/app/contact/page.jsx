@@ -10,8 +10,8 @@ export default function Contact() {
         <Navbar />
       </header>
       
-      <div className="flex flex-col items-center px-4 py-8 mx-auto w-full max-w-7xl">
-        <div className="text-center mb-12">
+      <div className="flex flex-col items-center max-2xl:mt-20 px-4 py-8 mx-auto w-full max-w-7xl">
+        <div className="text-center mb-12 xl:max-2xl:pt-8">
           <h1 className="text-3xl font-bold">Contactez-nous !</h1>
         </div>
   

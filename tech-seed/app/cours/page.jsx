@@ -53,10 +53,10 @@ export default function Course() {
       <div>
         <Navbar />
       </div>
-      <div className="px-4 sm:px-6 lg:px-10 my-12 sm:my-16 lg:my-24">
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-0">
-          <div className="flex-1 bg-[#FFD130] h-[300px] sm:h-[400px] lg:h-[400px] rounded-md flex">
-            <div className="bg-[url('yellowBg.png')] w-full sm:w-[45%] lg:w-[45%] h-full flex flex-col justify-center pl-4 sm:pl-14">
+      <div className="px-4 sm:px-6 lg:px-10 my-[120px] sm:my-28 lg:my-24 ">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-0">
+          <div className="sm:flex-1 bg-[#FFD130] h-[300px] sm:h-[400px] rounded-md flex">
+            <div className="bg-[url('yellowBg.png')] max-lg:mb-5 w-full sm:w-[45%] lg:w-[45%] h-full flex flex-col justify-center pl-4 sm:pl-14">
               <span className="text-2xl sm:text-3xl lg:text-4xl font-bold">
                 Apprenez de nouvelles choses chaque jour
               </span>
@@ -66,7 +66,7 @@ export default function Course() {
               <Button title={"Explorez notre catalogue"} bgColor={"bg-white"} />
             </div>
             <div className="bg-gradient-to-r from-[#FFD130] from-[100%] to-[#fcda60] to-[0%] hidden sm:block w-[10%] h-full"></div>
-            <div className="bg-[url('lego.png')] w-full sm:w-[45%] lg:w-[45%] h-full relative text-white">
+            <div className="hidden sm:block bg-[url('lego.png')] w-full sm:w-[45%] lg:w-[45%] h-full relative text-white">
               <div className="flex absolute bottom-3 left-4 sm:left-20">
                 <img
                   src="profAvatar1.png"

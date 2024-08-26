@@ -108,7 +108,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className=" flex flex-col items-center sm:px-[110px] py-10">
+        <div className=" flex flex-col items-center lg:px-[110px] py-10">
           <span className="text-[#20B486] font-semibold">Nos Services</span>
           <span className="font-bold text-3xl w-2/3 text-center mt-4 mb-8">
             Favoriser un environnement d’apprentissage ludique et engageant

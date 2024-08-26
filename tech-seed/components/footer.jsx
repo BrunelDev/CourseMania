@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#101828] w-full py-8 px-8 md:px-32">
+    <footer className="bg-[#101828] w-full py-8 px-8 xl:px-32">
       <div className="flex flex-col md:grid md:grid-cols-2 gap-8">
         {/* Texte de description */}
         <div className="text-[#EAECF0] text-center md:text-left mb-6 md:mb-0">
@@ -13,11 +13,11 @@ export default function Footer() {
         </div>
         
         {/* Liens du footer */}
-        <div className="flex flex-col md:flex-row md:justify-between ">
+        <div className="flex flex-col md:flex-row md:justify-between md:max-lg:grid md:max-lg:gap-3 md:max-lg:grid-cols-2 ">
           {/* Colonne 1 */}
           <ul className="mb-6 md:mb-0 text-[#EAECF0] font-medium text-center md:text-left">
             <li className="text-[#98A2B3] mb-3 font-semibold">
-              <a href="#">Product</a>
+              <a href="#">Produit</a>
             </li>
             <li className="mb-3">
               <a href="#">Aperçu</a>
@@ -39,7 +39,7 @@ export default function Footer() {
           {/* Colonne 2 */}
           <ul className="mb-6 md:mb-0 text-[#EAECF0] font-medium text-center md:text-left">
             <li className="text-[#98A2B3] mb-3 font-semibold">
-              <a href="#">Company</a>
+              <a href="#">Entreprise</a>
             </li>
             <li className="mb-3">
               <a href="#">À propos</a>

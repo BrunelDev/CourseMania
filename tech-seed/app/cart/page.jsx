@@ -1,5 +1,5 @@
 "use client";
-import { Cart } from "@/components/cart";
+import Cart from "@/components/cart";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 export default function CartPage() {

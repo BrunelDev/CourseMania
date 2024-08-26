@@ -17,14 +17,14 @@ export default function Help() {
         <div className="flex flex-col mt-10 md:mt-36 z-10">
           <h1 className="text-4xl md:text-6xl font-bold">AIDE</h1>
           <h2 className="text-xl md:text-2xl text-[#4F5E71] mt-4 md:mt-0">
-            Ask a teacher for more <br /> comprehension
+            Demandez un mentor pour plus de compréhension
           </h2>
           <br />
           <br />
           <Link href="helpSuite" >
-              <button className="text-white bg-[#00A991] w-[120px] h-[42px] md:w-[137px] md:h-[52px] rounded-full">
+              <button className="text-white bg-[#00A991] w-[175px] h-[42px] md:w-[175px] md:h-[52px] rounded-full">
                 <span className="flex justify-center font-bold">
-                  Ask for Help
+                  Demander de l'aide
                 </span>
               </button>
           </Link>

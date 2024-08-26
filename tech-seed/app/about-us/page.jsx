@@ -12,7 +12,7 @@ export default function About() {
                 <nav>
                     <Navbar />
                 </nav>
-                <header className="flex flex-col lg:flex-row px-6 lg:px-20">
+                <header className="flex flex-col max-lg:mt-20 lg:flex-row px-6 lg:px-20 lg:mb-4">
                     {/* About description */}
                     <div
                         className="flex flex-col w-full lg:w-[600px] lg:h-[600px] mt-10 lg:mt-[200px] py-0"
@@ -41,7 +41,7 @@ export default function About() {
                             </p>
                         </section>
                         <br />
-                        <a href="" className="hover:bg-white-700 text-white font-bold">
+                        <a href="" className="hover:bg-white-700 text-white font-bold max-lg:mb-5">
                             <button className="text-white bg-[#22B286] w-[127px] h-[52px] rounded-full">
                                 <span className="flex text-center ml-4">
                                     Join Us
@@ -63,7 +63,7 @@ export default function About() {
 
                 {/* Fin de la partis header */}
                 <div className="flex flex-col mt-20 px-6 lg:px-0">
-                    <div className="flex flex-col lg:flex-row justify-center">
+                    <div className="flex flex-col lg:flex-row justify-center lg:max-xl:mt-[125px]">
                         <div className="bg-[#F2F2F2] w-full lg:w-[474px] h-[474px] rounded-md">
                             <img src="Section Img.png" alt="" className="w-full lg:w-[434px] h-auto lg:h-[461px] mt-10 lg:ml-4" />
                         </div>
@@ -115,7 +115,7 @@ export default function About() {
                                 <p>access to US Suppliers, AliExpress vendors, and the best.</p>
                             </span>
                         </div>
-                        <div className="mt-10 lg:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center space-y-10 lg:space-y-0">
+                        <div className="mt-10 lg:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  justify-items-center space-y-10 lg:space-y-5">
                             <ThemeCard
                                 title={"O1"}
                                 icon="Ellipse 8 (1).png"

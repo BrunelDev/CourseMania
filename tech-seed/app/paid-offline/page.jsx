@@ -93,7 +93,7 @@ export default function PaidOffline() {
             <span>4.8</span>
             <span>(1.832 notes)</span>
           </div>
-          <div className="flex justify-between">
+          <div className="flex flex-col md:flex-row justify-between">
             <div className="w-fit relative">
               <VideoPlayer />
               {/*<img src="computerScreen.png" alt="" />

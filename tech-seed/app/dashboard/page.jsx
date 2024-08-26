@@ -165,7 +165,7 @@ export default function Dashboard() {
                   <ChartBar />
                 </Paper>
                 <Paper
-                  className="mt-4 w-full"
+                  className="mt-4 w-full overflow-x-auto"
                   sx={{ p: 2, display: "flex", flexDirection: "column" }}
                 >
                   <Leaderboard />
