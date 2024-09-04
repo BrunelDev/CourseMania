@@ -17,15 +17,15 @@ export default function Home() {
         </div>
       </header>
       <div className="">
-        <div className="flex flex-row justify-between px-[110px] py-10 bg-gradient-to-tl from-[#24bb8b1b] from-0% to-[#24bb8b00] to-100% ">
-          <div className=" w-1/2">
+        <div className="flex flex-row justify-between px-8 lg:px-[110px] py-4 lg:py-10 bg-gradient-to-tl from-[#24bb8b1b] from-0% to-[#24bb8b00] to-100% overflow-hidden ">
+          <div className=" sm:w-1/2">
             <img
               src="spiral.svg"
               alt=""
               className="absolute left-0 w-[350px] h-[350px]"
             />
-            <p className="translate-y-10 text-5xl font-bold text-[#101828]">
-              Améliorez vos <span className="text-[#20B486]">compétences</span>
+            <p className="translate-y-10 text-4xl sm:text-5xl font-bold text-[#101828]">
+              Améliorez vos <span className="text-[#20B486]">compétences </span>
               pour faire <span>progresser</span> votre cheminement de{" "}
               <span>carrière</span>.
             </p>
@@ -49,7 +49,7 @@ export default function Home() {
                 <img
                   src="speaker.svg"
                   alt=""
-                  className="w-[28px] h-[28px] mr-3"
+                  className="w-5 h-5 mr-1 sm:w-[28px] sm:h-[28px] sm:mr-3"
                 />
                 Public Speaking
               </span>
@@ -57,7 +57,7 @@ export default function Home() {
                 <img
                   src="carreerIcon.svg"
                   alt=""
-                  className="w-[28px] h-[28px] mr-3"
+                  className="w-5 h-5 mr-1 sm:w-[28px] sm:h-[28px] sm:mr-3"
                 />
                 Orienté carrière
               </span>{" "}
@@ -65,21 +65,21 @@ export default function Home() {
                 <img
                   src="creativeIcon.svg"
                   alt=""
-                  className="w-[28px] h-[28px] mr-3"
+                  className="w-5 h-5 mr-1 sm:w-[28px] sm:h-[28px] sm:mr-3"
                 />
                 Pensée Créative
               </span>
             </div>
           </div>
 
-          <div className="relative">
+          <div className="hidden sm:block relative">
             <div className="rounded-full w-[400px] h-[400px] border border-[#20B486]"></div>
-            <div className="rounded-full w-[400px] h-[400px] absolute top-5 left-5 border bg-[#20B486] overflow-hidden ">
+            <div className="rounded-full  sm:w-[400px] sm:h-[400px] absolute top-5 left-5 border bg-[#20B486] overflow-hidden ">
               {
                 <img
                   src="studentPicture.png"
                   alt=""
-                  className="w-[444px] h-[444px] absolute -bottom-10 left-1/2 -translate-x-1/2"
+                  className="w-[250px] h-[250px] sm:w-[444px] sm:h-[444px] absolute -bottom-10 left-1/2 -translate-x-1/2"
                 />
               }
             </div>

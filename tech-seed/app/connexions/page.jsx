@@ -4,7 +4,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ButtonNew from "@/components/ButtonNew";
 
-export default function Connexion() {
+export default function Connexions() {
   return (
     <main className="bg-cover bg-center bg-no-repeat min-h-screen" style={{ backgroundImage: "url('/backconnexion.jpg')" }}>
       <header className="w-full mb-8">

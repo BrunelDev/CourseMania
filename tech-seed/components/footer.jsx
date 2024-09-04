@@ -1,6 +1,20 @@
+"use client";
 import React from "react";
+import { useRouter } from "next/navigation";
+import { useNavigationLink } from "@/lib/context";
 
 export default function Footer() {
+  const router = useRouter();
+  const {
+    selectLink,
+    isFaqsSelected,
+    isAboutUsSelected,
+    isCourseSelected,
+    isContactSelected,
+    isHomeSelected,
+  } = useNavigationLink();
+
+
   return (
     <footer className="bg-[#101828] w-full py-8 px-8 xl:px-32">
       <div className="flex flex-col md:grid md:grid-cols-2 gap-8">
@@ -17,79 +31,142 @@ export default function Footer() {
           {/* Colonne 1 */}
           <ul className="mb-6 md:mb-0 text-[#EAECF0] font-medium text-center md:text-left">
             <li className="text-[#98A2B3] mb-3 font-semibold">
-              <a href="#">Produit</a>
+              Produit
             </li>
-            <li className="mb-3">
-              <a href="#">Aperçu</a>
+            <li 
+             className={`${isContactSelected && "text-[#1A906B] font-semibold"} mb-3 cursor-pointer`}
+             onClick={() => {
+               selectLink("contact");
+               router.push("/contact");
+                            }}>
+              Aperçu
             </li>
-            <li className="mb-3">
-              <a href="#">Fonctionnalités</a>
+            <li 
+             className={`${isContactSelected && "text-[#1A906B] font-semibold"} mb-3 cursor-pointer`}
+             onClick={() => {
+               selectLink("contact");
+               router.push("/contact");
+                            }}>
+              Fonctionnalités
             </li>
-            <li className="mb-3">
-              <a href="#">Tutoriels</a>
+            <li 
+             className={`${isContactSelected && "text-[#1A906B] font-semibold"} mb-3 cursor-pointer`}
+             onClick={() => {
+               selectLink("contact");
+               router.push("/contact");
+                            }}>
+              Tutoriels
             </li>
-            <li className="mb-3">
-              <a href="#">Solutions</a>
+            <li 
+             className={`${isContactSelected && "text-[#1A906B] font-semibold"} mb-3 cursor-pointer`}
+             onClick={() => {
+               selectLink("contact");
+               router.push("/contact");
+                            }}>
+              Solutions
             </li>
-            <li className="mb-3">
-              <a href="#">Tarifs</a>
+            <li 
+             className={`${isContactSelected && "text-[#1A906B] font-semibold"} mb-3 cursor-pointer`}
+             onClick={() => {
+               selectLink("contact");
+               router.push("/contact");
+                            }}>
+              Tarifs
             </li>
           </ul>
 
           {/* Colonne 2 */}
           <ul className="mb-6 md:mb-0 text-[#EAECF0] font-medium text-center md:text-left">
             <li className="text-[#98A2B3] mb-3 font-semibold">
-              <a href="#">Entreprise</a>
+              Entreprise
             </li>
-            <li className="mb-3">
-              <a href="#">À propos</a>
+            <li className={`${isCourseSelected && "text-[#1A906B] font-semibold"} mb-3 cursor-pointer`}
+            onClick={() => {
+              selectLink("about-us");
+              router.push("/about-us");
+            }}>
+              À propos
             </li>
-            <li className="mb-3">
-              <a href="#">Carrières</a>
+            <li 
+             className={`${isContactSelected && "text-[#1A906B] font-semibold"} mb-3 cursor-pointer`}
+             onClick={() => {
+               selectLink("contact");
+               router.push("/contact");
+                            }}>
+              Carrières
             </li>
-            <li className="mb-3">
-              <a href="#">Presse</a>
+            <li 
+             className={`${isContactSelected && "text-[#1A906B] font-semibold"} mb-3 cursor-pointer`}
+             onClick={() => {
+               selectLink("contact");
+               router.push("/contact");
+                            }}>
+              Presse
             </li>
-            <li className="mb-3">
-              <a href="#">Nouvelles</a>
+            <li 
+             className={`${isContactSelected && "text-[#1A906B] font-semibold"} mb-3 cursor-pointer`}
+             onClick={() => {
+               selectLink("contact");
+               router.push("/contact");
+                            }}>
+              Nouvelles
             </li>
           </ul>
 
           {/* Colonne 3 */}
           <ul className="mb-6 md:mb-0 text-[#EAECF0] font-medium text-center md:text-left">
             <li className="text-[#98A2B3] mb-3 font-semibold">
-              <a href="#">Social</a>
+              Social
             </li>
             <li className="mb-3">
-              <a href="#">Twitter</a>
+              Twitter
             </li>
             <li className="mb-3">
-              <a href="#">LinkedIn</a>
+              LinkedIn
             </li>
             <li className="mb-3">
-              <a href="#">GitHub</a>
+              GitHub
             </li>
             <li className="mb-3">
-              <a href="#">Dribbble</a>
+              Dribbble
             </li>
           </ul>
 
           {/* Colonne 4 */}
           <ul className="text-[#EAECF0] font-medium text-center md:text-left">
             <li className="text-[#98A2B3] mb-3 font-semibold">
-              <a href="#">Légal</a>
+              Légal
             </li>
-            <li className="mb-3">
-              <a href="#">Termes</a>
+            <li 
+             className={`${isContactSelected && "text-[#1A906B] font-semibold"} mb-3 cursor-pointer`}
+             onClick={() => {
+               selectLink("contact");
+               router.push("/contact");
+                            }}>
+              Termes
             </li>
-            <li className="mb-3">
-              <a href="#">Confidentialité</a>
+            <li 
+             className={`${isContactSelected && "text-[#1A906B] font-semibold"} mb-3 cursor-pointer`}
+             onClick={() => {
+               selectLink("contact");
+               router.push("/contact");
+                            }}>
+              Confidentialité
             </li>
-            <li className="mb-3">
-              <a href="#">Cookies</a>
+            <li  
+              className={`${isContactSelected && "text-[#1A906B] font-semibold"} mb-3 cursor-pointer`}
+              onClick={() => {
+                selectLink("contact");
+                router.push("/contact");
+            }}>
+              Cookies
             </li>
-            <li className="mb-3">
-              <a href="#">Contact</a>
+            <li className={`${isContactSelected && "text-[#1A906B] font-semibold"} mb-3 cursor-pointer`}
+               onClick={() => {
+                 selectLink("contact");
+                 router.push("/contact");
+               }}>
+              Contact
             </li>
           </ul>
         </div>

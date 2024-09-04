@@ -88,12 +88,12 @@ export function Connexion({ button }) {
                 <div className="">
                   <div className="space-y-2">
                     <p className="">
-                      Already have an account?{" "}
+                      Avez vous déja un compte ? Inscrivez-vous{" "}
                       <a
                         href="javascript:void(0)"
                         className="font-medium text-indigo-600 hover:text-indigo-500"
                       >
-                        Log in
+                         ici
                       </a>
                     </p>
                   </div>
@@ -209,18 +209,6 @@ export function Connexion({ button }) {
                   className="space-y-5"
                 >
                   <div>
-                    <label className="font-medium">Name</label>
-                    <input
-                      value={username}
-                      onChange={(e) => {
-                        setUsername(e.target.value);
-                      }}
-                      type="text"
-                      required
-                      className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
-                    />
-                  </div>
-                  <div>
                     <label className="font-medium">Email</label>
                     <input
                       value={email}
@@ -244,8 +232,11 @@ export function Connexion({ button }) {
                       className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                     />
                   </div>
+                  <a href="" className="text-[10px] hover:text-blue-400 w-fit">
+                    <span>Mot de passe oublié ?</span>
+                  </a>
                   <button className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
-                    Create account
+                    Se connecter
                   </button>
                 </form>
               </div>

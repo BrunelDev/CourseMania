@@ -50,8 +50,8 @@ export function ChatBot() {
           className="cursor-pointer p-3 bg-[#20B486] rounded-full hover:scale-105 duration-300"
         />
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[400px]">
-        <div className="relative w-[400px] h-[600px] bg-green-50 overflow-scroll scroll-hidden no-scrollbar">
+      <DialogContent className="w-screen sm:max-w-[400px]">
+        <div className="relative w-screen sm:w-[400px] [] short:h-screen h-[600px] bg-green-50 overflow-scroll scroll-hidden no-scrollbar">
           <header className="fixed z-50 left-0 top-0 w-[400px] bg-[#20B486] flex justify-between items-center">
             <div className="flex space-x-3 px-2">
               <img src="wappGPTlogo2.png" alt="" />
@@ -65,16 +65,16 @@ export function ChatBot() {
               </div>
             </div>
           </header>
-          <div className="w-full mt-12">
+          <div className="w-full mt-12 mb-[120px]">
             <MessageList
-              className="message-list"
+              className="message-list  overflow-auto"
               lockable={true}
               toBottomHeight={"10%"}
               dataSource={messageList}
             />
           </div>
 
-          <div className="fixed top-[512px] py-1 bg-white w-[400px]">
+          <div className="fixed bottom-0 py-1 bg-white w-screen sm:w-[400px]">
             <div className="flex space-x-2 mb-1">
               <PreparedMesssage
                 value={"Qu'est-ce que Iziskill ?🤔"}

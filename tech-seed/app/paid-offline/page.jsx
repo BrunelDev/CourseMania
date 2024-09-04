@@ -83,7 +83,7 @@ export default function PaidOffline() {
       <div className="mb-24">
         <Navbar />
       </div>
-      <div className="mx-14 mb-10">
+      <div className="mx-4 md:mx-14 mb-10">
         <div className="flex flex-col space-y-3">
           <Description description={"Development/Mobile Engineer"} />
           <Title title={"Make Uber Clone App"} />
@@ -156,7 +156,7 @@ export default function PaidOffline() {
           </span>
         </div>
         {isCoursesSelected ? (
-          <div className="rounded-xl overflow-hidden border w-fit mt-10">
+          <div className="rounded-xl overflow-hidden border sm:w-fit mt-10">
             <ChapterList chapters={chapters} />
           </div>
         ) : isDescriptionSelected ? (

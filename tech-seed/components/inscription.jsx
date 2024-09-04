@@ -35,11 +35,11 @@ export function Inscription() {
         <span
           className={`cursor-pointer  hover:text-[#198764] py-2 px-3 text-center rounded-md  w-fit h-fit z-50`}
         >
-         Creer Un compte gratuitement
+         Creer un compte gratuitement
         </span>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[1000px]">
-        <div className="grid gap-4 py-4">
+      <DialogContent className="sm:max-w-[1000px] ">
+        <div className="grid gap-4 py-4 overflow-auto no-scrollbar">
           <main className="flex w-full space-x-3 justify-center items-center h-full">
             <div className="relative flex-1 items-center justify-center bg-[url('placeholder1.png')] bg-no-repeat bg-center bg-[length:500px_550px] h-full lg:flex">
               <div className="relative z-10 w-full max-w-md">
@@ -89,12 +89,12 @@ export function Inscription() {
                 <div className="">
                   <div className="space-y-2">
                     <p className="">
-                      Avez vous deja un compte ?
+                      Avez vous deja un compte ? Connectez-vous 
                       <a
                         href="javascript:void(0)"
                         className="font-medium text-indigo-600 hover:text-indigo-500"
                       >
-                        Log in
+                        ici
                       </a>
                     </p>
                   </div>
