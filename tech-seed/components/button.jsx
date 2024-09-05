@@ -12,7 +12,7 @@ export default function Button({
 }) {
   return (
     <span
-      className={`cursor-pointer ${textColor} ${hoverTextColor} ${hoverBgColor} py-2 px-3 text-center rounded-md ${bgColor} w-fit h-fit z-50`}
+      className={`cursor-pointer ${textColor} ${hoverTextColor} ${hoverBgColor} py-2 px-3 text-center rounded-md ${bgColor} w-fit h-fit z-40`}
       onClick={action}
     >
       {title}

@@ -13,19 +13,31 @@ export default function Help1() {
                     <div className="lg:w-[800px] h-[700px] bg-white max-md:w-screen mt-[]  lg:ml-[100px] xl:ml-[300px] flex flex-col justify-center max-sm:mb-[80px] ">
                         <h1 className="text-center text-7xl font-bold">?Aide?</h1>
                         <br />
-                        <InputDemo className="text-center" />
+                        <div className="w-[90%] max-w-[400px] text-center flex flex-col md:ml-52 mx-auto">
+                          <input
+                            type="text"
+                            placeholder="Nom et Prenom"
+                            className=" h-9 border-2 "
+                          />
+                          <br />
+                          <input
+                            type="text"
+                            placeholder="Nom de votre  Mentor(Optionnel)"
+                            className=" h-9 border-2 "
+                          />
+                        </div>
                         <br />
-                        <textarea name="" id="" placeholder="Votre probleme... " className="w-[95%] max-w-[422px] max-md:mx-auto h-32 md:ml-52 border-gray-50 ">
+                        <textarea name="" id="" placeholder="Votre probleme... " className=" w-[90%] max-w-[400px] mx-auto h-32 md:ml-52 border-gray-50 ">
                         </textarea>
                         <br />
-                        <div className="max-md:mx-auto md:ml-52">
-                            <a href="" className="hover:bg-white-700 text-white font-bold " >
-                                <button className="text-white bg-[#00A991] max-[400px]:w-[300px] w-[360px] sm:w-[422px] h-[52px]  ">
+                        <div className="mx-auto md:ml-52 w-[95%] max-w-[400px]">
+                            
+                                <button className="text-white bg-[#00A991] hover:bg-white-700 w-full font-bold h-[52px]  ">
                                     <span className=" text-center">
                                         Envoyer
                                     </span>
                                 </button>
-                            </a>
+                            
                         </div>
                     </div>
                     <img src="Group 70.png" alt="" className="hidden lg:block lg:ml-[200px] lg:mt-[-80px]" />

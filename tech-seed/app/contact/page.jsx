@@ -12,7 +12,7 @@ export default function Contact() {
       
       <div className="flex flex-col items-center max-2xl:mt-20 px-4 py-8 mx-auto w-full max-w-7xl">
         <div className="text-center mb-12 xl:max-2xl:pt-8">
-          <h1 className="text-3xl font-bold">Contactez-nous !</h1>
+          <h1 className="text-3xl font-bold pt-6">Contactez-nous !</h1>
         </div>
   
         <div className="w-full max-w-4xl flex flex-col md:flex-row md:space-x-8">
@@ -24,6 +24,7 @@ export default function Contact() {
               type="text"
               id="name"
               required
+              placeholder="Votre nom..."
               minLength="4"
             />
   
@@ -34,6 +35,7 @@ export default function Contact() {
               id="email"
               pattern=".+@example\\.com"
               required
+              placeholder="Votre adresse e-mail..."
             />
   
             <label htmlFor="message" className="block text-gray-700 font-bold mb-2">Entrez votre message:</label>

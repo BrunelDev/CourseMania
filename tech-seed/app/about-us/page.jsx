@@ -12,10 +12,10 @@ export default function About() {
                 <nav>
                     <Navbar />
                 </nav>
-                <header className="flex flex-col max-lg:mt-20 lg:flex-row px-6 lg:px-20 lg:mb-4">
+                <header className="flex flex-col lg:flex-row px-6 lg:px-20 lg:mb-4">
                     {/* About description */}
                     <div
-                        className="flex flex-col w-full lg:w-[600px] lg:h-[600px] mt-10 lg:mt-[200px] py-0"
+                        className="flex flex-col w-full lg:w-[600px] lg:h-[600px] mt-24 lg:mt-[170px] py-0"
                     >
                         <section className="text-left">
                             <h1 className="font-bold text-4xl sm:text-5xl lg:text-7xl text-[#1A906B]">A Propos</h1>
@@ -41,7 +41,7 @@ export default function About() {
                             </p>
                         </section>
                         <br />
-                        <a href="" className="hover:bg-white-700 text-white font-bold max-lg:mb-5">
+                        <a href="" className="hover:bg-white-700 text-white font-bold mb-5 lg:mb-0">
                             <button className="text-white bg-[#22B286] w-[127px] h-[52px] rounded-full">
                                 <span className="flex text-center ml-4">
                                     Join Us
@@ -55,8 +55,8 @@ export default function About() {
                         className="w-full lg:w-80 h-80 bg-[#F2F2F2] mt-10 lg:mt-[360px] lg:ml-[170px] rounded-md"
                     >
                         <div className="flex justify-center lg:justify-start">
-                            <img src="Rectangle 14.png" alt="" className="ml-0 lg:ml-44 -mt-12" />
-                            <img src="Rectangle 13.png" alt="" className="-ml-16 lg:-ml-44" />
+                            <img src="Rectangle 14.png" alt="" className="ml-0 lg:ml-44 -mt-12 overflow-auto" />
+                            <img src="Rectangle 13.png" alt="" className="-ml-16 lg:-ml-44 overflow-auto" />
                         </div>
                     </div>
                 </header>

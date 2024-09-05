@@ -42,8 +42,8 @@ export default function PrincipalPage() {
                             <Days />
                         </div>
                         <a href="" className="hover:bg-white-700 text-white font-bold mb-4">
-                            <button className="text-black bg-[#FFEED6] w-[258px] h-[52px] rounded-full">
-                                <span className="text-center">
+                            <button className="text-black bg-[#FFEED6] w-[258px] h-[52px] rounded-full my-8">
+                                <span className="text-center ">
                                     Upgrade
                                 </span>
                             </button>

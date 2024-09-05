@@ -7,7 +7,7 @@ import CardFavoris from "../../components/cardFavoris";
 import { Combobox } from "../../components/combobox";
 import Favoris from '@/components/favoris';
 import Footer from "@/components/footer";
-import {Nav} from '@/components/Nav';
+import Navbar from "@/components/navbar";
 
 
 export default function CourseFavoris() {
@@ -58,7 +58,7 @@ export default function CourseFavoris() {
           </div>
         </div>
         <div className="">
-            <Nav/>
+            <Navbar/>
         </div>
         <div className="grid  grid-flow-row grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 sm:mx-10">
           {videos.map((video) => {

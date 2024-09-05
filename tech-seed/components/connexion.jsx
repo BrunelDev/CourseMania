@@ -40,11 +40,11 @@ export function Connexion({ button }) {
       <DialogContent className="sm:max-w-[1000px]">
         <div className="h-[500px] grid gap-4 py-4">
           <main className="flex w-full space-x-3 justify-center items-center">
-            <div className="relative flex-1 items-center justify-center bg-[url('placeholder1.png')] bg-no-repeat bg-center bg-[length:500px_550px] h-full lg:flex">
+            <div className="hidden sm:block relative flex-1 items-center justify-center bg-[url('placeholder1.png')] bg-no-repeat bg-center bg-[length:500px_600px] h-full lg:flex">
               <div className="relative z-10 w-full max-w-md">
                 <div className=" mt-16 -space-y-2 ml-28">
                   <h3 className="text-white text-3xl font-bold -mt-7">
-                    Start growing your business quickly
+                     Commencer à apprendre à moindre cout!
                   </h3>{" "}
                   <br />
                   <div className="flex items-center -space-x-2 overflow-hidden mt-80">
@@ -69,7 +69,7 @@ export function Connexion({ button }) {
                       className="w-10 h-10 rounded-full border-2 border-white"
                     />
                     <p className="text-sm text-gray-400 font-medium translate-x-5">
-                      Join...users
+                      Rejoignez...utilisateurs
                     </p>
                   </div>
                 </div>
@@ -88,7 +88,7 @@ export function Connexion({ button }) {
                 <div className="">
                   <div className="space-y-2">
                     <p className="">
-                      Avez vous déja un compte ? Inscrivez-vous{" "}
+                      Avez vous déja un compte ? Inscrivez-vous {" "}
                       <a
                         href="javascript:void(0)"
                         className="font-medium text-indigo-600 hover:text-indigo-500"
@@ -198,7 +198,7 @@ export function Connexion({ button }) {
                 <div className="relative">
                   <span className="block w-full h-px bg-gray-300"></span>
                   <p className="inline-block w-fit text-sm bg-white px-2 absolute -top-2 inset-x-0 mx-auto">
-                    Or continue with
+                    Ou continuez avec
                   </p>
                 </div>
                 <form
@@ -209,7 +209,7 @@ export function Connexion({ button }) {
                   className="space-y-5"
                 >
                   <div>
-                    <label className="font-medium">Email</label>
+                    <label className="font-medium">E-mail</label>
                     <input
                       value={email}
                       onChange={(e) => {
@@ -217,6 +217,7 @@ export function Connexion({ button }) {
                       }}
                       type="email"
                       required
+                      placeholder="Entrez votre adresse e-mail..."
                       className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                     />
                   </div>
@@ -229,6 +230,7 @@ export function Connexion({ button }) {
                       }}
                       type="password"
                       required
+                      placeholder="Entrez votre mot de passe..."
                       className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                     />
                   </div>
