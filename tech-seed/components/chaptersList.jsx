@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion";
 export function ChapterList({ chapters }) {
   return (
-    <Accordion type="single" collapsible className="w-[500px]">
+    <Accordion type="single" collapsible className="w-full sm:w-[500px]">
       {chapters.map((chapter) => {
         return (
           <AccordionItem
@@ -15,7 +15,7 @@ export function ChapterList({ chapters }) {
             key={chapter.chapterName}
           >
             <AccordionTrigger>
-              <div className="flex flex-col pt-5 pl-5">
+              <div className="flex flex-col pt-5 pl-5 pr-3">
                 <span className="font-semibold text-[#1B1B1B] text-lg">
                   {chapter.chapterName}
                 </span>

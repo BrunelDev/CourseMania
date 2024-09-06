@@ -22,7 +22,7 @@ export default function PerformCours({ cour }) {
   }, [cour]);
 
   return (
-    <div className="flex w-[256px] h-[40px] gap-4 rounded-lg m-4 bg-white shadow-md items-center">
+    <div className="flex w-full h-[40px] gap-4 rounded-lg m-4 bg-white items-center">
       <img src={courData.affiche} alt="Affiche du cours" className="w-10 h-10 object-cover rounded-lg" />
       <div className="flex flex-col justify-between">
         <h3 className="font-gilroy text-sm leading-4 text-left text-[#161736] whitespace-nowrap overflow-hidden text-ellipsis">
@@ -35,7 +35,7 @@ export default function PerformCours({ cour }) {
           </h3>
         </div>
       </div>
-      <img src="graphic.png" alt="Graphique" className="w-[33px] h-[14px] ml-[55px] " />
+      <img src="graphic.png" alt="Graphique" className="w-[33px] h-[14px] ml-[34.5%] " />
     </div>
   );
 }

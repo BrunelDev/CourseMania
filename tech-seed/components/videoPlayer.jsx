@@ -1,13 +1,14 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, Maximize2, Minimize2 } from "lucide-react";
 
 export default function VideoPlayer() {
   const videoRef = useRef(null);
   const [progress, setProgress] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isFullScreen, setIsFullScreen] = useState(false);
 
   const handleTimeUpdate = () => {
     const video = videoRef.current;
@@ -39,16 +40,30 @@ export default function VideoPlayer() {
     }
   };
 
+  const toggleFullScreen = () => {
+    if (videoRef.current) {
+      if (!document.fullscreenElement) {
+        videoRef.current.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+  };
+
+  document.onfullscreenchange = () => {
+    setIsFullScreen(!!document.fullscreenElement);
+  };
+
   return (
     <div
-      className="relative w-full max-w-3xl mx-auto"
+      className={`relative w-full max-w-3xl mx-auto ${isFullScreen ? 'h-screen' : 'h-auto'}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <video
         ref={videoRef}
         onTimeUpdate={handleTimeUpdate}
-        className="w-full h-auto"
+        className="w-full h-full object-cover"
         onClick={togglePlayPause}
       >
         <source
@@ -74,6 +89,18 @@ export default function VideoPlayer() {
             onClick={togglePlayPause}
           >
             {isPlaying ? <Pause /> : <Play />}
+          </button>
+          <button
+            className={`absolute top-4 right-4 bg-white text-black rounded-full p-2 ${isFullScreen ? 'hidden' : 'block'}`}
+            onClick={toggleFullScreen}
+          >
+            <Maximize2 />
+          </button>
+          <button
+            className={`absolute top-4 right-4 bg-white text-black rounded-full p-2 ${isFullScreen ? 'block' : 'hidden'}`}
+            onClick={toggleFullScreen}
+          >
+            <Minimize2 />
           </button>
         </>
       )}

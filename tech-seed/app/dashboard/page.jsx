@@ -18,7 +18,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { mainListItems, secondaryListItems } from "./listItems";
-
 import Leaderboard from "./leaderboard";
 import { ChartBar } from "@/components/chart";
 import { CalendarComponent } from "@/components/calendar";
@@ -71,7 +70,6 @@ const Drawer = styled(MuiDrawer, {
   },
 }));
 
-// TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function Dashboard() {
@@ -161,16 +159,16 @@ export default function Dashboard() {
                     p: 2,
                     display: "flex",
                     flexDirection: "column",
-                    height: 400,
+                    minHeight: 400,
                   }}
                 >
                   <ChartBar />
-                  <Paper
-                    className="mt-[200px]"
-                    sx={{ p: 2, display: "flex", flexDirection: "column" }}
-                  >
-                    <Leaderboard />
-                  </Paper>
+                </Paper>
+                <Paper
+                  className="mt-4 w-full overflow-x-auto"
+                  sx={{ p: 2, display: "flex", flexDirection: "column" }}
+                >
+                  <Leaderboard />
                 </Paper>
               </Grid>
               {/* Recent Deposits */}
@@ -181,7 +179,8 @@ export default function Dashboard() {
                     p: 2,
                     display: "flex",
                     flexDirection: "column",
-                    height: 700,
+                    height: "auto",
+                    minHeight: 700,
                   }}
                 >
                   <div className="mx-auto">

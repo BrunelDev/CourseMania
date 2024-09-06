@@ -3,7 +3,7 @@ import Tag from "./tag";
 
 export default function BlogCard({ image, date, title, description, tagList }) {
   return (
-    <div className="flex">
+    <div className="flex overflow-auto">
       <img
         src={image}
         alt={title}

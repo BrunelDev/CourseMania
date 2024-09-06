@@ -6,8 +6,8 @@ export function ChatInput({ value, setValue, onSend }) {
       <input
         value={value}
         type="text"
-        placeholder="Entrez votre message..."
-        className="bg-transparent focus:border-none focus:outline-none"
+        placeholder="Entrez votre requete..."
+        className="bg-transparent focus:border-none focus:outline-none w-[86%]"
         onChange={(e) => {
           setValue(e.target.value);
         }}

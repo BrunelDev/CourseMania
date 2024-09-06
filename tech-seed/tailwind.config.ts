@@ -23,6 +23,9 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
+      screens: {
+        'short': { 'raw': '(max-height: 600px)' }, // Pour les écrans ayant une hauteur <= 600px
+      },
 
       colors: {
         border: "hsl(var(--border))",

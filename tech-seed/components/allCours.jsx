@@ -22,7 +22,7 @@ export default function AllCours({ cour }) {
   }, [cour]);
 
   return (
-    <div className="flex p-4 w-[394px] h-[150px] gap-4 rounded-[10px] m-4 bg-white shadow-md">
+    <div className="flex p-4 w-[394px] h-[150px] gap-4 rounded-[10px] m-4 bg-white shadow-[0px_9px_44px_0px_#AEAEAE33]">
       <img src={courData.affiche} alt="Affiche du cours" className="w-1/3 h-full object-cover rounded-[10px]" />
       <div className="flex flex-col justify-between ml-4">
         <h3 className="font-semibold text-[20px] leading-[28px] text-left text-[#161736] whitespace-normal">
