@@ -54,8 +54,7 @@ export function Inscription() {
           Creer un compte gratuitement
         </span>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[1000px] ">
-        <div className="grid gap-4 py-4 overflow-auto no-scrollbar">
+
       <DialogContent className="sm:max-w-[1000px] ">
         <div className="grid gap-4 py-4 overflow-auto no-scrollbar">
           <main className="flex w-full space-x-3 justify-center items-center h-full">
@@ -112,8 +111,7 @@ export function Inscription() {
                         href="javascript:void(0)"
                         className="font-medium text-indigo-600 hover:text-indigo-500"
                       >
-                        ici
-                        ici
+                        ici ici
                       </a>
                     </p>
                   </div>

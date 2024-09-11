@@ -14,12 +14,6 @@ export default function CourseVideoCard({ image, title, tutorName, status }) {
           alt={title}
           className="w-full h-auto object-cover rounded-md"
         />
-      <div className="flex flex-col relative hover:scale-105 duration-300 m-4 sm:m-5">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-auto object-cover rounded-md"
-        />
         <span className="absolute top-2 right-2">
           <VideoSetting />
         </span>
