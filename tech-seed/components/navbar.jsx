@@ -15,6 +15,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false); // État d'authentification
   const [showLogoutPopup, setShowLogoutPopup] = useState(false); // Pour le pop-up de déconnexion
+
   const router = useRouter();
   const {
     selectLink,
@@ -159,6 +160,7 @@ export default function Navbar() {
       </button>
 
       {/* Menu pour les petits écrans */}
+      {/* Menu pour les petits écrans */}
       <ul
         className={`${
           isMenuOpen ? "flex" : "hidden"
@@ -241,6 +243,29 @@ export default function Navbar() {
           </li>
         )}
       </ul>
+
+      {/* Pop-up de confirmation de déconnexion */}
+      {showLogoutPopup && (
+        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <p className="mb-4">Voulez-vous vraiment vous déconnecter ?</p>
+            <div className="flex justify-between">
+              <button
+                className="bg-red-500 text-white px-4 py-2 rounded"
+                onClick={handleLogout}
+              >
+                Oui
+              </button>
+              <button
+                className="bg-gray-300 px-4 py-2 rounded"
+                onClick={() => setShowLogoutPopup(false)}
+              >
+                Non
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Pop-up de confirmation de déconnexion */}
       {showLogoutPopup && (

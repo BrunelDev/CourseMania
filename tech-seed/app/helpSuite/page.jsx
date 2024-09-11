@@ -1,4 +1,5 @@
 
+
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import InputDemo from "@/components/input"
@@ -9,6 +10,8 @@ export default function Help1() {
                 <Navbar />
                 <div className="  bg-gradient-to-tl from-[#FFFFFF]  from-10% to-[#5FDFB7] to-100% h-full shadow-gray-950">
 
+                    <img src="Group 70.png" alt="" className="hidden lg:block lg:ml-[85%] lg:mt-12" />
+                    <div className="lg:w-[800px] h-[700px] bg-white max-md:w-screen mt-[]  lg:ml-[100px] xl:ml-[300px] flex flex-col justify-center max-sm:mb-[80px] ">
                     <img src="Group 70.png" alt="" className="hidden lg:block lg:ml-[85%] lg:mt-12" />
                     <div className="lg:w-[800px] h-[700px] bg-white max-md:w-screen mt-[]  lg:ml-[100px] xl:ml-[300px] flex flex-col justify-center max-sm:mb-[80px] ">
                         <h1 className="text-center text-7xl font-bold">?Aide?</h1>
@@ -25,12 +28,15 @@ export default function Help1() {
                                         Envoyer
                                     </span>
                                 </button>
-                            </a>
+                            
                         </div>
                     </div>
                     <img src="Group 70.png" alt="" className="hidden lg:block lg:ml-[200px] lg:mt-[-80px]" />
+                    <img src="Group 70.png" alt="" className="hidden lg:block lg:ml-[200px] lg:mt-[-80px]" />
                 </div>
                 <div className="flex flex-row justify-between  w-full h-auto -mt-36">
+                    <img src="Group 81.png" alt="" className="max-sm:w-[100px] max-sm:h-[150px]" />
+                    <img src="Group 82.png" alt="" className="max-sm:w-[100px] max-sm:h-[150px]" />
                     <img src="Group 81.png" alt="" className="max-sm:w-[100px] max-sm:h-[150px]" />
                     <img src="Group 82.png" alt="" className="max-sm:w-[100px] max-sm:h-[150px]" />
                 </div>

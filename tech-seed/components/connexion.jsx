@@ -70,7 +70,7 @@ export function Connexion() {
                       className="w-10 h-10 rounded-full border-2 border-white"
                     />
                     <p className="text-sm text-gray-400 font-medium translate-x-5">
-                      Join...users
+                      Rejoignez...utilisateurs
                     </p>
                   </div>
                 </div>
@@ -199,7 +199,7 @@ export function Connexion() {
                 <div className="relative">
                   <span className="block w-full h-px bg-gray-300"></span>
                   <p className="inline-block w-fit text-sm bg-white px-2 absolute -top-2 inset-x-0 mx-auto">
-                    Or continue with
+                    Ou continuez avec
                   </p>
                 </div>
                 <form
@@ -249,14 +249,18 @@ export function Connexion() {
                       }}
                       type="password"
                       required
+                      placeholder="Entrez votre mot de passe..."
                       className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                     />
                   </div>
                   <a href="" className="text-[10px] hover:text-blue-400 w-fit">
                     <span>Mot de passe oublié ?</span>
                   </a>
+                  <a href="" className="text-[10px] hover:text-blue-400 w-fit">
+                    <span>Mot de passe oublié ?</span>
+                  </a>
                   <button className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
-                    Se connecter
+                    Se connecter Se connecter
                   </button>
                   {showSpinner && (
                     <div className="flex justify-center items-center">

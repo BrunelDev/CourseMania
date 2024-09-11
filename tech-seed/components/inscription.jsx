@@ -56,8 +56,10 @@ export function Inscription() {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[1000px] ">
         <div className="grid gap-4 py-4 overflow-auto no-scrollbar">
+      <DialogContent className="sm:max-w-[1000px] ">
+        <div className="grid gap-4 py-4 overflow-auto no-scrollbar">
           <main className="flex w-full space-x-3 justify-center items-center h-full">
-            <div className="relative flex-1 items-center justify-center bg-[url('placeholder1.png')] bg-no-repeat bg-center bg-[length:500px_550px] h-full lg:flex">
+            <div className="hidden sm:block relative flex-1 items-center justify-center bg-[url('placeholder1.png')] bg-no-repeat bg-center bg-[length:500px_600px] h-full lg:flex">
               <div className="relative z-10 w-full max-w-md">
                 <div className=" mt-16 -space-y-2 ml-28">
                   <h3 className="text-white text-3xl font-bold -mt-7">
@@ -110,6 +112,7 @@ export function Inscription() {
                         href="javascript:void(0)"
                         className="font-medium text-indigo-600 hover:text-indigo-500"
                       >
+                        ici
                         ici
                       </a>
                     </p>
@@ -227,6 +230,7 @@ export function Inscription() {
                 >
                   <div>
                     <label className="font-medium">Nom</label>
+                    <label className="font-medium">Nom</label>
                     <input
                       value={username}
                       onChange={(e) => {
@@ -234,11 +238,12 @@ export function Inscription() {
                       }}
                       type="text"
                       required
+                      placeholder="Entrez votre nom et vos prénoms..."
                       className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                     />
                   </div>
                   <div>
-                    <label className="font-medium">Email</label>
+                    <label className="font-medium">Adresse e-mail</label>
                     <input
                       value={email}
                       onChange={(e) => {
@@ -251,6 +256,7 @@ export function Inscription() {
                   </div>
                   <div>
                     <label className="font-medium">Mot de passe</label>
+                    <label className="font-medium">Mot de passe</label>
                     <input
                       value={password}
                       onChange={(e) => {
@@ -258,6 +264,7 @@ export function Inscription() {
                       }}
                       type="password"
                       required
+                      placeholder="Entrez un mot de passe..."
                       className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                     />
                   </div>
@@ -272,6 +279,7 @@ export function Inscription() {
                       }}
                       type="password"
                       required
+                      placeholder="Confirmez le mot de passe entré..."
                       className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                     />
                   </div>

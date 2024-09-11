@@ -1,4 +1,5 @@
 import React from "react";
+import React from "react";
 export default function InputDemo() {
   return (
     <div className="text-center flex flex-col md:ml-52 ">
@@ -15,4 +16,6 @@ export default function InputDemo() {
       />
     </div>
   );
+  );
 }
+
