@@ -1,5 +1,6 @@
 import React from "react";
 import DurationBox from "./durationBox";
+import { Rating } from "@mui/material";
 import { ArrowUpRight } from "lucide-react";
 
 export default function CourseCard({
@@ -29,26 +30,19 @@ export default function CourseCard({
       <p className="w-[290px] text-[#667085]">{description}</p>
       <div className="flex">
         <span className="text-[#3FC89E] text-sm mr-3 my-4">4.3</span>
-        <img src="star.svg" alt="" />
-        <img src="star.svg" alt="" />
-        <img src="star.svg" alt="" />
-        <img src="star.svg" alt="" />
-        <img src="star.svg" alt="" />
+        <Rating name="read-only" value={rating} readOnly precision={0.5} />
+
         <span className="text-[#667085] text-sm ml-3 my-4">(16.500)</span>
       </div>
       <div className="flex justify-between">
         <div className="flex">
-          <img
-            src="mentorAvatar.png"
-            alt=""
-            className="mr-4 w-[40px] h-[40px]"
-          />
+          <img src={mentorPicture} alt="" className="mr-4 w-[40px] h-[40px]" />
           <div className="flex flex-col text-sm">
-            <span className="text-[#101828]">Jane Cooper</span>
+            <span className="text-[#101828]">{mentorName}</span>
             <span className="text-[#667085]">2001 Enrolled</span>
           </div>
         </div>
-        <span className="text-[#3FC89E] font-bold text-xl">17.000FCFA</span>
+        <span className="text-[#3FC89E] font-bold text-xl">{price}FCFA</span>
       </div>
     </div>
   );

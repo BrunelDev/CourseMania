@@ -341,14 +341,27 @@ const deleteOneCategory = async (id) => {
 };
 
 // Get courses
-export const getCourses = async (subcategory, page, pageSize) => {
+export const getCourses = async (
+  subcategory,
+  page,
+  pageSize,
+  difficultyLevel
+) => {
   try {
     const response = await api.get("/courses/", {
-      page,
-      pageSize,
-      subcategory,
-      difficultyLevel,
+      page: page,
+      page_size: pageSize,
+      sub_category: subcategory,
+      difficulty_level: difficultyLevel,
     });
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching courses:", error);
+  }
+};
+export const getAllCourses = async () => {
+  try {
+    const response = await api.get("/courses/");
     return response.data;
   } catch (error) {
     console.error("Error fetching courses:", error);

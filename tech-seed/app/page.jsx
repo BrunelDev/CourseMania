@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/navbar";
 import CourseCard from "@/components/courseCard";
 import ThemeCard from "@/components/themeCard";
@@ -8,7 +9,14 @@ import TeacherCard from "@/components/teacherCard";
 import Footer from "@/components/footer";
 import BlogCard from "@/components/blogCard";
 import { Chatbot } from "@/components/chatbot1";
+import { getAllCourses } from "@/lib/functions";
 export default function Home() {
+  const [courses, setCourses] = useState([]);
+  useEffect(() => {
+    getAllCourses().then((res) => {
+      setCourses(res.results);
+    });
+  }, []);
   return (
     <main className="bg-[#24bb8b05]">
       <header>
@@ -150,24 +158,25 @@ export default function Home() {
             seront certainement utiles.
           </span>
           <div className="mb-10 flex overflow-x-auto space-x-4 w-full justify-between">
+            {courses.map((course) => {
+              return (
+                <CourseCard
+                  mentorPicture={course.instructor.user.image}
+                  price={course.price}
+                  theme={course.sub_category.name}
+                  rating={course.rating}
+                  duration={course.duration}
+                  key={course.id}
+                  image={course.thumbnail}
+                  title={course.title}
+                  description={course.description}
+                />
+              );
+            })}
             <CourseCard
               image="userInterfacePic.png"
               title={"Figma UI UX Design.."}
               description={`Utilisez Figma pour obtenir un emploi dans la conception d'interface utilisateur, l'interface utilisateur et la conception d'expérience utilisateur.`}
-            />
-            <CourseCard
-              image="userInterfacePic.png"
-              title={"Créer User Interface.."}
-              description={
-                "Use Figma to get a job in UI Design, User Interface, User Experience design."
-              }
-            />
-            <CourseCard
-              image="userInterfacePic.png"
-              title={"Figma UI UX Design.."}
-              description={
-                "Use Figma to get a job in UI Design, User Interface, User Experience design."
-              }
             />
           </div>
           <div className="mx-auto">
@@ -187,7 +196,7 @@ export default function Home() {
             Rencontrez les héros.
           </span>
           <span className="text-[#667085] text-center sm:w-1/2 text-lg my-6">
-            Sur VirtuClass, des instructeurs du monde entier instruisent des
+            Sur IzziSkill, des instructeurs du monde entier instruisent des
             millions d'étudiants. Nous offrons les connaissances et les
             capacités.
           </span>
