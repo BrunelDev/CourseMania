@@ -1,7 +1,4 @@
-"use client";
-
 import React from "react";
-import { useState } from "react";
 import Navbar from "@/components/navbar";
 import CourseCard from "@/components/courseCard";
 import { motion } from "framer-motion";
@@ -19,8 +16,15 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 1 } },
 };
 
+import { getAllCourses } from "@/lib/functions";
 export default function Home() {
   const [isAnimating, setIsAnimating] = useState(false);
+  const [courses, setCourses] = useState([]);
+  useEffect(() => {
+    getAllCourses().then((res) => {
+      setCourses(res.results);
+    });
+  }, []);
   return (
     <main className="bg-[#24bb8b05]">
       <header>
@@ -46,6 +50,7 @@ export default function Home() {
               alt=""
               className="absolute left-0 w-[350px] h-[350px]"
             />
+
             <p className="translate-y-10 text-4xl sm:text-5xl font-bold text-[#101828]">
               Améliorez vos <span className="text-[#20B486]">compétences </span>
               pour faire <span>progresser</span> votre cheminement de{" "}
@@ -92,7 +97,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hidden sm:block relative">
+          <div className="sm:block relative">
             <div className="rounded-full w-[400px] h-[400px] border border-[#20B486]"></div>
             <div className="rounded-full  sm:w-[400px] sm:h-[400px] absolute top-5 left-5 border bg-[#20B486] overflow-hidden ">
               {
@@ -178,6 +183,21 @@ export default function Home() {
               Rejoignez nos cours renommés pour acquérir des compétences pratiques et théoriques essentielles à votre développement professionnel.
           </span>
           <div className="mb-10 flex overflow-x-auto space-x-4 w-full justify-between">
+            {courses.map((course) => {
+              return (
+                <CourseCard
+                  mentorPicture={course.instructor.user.image}
+                  price={course.price}
+                  theme={course.sub_category.name}
+                  rating={course.rating}
+                  duration={course.duration}
+                  key={course.id}
+                  image={course.thumbnail}
+                  title={course.title}
+                  description={course.description}
+                />
+              );
+            })}
             <CourseCard
               image="userInterfacePic.png"
               title={"Design UI/UX avec Figma"}

@@ -7,7 +7,7 @@ export default function SearchBar() {
         <img
           src={"loupe.png"}
           alt=""
-          className="w-[16px] h-[16px] mr-3 absolute top-[34px]"
+          className="w-[16px] h-[16px] mr-3 absolute top-[28px]"
         />
 
         <input

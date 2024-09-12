@@ -1,8 +1,15 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CheckboxComponent } from "@/components/checkbox";
+import { getActivities } from "@/lib/functions";
 
-export function Todolist({ todo }) {
+export default function Todolist({ todo }) {
+  const [activities, setActivities] = useState([]);
+  useEffect(() => {
+    getActivities().then((res) => {
+      setActivities(res);
+    });
+  }, []);
   const todo1 = [
     {
       task: "Développer l'application de restaurant",

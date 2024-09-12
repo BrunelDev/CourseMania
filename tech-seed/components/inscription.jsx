@@ -1,43 +1,60 @@
 "use client";
 import Button from "@/components/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { register } from "@/lib/functions";
 import { useState } from "react";
+import { TailSpin } from "react-loader-spinner";
 export function Inscription() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
   const [status, setStatus] = useState("apprenant");
-  const registration = () => {
+  const [message, setMessage] = useState("");
+  const [showMessage, setShowMessage] = useState(false);
+  const [showSpinner, setShowSpinner] = useState(false);
+  const Message = () => {
+    return (
+      <div className="flex items-center justify-center w-full h-16">
+        <div className="flex-1 flex items-center justify-center">
+          <div className="text-sm text-white bg-[#20B486] px-4 py-2 rounded-md">
+            {message}
+          </div>
+        </div>
+      </div>
+    );
+  };
+  const registration = async () => {
+    setShowSpinner(true);
     if (password !== password2) {
+      setMessage("Les mots de passe ne correspondent pas.");
+      setShowMessage(true);
+      setShowSpinner(false);
       return;
     }
-    fetch("http://192.168.1.104:8000/api/users/register/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        username: username,
-        email: email,
-        password: password,
-      }),
-    })
-      .then((response) => console.log(response.json()))
+    register(username, password, email, status)
+      .then(() => {
+        console.log(response.json());
+        setShowSpinner(false);
+      })
       .catch((error) => {
         console.warn(error.message);
+        setMessage(error.message);
+        setShowSpinner(false);
+
+        return;
       });
   };
   return (
     <Dialog>
       <DialogTrigger asChild>
         <span
-          className={`cursor-pointer  hover:text-[#198764] py-2 px-3 text-center rounded-md  w-fit h-fit z-50`}
+          className={`cursor-pointer text-white bg-[#20B486] hover:bg-[#198764] py-2 px-3 text-center rounded-md  w-fit h-fit z-50`}
         >
-          Créer un compte gratuitement
+          Creer un compte gratuitement
         </span>
       </DialogTrigger>
+
       <DialogContent className="sm:max-w-[1000px] ">
         <div className="grid gap-4 py-4 overflow-auto no-scrollbar">
           <main className="flex w-full space-x-3 justify-center items-center h-full">
@@ -45,7 +62,7 @@ export function Inscription() {
               <div className="relative z-10 w-full max-w-md">
                 <div className=" mt-16 -space-y-2 ml-28">
                   <h3 className="text-white text-3xl font-bold -mt-7">
-                    Commencer à apprendre à moindre cout!
+                    Commencez a apprendre rapidement
                   </h3>{" "}
                   <br />
                   <div className="flex items-center -space-x-2 overflow-hidden mt-80">
@@ -70,7 +87,7 @@ export function Inscription() {
                       className="w-10 h-10 rounded-full border-2 border-white"
                     />
                     <p className="text-sm text-gray-400 font-medium translate-x-5">
-                      Rejoignez...utilisateurs
+                      Rejoindre...les utilisitateurs
                     </p>
                   </div>
                 </div>
@@ -89,12 +106,12 @@ export function Inscription() {
                 <div className="">
                   <div className="space-y-2">
                     <p className="">
-                      Avez vous déja un compte ? Connectez-vous
+                      Avez vous deja un compte ? Connectez-vous
                       <a
                         href="javascript:void(0)"
                         className="font-medium text-indigo-600 hover:text-indigo-500"
                       >
-                        ici
+                        ici ici
                       </a>
                     </p>
                   </div>
@@ -199,7 +216,7 @@ export function Inscription() {
                 <div className="relative">
                   <span className="block w-full h-px bg-gray-300"></span>
                   <p className="inline-block w-fit text-sm bg-white px-2 absolute -top-2 inset-x-0 mx-auto">
-                    Ou continuez avec
+                    Ou continuer avec
                   </p>
                 </div>
                 <form
@@ -210,6 +227,7 @@ export function Inscription() {
                   className="space-y-5"
                 >
                   <div>
+                    <label className="font-medium">Nom</label>
                     <label className="font-medium">Nom</label>
                     <input
                       value={username}
@@ -225,17 +243,17 @@ export function Inscription() {
                   <div>
                     <label className="font-medium">Adresse e-mail</label>
                     <input
-                      type="email"
                       value={email}
-                      required
-                      placeholder="Entrez votre adresse e-mail..."
                       onChange={(e) => {
                         setEmail(e.target.value);
                       }}
+                      type="email"
+                      required
                       className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                     />
                   </div>
                   <div>
+                    <label className="font-medium">Mot de passe</label>
                     <label className="font-medium">Mot de passe</label>
                     <input
                       value={password}
@@ -250,7 +268,7 @@ export function Inscription() {
                   </div>
                   <div>
                     <label className="font-medium">
-                      Confirmation du mot de passe
+                      Confirmer mot de passe
                     </label>
                     <input
                       value={password2}
@@ -263,9 +281,24 @@ export function Inscription() {
                       className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                     />
                   </div>
+                  {showSpinner && (
+                    <div className="flex justify-center items-center">
+                      <TailSpin
+                        visible={true}
+                        height="40"
+                        width="40"
+                        color="blue"
+                        ariaLabel="tail-spin-loading"
+                        radius="0.4"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                      />
+                    </div>
+                  )}
                   <button className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
                     Créer un compte
                   </button>
+                  {showMessage ? <Message /> : null}
                 </form>
               </div>
             </div>

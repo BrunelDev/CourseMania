@@ -4,9 +4,12 @@ import Lien from "@/components/lien";
 import Days from "@/components/days"
 import ChatMessage from "@/components/chatmessage";
 import { InputFile } from "@/components/inputFichier"
+import { InputFile } from "@/components/inputFichier"
 import InputWithButton from "@/components/inputRequest"
 import { IterationCw, Menu } from "lucide-react";
+import { IterationCw, Menu } from "lucide-react";
 import { Plus } from "lucide-react";
+
 
 export default function PrincipalPage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -137,3 +140,4 @@ export default function PrincipalPage() {
         </div>
     )
 }
+

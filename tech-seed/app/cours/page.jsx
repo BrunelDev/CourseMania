@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/navbar";
 import Button from "@/components/button";
 import Title from "@/components/title";
@@ -7,8 +7,15 @@ import Description from "../../components/description";
 import CourseVideoCard from "../../components/courseVideoCard";
 import { Combobox } from "../../components/combobox";
 import Footer from "@/components/footer";
+import { getCourses } from "@/lib/functions";
 
 export default function Course() {
+  const [courses, setCourses] = useState([]);
+  useEffect(() => {
+    getCourses().then((res) => {
+      setCourses(res);
+    });
+  }, []);
   const videos = [
     {
       image: "videoPlaceholder1.png",

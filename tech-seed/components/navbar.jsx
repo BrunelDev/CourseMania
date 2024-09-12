@@ -1,16 +1,21 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useNavigationLink } from "@/lib/context";
 import Button from "./button";
 import SearchBar from "./searchbar";
 import { Connexion } from "@/components/connexion";
 import { Inscription } from "@/components/Inscription";
+import { ShoppingCart } from "lucide-react";
+import { AvatarComponent } from "@/components/avatar";
+import { logOut } from "@/lib/functions";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false); // État d'authentification
   const [showLogoutPopup, setShowLogoutPopup] = useState(false); // Pour le pop-up de déconnexion
+
   const router = useRouter();
   const {
     selectLink,
@@ -42,9 +47,11 @@ export default function Navbar() {
       </div>
 
       {/* Liste de navigation */}
-      <ul className="hidden xl:flex space-x-6 items-center ml-4">
+      <ul className="xl:flex space-x-4 items-center">
         <li
-          className={`${isHomeSelected && "text-[#1A906B] font-semibold"} cursor-pointer`}
+          className={`${
+            isHomeSelected && "text-[#1A906B] font-semibold"
+          } cursor-pointer`}
           onClick={() => {
             selectLink("home");
             router.push("/");
@@ -53,7 +60,9 @@ export default function Navbar() {
           Accueil
         </li>
         <li
-          className={`${isAboutUsSelected && "text-[#1A906B] font-semibold"} cursor-pointer`}
+          className={`${
+            isAboutUsSelected && "text-[#1A906B] font-semibold"
+          } cursor-pointer`}
           onClick={() => {
             selectLink("about-us");
             router.push("/about-us");
@@ -62,7 +71,9 @@ export default function Navbar() {
           A propos
         </li>
         <li
-          className={`${isCourseSelected && "text-[#1A906B] font-semibold"} cursor-pointer`}
+          className={`${
+            isCourseSelected && "text-[#1A906B] font-semibold"
+          } cursor-pointer`}
           onClick={() => {
             selectLink("courses");
             router.push("/cours");
@@ -71,7 +82,9 @@ export default function Navbar() {
           Nos Cours
         </li>
         <li
-          className={`${isContactSelected && "text-[#1A906B] font-semibold"} cursor-pointer`}
+          className={`${
+            isContactSelected && "text-[#1A906B] font-semibold"
+          } cursor-pointer`}
           onClick={() => {
             selectLink("contact");
             router.push("/contact");
@@ -80,10 +93,13 @@ export default function Navbar() {
           Nous Contacter
         </li>
         <li
-          className={`${isFaqsSelected && "text-[#1A906B] font-semibold"} cursor-pointer`}
+          className={`${
+            isFaqsSelected && "text-[#1A906B] font-semibold"
+          } cursor-pointer`}
           onClick={() => {
-            selectLink("faqs");
             router.push("/help");
+
+            selectLink("faqs");
           }}
         >
           Demander de l'aide
@@ -91,17 +107,32 @@ export default function Navbar() {
       </ul>
 
       {/* Boutons de connexion / déconnexion */}
-      <div className="hidden xl:block xl-flex items-center space-x-4">
-        {isAuthenticated ? (
-          <button
-            className="bg-red-500 text-white px-4 py-2 rounded"
-            onClick={() => setShowLogoutPopup(true)}
-          >
-           Se Déconnecter
-          </button>
+      <div className="xl:block flex items-center space-x-4">
+        {localStorage.getItem("accessToken") ? (
+          <div className="flex justify-between items-center space-x-3 ml-3">
+            <Link href={"/home"}>
+              <AvatarComponent img={localStorage.getItem("profileImage")} />
+            </Link>
+            <ShoppingCart
+              className="cursor-pointer"
+              onClick={() => {
+                router.push("/cart");
+              }}
+            />
+            <button
+              className="bg-red-500 text-white px-4 py-2 rounded"
+              onClick={() => {
+                setShowLogoutPopup(true);
+                logOut();
+              }}
+            >
+              Déconnexion
+            </button>
+          </div>
         ) : (
           <>
             <Inscription />
+
             <Connexion />
           </>
         )}
@@ -129,11 +160,16 @@ export default function Navbar() {
       </button>
 
       {/* Menu pour les petits écrans */}
+      {/* Menu pour les petits écrans */}
       <ul
-        className={`${isMenuOpen ? "flex" : "hidden"} flex-col xl:hidden w-full absolute top-16 left-0 bg-white p-4 space-y-4`}
+        className={`${
+          isMenuOpen ? "flex" : "hidden"
+        } flex-col xl:hidden w-full absolute top-16 left-0 bg-white p-4 space-y-4`}
       >
         <li
-          className={`${isHomeSelected && "text-[#1A906B] font-semibold"} cursor-pointer`}
+          className={`${
+            isHomeSelected && "text-[#1A906B] font-semibold"
+          } cursor-pointer`}
           onClick={() => {
             selectLink("home");
             router.push("/");
@@ -143,7 +179,9 @@ export default function Navbar() {
           Accueil
         </li>
         <li
-          className={`cursor-pointer ${isAboutUsSelected && "text-[#1A906B] font-semibold"}`}
+          className={`cursor-pointer ${
+            isAboutUsSelected && "text-[#1A906B] font-semibold"
+          }`}
           onClick={() => {
             selectLink("about-us");
             router.push("/about-us");
@@ -153,7 +191,9 @@ export default function Navbar() {
           A propos
         </li>
         <li
-          className={`cursor-pointer ${isCourseSelected && "text-[#1A906B] font-semibold"}`}
+          className={`cursor-pointer ${
+            isCourseSelected && "text-[#1A906B] font-semibold"
+          }`}
           onClick={() => {
             selectLink("courses");
             router.push("/cours");
@@ -163,7 +203,9 @@ export default function Navbar() {
           Nos Cours
         </li>
         <li
-          className={`cursor-pointer ${isContactSelected && "text-[#1A906B] font-semibold"}`}
+          className={`cursor-pointer ${
+            isContactSelected && "text-[#1A906B] font-semibold"
+          }`}
           onClick={() => {
             selectLink("contact");
             router.push("/contact");
@@ -173,7 +215,9 @@ export default function Navbar() {
           Nous Contacter
         </li>
         <li
-          className={`cursor-pointer ${isFaqsSelected && "text-[#1A906B] font-semibold"}`}
+          className={`cursor-pointer ${
+            isFaqsSelected && "text-[#1A906B] font-semibold"
+          }`}
           onClick={() => {
             selectLink("faqs");
             router.push("/help");
@@ -194,10 +238,34 @@ export default function Navbar() {
         ) : (
           <li className="mt-4 flex flex-col items-center space-y-4">
             <Inscription />
+
             <Connexion />
           </li>
         )}
       </ul>
+
+      {/* Pop-up de confirmation de déconnexion */}
+      {showLogoutPopup && (
+        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <p className="mb-4">Êtes-vous sûr de vouloir vous déconnecter ?</p>
+            <div className="flex justify-between">
+              <button
+                className="bg-red-500 text-white px-4 py-2 rounded"
+                onClick={handleLogout}
+              >
+                Oui
+              </button>
+              <button
+                className="bg-gray-300 px-4 py-2 rounded"
+                onClick={() => setShowLogoutPopup(false)}
+              >
+                Non
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Pop-up de confirmation de déconnexion */}
       {showLogoutPopup && (

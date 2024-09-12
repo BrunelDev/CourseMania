@@ -2,49 +2,50 @@
 import Button from "@/components/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { useState } from "react";
-export function Connexion({ button }) {
+import { login } from "@/lib/functions";
+import { useRouter } from "next/navigation";
+import { TailSpin } from "react-loader-spinner";
+
+export function Connexion() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const login = () => {
-    fetch("http://192.168.1.104:8000/api/token/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        username: username,
-        password: password,
-      }),
-    })
-      .then((rsp) => {
-        const response = rsp.json();
-        localStorage.setItem("refreshToken", response.refresh);
-        localStorage.setItem("accessToken", response.access);
-        console.log(response);
-      })
-      .catch((error) => {
-        console.warn(error.message);
-      });
+  const [password2, setPassword2] = useState("");
+  const [status, setStatus] = useState("apprenant");
+  const router = useRouter();
+  const [showSpinner, setShowSpinner] = useState(false);
+  const handleSubmit = async () => {
+    setShowSpinner(true);
+    try {
+      await login(username, password);
+      setShowSpinner(false);
+      router.push("/home");
+    } catch (error) {
+      console.error(error);
+      setShowSpinner(false);
+    }
   };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
         <span
-          className={`cursor-pointer text-white bg-[#20B486] hover:bg-[#198764] py-2 px-3 text-center rounded-md  w-fit h-fit z-50`}
+          className={`cursor-pointer  hover:text-[#198764] py-2 px-3 text-center rounded-md  w-fit h-fit z-50`}
         >
-         Se connecter
+          Se connecter
         </span>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[1000px]">
-        <div className="h-[500px] grid gap-4 py-4">
-          <main className="flex w-full space-x-3 justify-center items-center">
-            <div className="hidden sm:block relative flex-1 items-center justify-center bg-[url('placeholder1.png')] bg-no-repeat bg-center bg-[length:500px_600px] h-full lg:flex">
+      <DialogContent className="sm:max-w-[1000px]" aria-describedby="dialog">
+        <div className="grid gap-4 py-4">
+          <main className="flex w-full space-x-3 justify-center items-center h-full">
+            <div className="relative flex-1 items-center justify-center bg-[url('placeholder1.png')] bg-no-repeat bg-center bg-[length:500px_550px] h-full lg:flex">
               <div className="relative z-10 w-full max-w-md">
                 <div className=" mt-16 -space-y-2 ml-28">
-                  <h3 className="text-white text-3xl font-bold -mt-7">
-                     Commencer à apprendre à moindre cout!
+                  <h3
+                    className="text-white text-3xl font-bold -mt-7"
+                    id="dialog"
+                  >
+                    Commencer a apprendre a moindre cout!
                   </h3>{" "}
                   <br />
                   <div className="flex items-center -space-x-2 overflow-hidden mt-80">
@@ -88,12 +89,12 @@ export function Connexion({ button }) {
                 <div className="">
                   <div className="space-y-2">
                     <p className="">
-                      Avez vous déja un compte ? Inscrivez-vous {" "}
+                      Avez vous déja un compte ? Inscrivez-vous{" "}
                       <a
                         href="javascript:void(0)"
                         className="font-medium text-indigo-600 hover:text-indigo-500"
                       >
-                         ici
+                        ici
                       </a>
                     </p>
                   </div>
@@ -204,25 +205,43 @@ export function Connexion({ button }) {
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
-                    login();
+                    console.log(username, password);
+                    handleSubmit()
+                      .then(() => {
+                        router.push("/home");
+                      })
+                      .catch((error) => {
+                        console.warn("Error logging in:", error);
+                      });
                   }}
                   className="space-y-5"
                 >
                   <div>
-                    <label className="font-medium">E-mail</label>
+                    <label className="font-medium">Nom</label>
                     <input
-                      value={email}
+                      value={username}
                       onChange={(e) => {
-                        setEmail(e.target.value);
+                        setUsername(e.target.value);
                       }}
-                      type="email"
+                      type="text"
                       required
-                      placeholder="Entrez votre adresse e-mail..."
                       className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                     />
                   </div>
                   <div>
-                    <label className="font-medium">Password</label>
+                    <label className="font-medium">Email</label>
+                    <input
+                      type="email"
+                      value={email}
+                      required
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                      }}
+                      className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                    />
+                  </div>
+                  <div>
+                    <label className="font-medium">Mot de Passe</label>
                     <input
                       value={password}
                       onChange={(e) => {
@@ -237,9 +256,26 @@ export function Connexion({ button }) {
                   <a href="" className="text-[10px] hover:text-blue-400 w-fit">
                     <span>Mot de passe oublié ?</span>
                   </a>
+                  <a href="" className="text-[10px] hover:text-blue-400 w-fit">
+                    <span>Mot de passe oublié ?</span>
+                  </a>
                   <button className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
-                    Se connecter
+                    Se connecter Se connecter
                   </button>
+                  {showSpinner && (
+                    <div className="flex justify-center items-center">
+                      <TailSpin
+                        visible={true}
+                        height="40"
+                        width="40"
+                        color="blue"
+                        ariaLabel="tail-spin-loading"
+                        radius="0.4"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                      />
+                    </div>
+                  )}
                 </form>
               </div>
             </div>

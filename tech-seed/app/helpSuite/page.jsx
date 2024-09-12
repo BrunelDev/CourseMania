@@ -1,4 +1,5 @@
 
+
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import InputDemo from "@/components/input"
@@ -56,6 +57,7 @@ export default function Help1() {
                             
                         </div>
                     </div>
+                    <img src="Group 70.png" alt="" className="hidden lg:block lg:ml-[200px] lg:mt-[-80px]" />
                     <img src="Group 70.png" alt="" className="hidden lg:block lg:ml-[200px] lg:mt-[-80px]" />
                 </div>
                 <div className="flex flex-row justify-between  w-full h-auto -mt-36">
