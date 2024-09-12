@@ -12,39 +12,39 @@ export default function Course() {
   const videos = [
     {
       image: "videoPlaceholder1.png",
-      title: "Java Programming Beginner",
+      title: "Introduction à la Programmation Java",
       tutor: "Kitani studio",
-      status: "Not Yet started",
+      status: "Pas encore commencé",
     },
     {
       image: "videoPlaceholder1.png",
-      title: "Java Programming Beginner",
+      title: "Introduction à la Programmation Java",
       tutor: "Kitani studio",
-      status: "Not Yet started",
+      status: "Pas encore commencé",
     },
     {
       image: "videoPlaceholder1.png",
-      title: "Java Programming Beginner",
+      title: "Introduction à la Programmation Java",
       tutor: "Kitani studio",
-      status: "Not Yet started",
+      status: "Pas encore commencé",
     },
     {
       image: "videoPlaceholder1.png",
-      title: "Java Programming Beginner",
+      title: "Introduction à la Programmation Java",
       tutor: "Kitani studio",
-      status: "Not Yet started",
+      status: "Pas encore commencé",
     },
     {
       image: "videoPlaceholder1.png",
-      title: "Java Programming Beginner",
+      title: "Introduction à la Programmation Java",
       tutor: "Kitani studio",
-      status: "Not Yet started",
+      status: "Pas encore commencé",
     },
     {
       image: "videoPlaceholder1.png",
-      title: "Java Programming Beginner",
+      title: "Introduction à la Programmation Java",
       tutor: "Kitani studio",
-      status: "Not Yet started",
+      status: "Pas encore commencé",
     },
   ];
 
@@ -58,10 +58,10 @@ export default function Course() {
           <div className="sm:flex-1 bg-[#FFD130] h-[300px] sm:h-[400px] rounded-md flex">
             <div className="bg-[url('yellowBg.png')] max-lg:mb-5 w-full sm:w-[45%] lg:w-[45%] h-full flex flex-col justify-center pl-4 sm:pl-14">
               <span className="text-2xl sm:text-3xl lg:text-4xl font-bold">
-                Apprenez de nouvelles choses chaque jour
+                Découvrez de nouvelles compétences chaque jour
               </span>
               <span className="my-4 sm:my-6 text-[#667085] font-light text-sm sm:text-base lg:text-lg">
-                Devenez professionnels et prêts à rejoindre le monde.
+                Rejoignez notre communauté et avancez dans votre carrière avec nos formations.
               </span>
               <Button title={"Explorez notre catalogue"} bgColor={"bg-white"} />
             </div>
@@ -76,7 +76,7 @@ export default function Course() {
                 <div className="flex flex-col space-y-1 place-self-center ml-2">
                   <span className="font-semibold text-sm sm:text-base">Pierre Dossou</span>
                   <span className="font-extralight text-xs sm:text-sm">
-                    Professeur de mathématique
+                    Expert en Programmation
                   </span>
                 </div>
               </div>
@@ -86,11 +86,11 @@ export default function Course() {
         <div className="flex flex-col sm:flex-row justify-between mt-10 sm:mt-20">
           <div className="flex flex-col mb-6 sm:mb-0">
             <Title title={"Mes cours"} />
-            <Description description={"Liste de vos cours"} />
+            <Description description={"Découvrez et gérez vos cours en un seul endroit."} />
           </div>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <Combobox title={"Cours les mieux notés"} />
-            <Combobox title={"Cours les plus récents"} />
+            <Combobox title={"Cours les mieux notés"} className="w-full sm:w-[200px] justify-between" />
+            <Combobox title={"Cours les plus récents"} className="w-full sm:w-[200px] justify-between" />
           </div>
         </div>
         <div className="overflow-x-auto mt-10">

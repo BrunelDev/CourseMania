@@ -18,6 +18,12 @@ const chartData = [
   { month: "Avril", desktop: 73, mobile: 190 },
   { month: "Mai", desktop: 209, mobile: 130 },
   { month: "Juin", desktop: 214, mobile: 140 },
+  { month: "Juillet", desktop: 166, mobile: 85 },
+  { month: "Aout", desktop: 105, mobile: 40 },
+  { month: "Septembre", desktop: 337, mobile: 160 },
+  { month: "Octobre", desktop: 173, mobile: 59 },
+  { month: "Novembre", desktop: 83, mobile: 27 },
+  { month: "Décembre", desktop: 8, mobile: 4 },
 ];
 
 const chartConfig = {

@@ -14,39 +14,39 @@ export default function CourseFavoris() {
   const videos = [
     {
       image: "videoPlaceholder1.png",
-      title: "Java Programming Beginner",
+      title: "Introduction à la Programmation Java",
       tutor: "Kitani studio",
-      status: "Not Yet started",
+      status: "Pas encore commencé",
     },
     {
       image: "videoPlaceholder1.png",
-      title: "Java Programming Beginner",
+      title: "Introduction à la Programmation Java",
       tutor: "Kitani studio",
-      status: "Not Yet started",
+      status: "Pas encore commencé",
     },
     {
       image: "videoPlaceholder1.png",
-      title: "Java Programming Beginner",
+      title: "Introduction à la Programmation Java",
       tutor: "Kitani studio",
-      status: "Not Yet started",
+      status: "Pas encore commencé",
     },
     {
       image: "videoPlaceholder1.png",
-      title: "Java Programming Beginner",
+      title: "Introduction à la Programmation Java",
       tutor: "Kitani studio",
-      status: "Not Yet started",
+      status: "Pas encore commencé",
     },
     {
       image: "videoPlaceholder1.png",
-      title: "Java Programming Beginner",
+      title: "Introduction à la Programmation Java",
       tutor: "Kitani studio",
-      status: "Not Yet started",
+      status: "Pas encore commencé",
     },
     {
       image: "videoPlaceholder1.png",
-      title: "Java Programming Beginner",
+      title: "Introduction à la Programmation Java",
       tutor: "Kitani studio",
-      status: "Not Yet started",
+      status: "Pas encore commencé",
     },
   ];
   return (

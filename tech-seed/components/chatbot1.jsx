@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, } from "react";
 import { CircleX } from "lucide-react";
 import { ChatInput } from "@/components/chatInput";
 import { PreparedMesssage } from "@/components/preparedMesssage";
@@ -22,7 +22,7 @@ export function Chatbot() {
       text: "That's all.",
     },
   ]);
-  const [message, setMessage] = useState("");
+  const [message, setMessage, useEffect] = useState("");
   const sendMessage = (message) => {
     let temp = messageList.slice();
     temp.push({
@@ -33,6 +33,8 @@ export function Chatbot() {
     });
     setMessageList(temp);
   };
+
+
   return (
     /*<div className="relative w-[400px] h-[600px] bg-green-300 overflow-scroll scroll-hidden no-scrollbar">
       <header className="fixed z-50 left-0 top-0 w-[400px] bg-[#20B486] flex justify-between items-center">

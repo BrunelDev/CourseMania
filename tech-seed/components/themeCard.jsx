@@ -16,7 +16,7 @@ export default function ThemeCard({ title, icon, description }) {
       </div>
       <p className="w-[250px] text-[0.8em] my-4">{description}</p>
       <span className="flex text-[#4AC8AE] group-hover:text-white ">
-        Learn more
+        En savoir plus
         <ChevronRight />
       </span>
     </div>

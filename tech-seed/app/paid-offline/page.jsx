@@ -11,63 +11,34 @@ import { useNavigation } from "@/lib/context";
 export default function PaidOffline() {
   const chapters = [
     {
-      chapterName: "chapter 1: Course Overview",
+      chapterName: "Chapitre 1 : Présentation du Cours",
       totalDuration: "28m",
-      quantity: "1/12 Videos",
+      quantity: "1/12 Vidéos",
       content: [
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
+        { title: "Introduction à Vue.js", duration: "12m" },
+        { title: "Configurer Vue.js", duration: "12m" },
+        { title: "Vue.js : Templating", duration: "12m" },
+        { title: "Vue.js : Composants", duration: "12m" },
+        { title: "Vue.js : Directives", duration: "12m" },
       ],
     },
     {
-      chapterName: "chapter 2: Course Overview",
-      totalDuration: "28m",
-      quantity: "1/12 Videos",
+      chapterName: "Chapitre 2 : Vue.js Avancé",
+      totalDuration: "35m",
+      quantity: "3/10 Vidéos",
       content: [
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
+        { title: "Cycle de Vie des Composants", duration: "15m" },
+        { title: "Vue Router", duration: "10m" },
+        { title: "Vuex : Gestion d'État", duration: "10m" },
       ],
     },
     {
-      chapterName: "chapter 3: Course Overview",
-      totalDuration: "28m",
-      quantity: "1/12 Videos",
+      chapterName: "Chapitre 3 : Projets Pratiques",
+      totalDuration: "45m",
+      quantity: "2/5 Vidéos",
       content: [
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-      ],
-    },
-    {
-      chapterName: "chapter 4: Course Overview",
-      totalDuration: "28m",
-      quantity: "1/12 Videos",
-      content: [
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-      ],
-    },
-    {
-      chapterName: "chapter 5: Course Overview",
-      totalDuration: "28m",
-      quantity: "1/12 Videos",
-      content: [
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
-        { title: "Vue Templating", duration: "12m" },
+        { title: "Création d'une App Vue.js", duration: "20m" },
+        { title: "Intégration d'une API", duration: "25m" },
       ],
     },
   ];
@@ -85,8 +56,8 @@ export default function PaidOffline() {
       </div>
       <div className="mx-4 md:mx-14 mb-10">
         <div className="flex flex-col space-y-3">
-          <Description description={"Development/Mobile Engineer"} />
-          <Title title={"Make Uber Clone App"} />
+          <Description description={"Développeur Mobile/Ingénieur"} />
+          <Title title={"Créer une Application Clone d'Uber"} />
           <div className="flex">
             <span className="text-[#C5322A] mr-6">Steeve Dossou</span>
             <img src="star.svg" alt="" />
@@ -104,19 +75,19 @@ export default function PaidOffline() {
               />*/}
             </div>
             <div className="flex flex-col">
-              <Title title={"Chapter 1 : Preparations"} />
+              <Title title={"Chapitre 1 : Préparations"} />
               <div>
                 <Description description={"6 Lectures"} />
-                <span className="text-yellow-400 ml-5">12% Completed</span>
+                <span className="text-yellow-400 ml-5">12% Terminé</span>
               </div>
 
               <VideosList
                 videos={[
-                  { title: "Installing Vue JS", duration: "10m" },
-                  { title: "Installing Vue JS", duration: "10m" },
-                  { title: "Installing Vue JS", duration: "10m" },
-                  { title: "Installing Vue JS", duration: "10m" },
-                  { title: "Installing Vue JS", duration: "10m" },
+                  { title: "Installation de Vue.js", duration: "10m" },
+                  { title: "Architecture de Vue.js", duration: "10m" },
+                  { title: "Composants Vue.js", duration: "10m" },
+                  { title: "Vue Router", duration: "10m" },
+                  { title: "Utilisation de Vuex", duration: "10m" },
                 ]}
               />
             </div>

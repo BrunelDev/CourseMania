@@ -23,28 +23,22 @@ export default function About() {
                         <br />
                         <section>
                             <p className="font-bold text-3xl sm:text-4xl lg:text-5xl">
-                                <span className="text-[#FF9B26]">WEEKEND UX</span> providing the <br />
-                                best opportunities to the <br />
-                                students around the globe
+                                <span className="text-[#FF9B26]">IZISKILL</span> offre les <br />
+                                meilleures opportunités aux <br />
+                                étudiants et professionnels du monde entier
                             </p>
                         </section>
                         <br />
                         <section>
                             <p>
-                                Weekend UX, is a UI/UX Design Academy in Delhi involved in User <br />
-                                Experience and User Interface Training and Consulting. It was started in <br />
-                                2023 and passionate towards User Interface Design/ User Experience <br />
-                                Design, Human Computer Interaction Design. Humanoid is gushing towards <br />
-                                competence to acquire knowledge and have a wide understanding towards <br />
-                                the sphere through the foremost courses in the area of UI/UX Design, by <br />
-                                strengthening up your skills, for your golden future.
+                            IZISKILL est une académie en ligne dédiée à l'apprentissage et au perfectionnement des compétences professionnelles. Fondée pour répondre aux besoins croissants des étudiants et des professionnels dans un monde en perpétuelle évolution, IZISKILL propose des formations de qualité en design, développement et gestion de projets. Nous nous engageons à vous fournir les outils et les connaissances nécessaires pour exceller dans votre domaine et atteindre vos objectifs professionnels.
                             </p>
                         </section>
                         <br />
                         <a href="" className="hover:bg-white-700 text-white font-bold mb-5 lg:mb-0">
-                            <button className="text-white bg-[#22B286] w-[127px] h-[52px] rounded-full">
+                            <button className="text-white bg-[#22B286] w-fit h-[52px] rounded-full">
                                 <span className="flex text-center ml-4">
-                                    Join Us
+                                     Rejoignez-nous
                                     <MoveRight color="white" />
                                 </span>
                             </button>
@@ -67,32 +61,27 @@ export default function About() {
                         <div className="bg-[#F2F2F2] w-full lg:w-[474px] h-[474px] rounded-md">
                             <img src="Section Img.png" alt="" className="w-full lg:w-[434px] h-auto lg:h-[461px] mt-10 lg:ml-4" />
                         </div>
-                        <section className="lg:ml-64 mt-10 lg:mt-0">
-                            <h1 className="font-bold text-2xl sm:text-3xl lg:text-3xl text-[#1A906B]">Feature</h1>
+                        <section className="lg:ml-64 mt-10 lg:mt-0 lg:w-1/2">
+                            <h1 className="font-bold text-2xl sm:text-3xl lg:text-3xl text-[#1A906B]">Nos Caractéristiques</h1>
                             <p className="font-bold text-2xl sm:text-3xl lg:text-5xl">
-                                We are always working <br />
-                                to provide you best of <br />
-                                the features in all <br />
-                                aspects.
+                                Nous travaillons constamment
+                                pour vous offrir les meilleures
+                                fonctionnalités dans tous
+                                les aspects de l'apprentissage.
                             </p>
                             <br />
                             <p>
-                                At WEEKENDUX the chief determination is to clear the minds of our <br />
-                                students about their goals, while making them consistent in their ambitions <br />
-                                and pushing them to be confident for their journey towards the course of <br />
-                                time.
+                                Chez IZISKILL, notre objectif principal est de clarifier vos objectifs professionnels tout en vousaidant à rester motivé et concentré sur votre parcours de formation. Nous nous efforçons de rendre l'apprentissage accessible et enrichissant, en vous offrant les meilleures ressources et un soutien continu.
                             </p>
                             <br />
                             <p>
-                                You will find every little thing on the internet in just a click of hand, but here <br />
-                                we admire that without knowledge and practice the internet may even also <br />
-                                fail you in your life.
+                            Internet regorge de contenus disponibles à tout moment, mais sans un apprentissage structuré et une pratique régulière, même les meilleures ressources en ligne peuvent ne pas suffire. Chez IZISKILL, nous croyons en l'importance d'un apprentissage pratique et guidé pour réussir dans votre carrière.
                             </p>
                             <br />
                             <a href="" className="hover:bg-white-700 text-white font-bold">
-                                <button className="text-white bg-[#22B286] w-[137px] h-[52px] rounded-full">
+                                <button className="text-white bg-[#22B286] w-fit h-[52px] rounded-full">
                                     <span className="flex text-center ml-4">
-                                        Learn More
+                                        En savoir plus
                                         <MoveRight color="white" />
                                     </span>
                                 </button>
@@ -102,17 +91,16 @@ export default function About() {
                     <div className="flex flex-col justify-center mt-20">
                         {/* Our Benefics */}
                         <div className="flex flex-col text-center">
-                            <span className="text-[#22B286] font-semibold text-xl sm:text-2xl">Our Benefits</span>
+                            <span className="text-[#22B286] font-semibold text-xl sm:text-2xl">Nos Avantages</span>
                             <br />
                             <span className="font-bold text-2xl sm:text-3xl lg:text-4xl">
-                                By Joining WEEKEND UX Platform, <br />
-                                One Can Avail a Lot Of Benefits.
+                               En rejoignant la plateforme IZISKILL, <br />
+                               vous bénéficiez de nombreux avantages.
                             </span>
                             <br />
                             <span className="desc1">
-                                Install our top-rated dropshipping app to your e-commerce site and get
-                                <br />
-                                <p>access to US Suppliers, AliExpress vendors, and the best.</p>
+                            Installez notre application de gestion des compétences sur votre appareil et obtenez <br />
+                            <p>accès à des formations certifiées, des ressources pédagogiques de qualité et un réseau professionnel.</p>
                             </span>
                         </div>
                         <div className="mt-10 lg:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  justify-items-center space-y-10 lg:space-y-5">
@@ -120,42 +108,42 @@ export default function About() {
                                 title={"O1"}
                                 icon="Ellipse 8 (1).png"
                                 description={
-                                    "Standardization When working in a global workplace, it’s often difficult to gauge learners’ training experiences, which are ... Read More"
+                                    "Formation certifiée : Bénéficiez de formations certifiées par des experts reconnus, garantissant la qualité et la pertinence des compétences acquises... "
                                 }
                             />
                             <ThemeCard
                                 title={"O2"}
                                 icon="Ellipse 8.png"
                                 description={
-                                    "Standardization When working in a global workplace, it’s often difficult to gauge learners’ training experiences, which are ... Read More"
+                                    "Approche personnalisée : Accédez à des parcours d'apprentissage adaptés à vos besoins spécifiques pour une meilleure efficacité... "
                                 }
                             />
                             <ThemeCard
                                 title={"O3"}
                                 icon="Ellipse 8 (1).png"
                                 description={
-                                    "Standardization When working in a global workplace, it’s often difficult to gauge learners’ training experiences, which are ... Read More"
+                                    "Ressources exclusives : Profitez de ressources pédagogiques de haute qualité pour approfondir vos connaissances et compétences... "
                                 }
                             />
                             <ThemeCard
                                 title={"O4"}
                                 icon="Ellipse 8.png"
                                 description={
-                                    "Standardization When working in a global workplace, it’s often difficult to gauge learners’ training experiences, which are ... Read More"
+                                    "Support expert : Recevez un soutien continu de la part de professionnels expérimentés pour répondre à vos questions et vous guider tout au long de votre formation... "
                                 }
                             />
                             <ThemeCard
                                 title={"O5"}
                                 icon="Ellipse 8 (1).png"
                                 description={
-                                    "Standardization When working in a global workplace, it’s often difficult to gauge learners’ training experiences, which are ... Read More"
+                                    "Réseautage : Connectez-vous avec d'autres professionnels et étudiants pour échanger des idées et opportunités... s"
                                 }
                             />
                             <ThemeCard
                                 title={"O6"}
                                 icon="Ellipse 8.png"
                                 description={
-                                    "Standardization When working in a global workplace, it’s often difficult to gauge learners’ training experiences, which are ... Read More"
+                                    "Pratique immersive : Engagez-vous dans des projets pratiques pour appliquer vos compétences dans des scénarios réels... "
                                 }
                             />
                         </div>

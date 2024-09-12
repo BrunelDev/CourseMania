@@ -26,7 +26,7 @@ const frameworks = [
   { value: "astro", label: "Astro" },
 ];
 
-export function Combobox({ title }) {
+export function Combobox({ title, className }) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
 
@@ -37,7 +37,7 @@ export function Combobox({ title }) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full sm:w-[200px] justify-between"
+          className={className}
         >
           {value
             ? frameworks.find((framework) => framework.value === value)?.label

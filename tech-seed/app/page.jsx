@@ -1,6 +1,10 @@
+"use client";
+
 import React from "react";
+import { useState } from "react";
 import Navbar from "@/components/navbar";
 import CourseCard from "@/components/courseCard";
+import { motion } from "framer-motion";
 import ThemeCard from "@/components/themeCard";
 import StatsBox from "@/components/statsBox";
 import Button from "@/components/button";
@@ -8,7 +12,15 @@ import TeacherCard from "@/components/teacherCard";
 import Footer from "@/components/footer";
 import BlogCard from "@/components/blogCard";
 import { Chatbot } from "@/components/chatbot1";
+
+// Définir des variantes pour l'animation
+const fadeInUp = {
+  hidden: { opacity: 0, y: 100 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+};
+
 export default function Home() {
+  const [isAnimating, setIsAnimating] = useState(false);
   return (
     <main className="bg-[#24bb8b05]">
       <header>
@@ -16,8 +28,18 @@ export default function Home() {
           <Navbar />
         </div>
       </header>
-      <div className="">
-        <div className="flex flex-row justify-between px-8 lg:px-[110px] py-4 lg:py-10 bg-gradient-to-tl from-[#24bb8b1b] from-0% to-[#24bb8b00] to-100% overflow-hidden ">
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+         className="">
+        <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp} 
+        className="flex flex-row justify-between px-8 lg:px-[110px] py-4 lg:py-10 bg-gradient-to-tl from-[#24bb8b1b] from-0% to-[#24bb8b00] to-100% overflow-hidden z-10 ">
           <div className=" sm:w-1/2">
             <img
               src="spiral.svg"
@@ -30,9 +52,7 @@ export default function Home() {
               <span>carrière</span>.
             </p>
             <p className="text-[#646464] text-base font-normal mt-16 mb-6 ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
-              aut veritatis! Ipsum pariatur provident aliquam sit quam sint,
-              recusandae .
+               Découvrez comment nos formations peuvent vous aider à atteindre vos objectifs professionnels. Que vous soyez en début de carrière ou que vous cherchiez à améliorer vos compétences existantes, nous avons des solutions adaptées à vos besoins.
             </p>
             <Button
               title={"Commencer"}
@@ -51,7 +71,7 @@ export default function Home() {
                   alt=""
                   className="w-5 h-5 mr-1 sm:w-[28px] sm:h-[28px] sm:mr-3"
                 />
-                Public Speaking
+                Prise de parole en public
               </span>
               <span className="flex">
                 <img
@@ -59,7 +79,7 @@ export default function Home() {
                   alt=""
                   className="w-5 h-5 mr-1 sm:w-[28px] sm:h-[28px] sm:mr-3"
                 />
-                Orienté carrière
+                Orientation professionnelle
               </span>{" "}
               <span className="flex">
                 <img
@@ -67,7 +87,7 @@ export default function Home() {
                   alt=""
                   className="w-5 h-5 mr-1 sm:w-[28px] sm:h-[28px] sm:mr-3"
                 />
-                Pensée Créative
+                Pensée créative
               </span>
             </div>
           </div>
@@ -106,9 +126,14 @@ export default function Home() {
               alt=""
             />
           </div>
-        </div>
+        </motion.div>
 
-        <div className=" flex flex-col items-center lg:px-[110px] py-10">
+        <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp} 
+        className=" flex flex-col items-center lg:px-[110px] py-10">
           <span className="text-[#20B486] font-semibold">Nos Services</span>
           <span className="font-bold text-3xl w-2/3 text-center mt-4 mb-8">
             Favoriser un environnement d’apprentissage ludique et engageant
@@ -118,26 +143,31 @@ export default function Home() {
               title={"Etudiants"}
               icon="interactionDesign.png"
               description={
-                "Faites un grand pas vers votre pacours scolaire en suivant l’une de nos formations diplômantes."
+                "Avancez dans votre parcours académique avec nos formations diplômantes, conçues pour vous fournir les compétences nécessaires pour exceller dans votre domaine."
               }
             />
             <ThemeCard
               title={"Enseignants"}
               icon="interactionDesign.png"
               description={
-                "Jouez un rôle clé en guidant et soutenant les apprenants quand rencontrent des obstacles.  Votre engagement et expertise sont précieux pour la réussite des apprenants."
+                "Aidez les étudiants à surmonter les défis et à atteindre leurs objectifs grâce à votre expertise et à votre soutien. Votre rôle est crucial dans leur réussite."
               }
             />
             <ThemeCard
               title={"Enseignants"}
               icon="interactionDesign.png"
               description={
-                "Jouez un rôle clé en guidant et soutenant les apprenants quand rencontrent des obstacles.  Votre engagement et expertise sont précieux pour la réussite des apprenants."
+                "Développez vos compétences professionnelles et restez à jour avec les dernières tendances de l'industrie pour propulser votre carrière vers de nouveaux sommets."
               }
             />
           </div>
-        </div>
-        <div className="flex flex-col justify-center xl:px-[110px] px-9">
+        </motion.div>
+        <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp} 
+        className="flex flex-col justify-center xl:px-[110px] px-9">
           <span className="text-[#20B486] font-semibold mt-20 mb-6">
             Explorez les programmes
           </span>
@@ -145,27 +175,26 @@ export default function Home() {
             Nos cours les plus populaires
           </span>
           <span className="text-[#667085] text-lg my-6">
-            Rejoignons notre célèbre cours, les connaissances fournies vous
-            seront certainement utiles.
+              Rejoignez nos cours renommés pour acquérir des compétences pratiques et théoriques essentielles à votre développement professionnel.
           </span>
           <div className="mb-10 flex overflow-x-auto space-x-4 w-full justify-between">
             <CourseCard
               image="userInterfacePic.png"
-              title={"Figma UI UX Design.."}
-              description={`Utilisez Figma pour obtenir un emploi dans la conception d'interface utilisateur, l'interface utilisateur et la conception d'expérience utilisateur.`}
+              title={"Design UI/UX avec Figma"}
+              description={`Maîtrisez Figma pour concevoir des interfaces utilisateur innovantes et créer des expériences utilisateur mémorables.`}
             />
             <CourseCard
               image="userInterfacePic.png"
-              title={"Créer User Interface.."}
+              title={"Création d'interfaces utilisateur"}
               description={
-                "Use Figma to get a job in UI Design, User Interface, User Experience design."
+                "Apprenez à créer des interfaces utilisateur attrayantes et fonctionnelles grâce à des techniques éprouvées et des outils modernes."
               }
             />
             <CourseCard
               image="userInterfacePic.png"
-              title={"Figma UI UX Design.."}
+              title={"Conception UX avec Figma"}
               description={
-                "Use Figma to get a job in UI Design, User Interface, User Experience design."
+                "Développez vos compétences en conception UX avec Figma pour offrir des expériences utilisateur exceptionnelles et intuitives."
               }
             />
           </div>
@@ -177,18 +206,22 @@ export default function Home() {
               }
             />
           </div>
-        </div>
-        <div className="flex justify-center items-center flex-col xl:px-[110px] px-6">
+        </motion.div>
+        <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp} 
+        className="flex justify-center items-center flex-col xl:px-[110px] px-6">
           <span className="text-[#22B286] font-semibold mt-[80px] mb-[20px]">
             Tuteurs
           </span>
           <span className="text-[#101828] font-semibold text-4xl">
-            Rencontrez les héros.
+             Nos experts en formation
           </span>
           <span className="text-[#667085] text-center sm:w-1/2 text-lg my-6">
-            Sur VirtuClass, des instructeurs du monde entier instruisent des
-            millions d'étudiants. Nous offrons les connaissances et les
-            capacités.
+            Sur Iziskill, des instructeurs du monde entier instruisent des
+            millions d'étudiants. Nous fournissons les connaissances et les compétences nécessaires.
           </span>
           <div className="flex overflow-x-auto space-x-4 w-full justify-between xl:w-full mb-8">
             <TeacherCard />
@@ -196,20 +229,28 @@ export default function Home() {
             <TeacherCard />
             <TeacherCard />
           </div>
-        </div>
-        <div className="bg-[#F0FAF7] w-full py-20 px-8 flex flex-col justify-center items-center">
+        </motion.div>
+        <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+        className="bg-[#F0FAF7] w-full py-20 px-8 flex flex-col justify-center items-center">
           <span className="text-center w-[90%] font-medium text-3xl text-[#101828]">
-            Les cours étaient fantastiques ! Il s'agit d'une plateforme
-            principale pour ceux qui cherchent à démarrer une nouvelle carrière
-            ou qui ont besoin d'une remise à niveau.
+          Les cours étaient exceptionnels ! Iziskill est la plateforme idéale pour ceux qui souhaitent démarrer une nouvelle carrière ou rafraîchir leurs compétences.
           </span>
           <img src="studentAvatar.png" alt="" className="py-5" />
           <span className="font-medium text-[#101828]">Jeanne Dossou</span>
           <span className="text-[#667085] py-5 text-center">
-            Etudiante a l'université Nationale de Abomey-Calavi
+          Étudiante à l'Université Nationale d'Abomey-Calavi
           </span>
-        </div>
-        <div className="px-[23px] md:px-[110px] py-10">
+        </motion.div>
+        <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+        className="px-[23px] md:px-[110px] py-10">
           <span className="font-bold text-3xl">Nos derniers blogs</span>
           <div className="my-5 flex-">
             <BlogCard
@@ -219,10 +260,10 @@ export default function Home() {
                 ["UI Design", "text-[#026AA2]", "bg-[#F0F9FF]"],
                 ["Java", "text-[#FF9B26]", "bg-[#FFF9F3]"],
               ]}
-              date={"8 Août 2024"}
-              title={"Programmation"}
+              date={"08 Août 2024"}
+              title={"Les tendances du design UI/UX en 2024"}
               description={
-                "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam ipsum rerum distinctio ratione amet minima porro in provident? Iste, atque obcaecati a vitae eligendi ipsa ad molestias voluptatum! Ipsum, libero."
+                "Découvrez les dernières tendances en design UI/UX et apprenez comment les appliquer pour créer des expériences utilisateur captivantes."
               }
             />
           </div>
@@ -234,15 +275,15 @@ export default function Home() {
                 ["UI Design", "text-[#026AA2]", "bg-[#F0F9FF]"],
                 ["Java", "text-[#FF9B26]", "bg-[#FFF9F3]"],
               ]}
-              date={"8 Août 2024"}
-              title={"Programmation"}
+              date={"09 Septembre 2024"}
+              title={"Stratégies efficaces en marketing digital"}
               description={
-                "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam ipsum rerum distinctio ratione amet minima porro in provident? Iste, atque obcaecati a vitae eligendi ipsa ad molestias voluptatum! Ipsum, libero."
+                "Explorez des stratégies éprouvées pour améliorer votre présence en ligne et atteindre vos objectifs marketing de manière efficace."
               }
             />
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       <div className="fixed right-5 bottom-10">
         <Chatbot />
       </div>

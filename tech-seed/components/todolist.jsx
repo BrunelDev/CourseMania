@@ -5,18 +5,18 @@ import { CheckboxComponent } from "@/components/checkbox";
 export function Todolist({ todo }) {
   const todo1 = [
     {
-      task: "Developping Restaurant App",
+      task: "Développer l'application de restaurant",
       isFinished: true,
-      type: "Programming",
+      type: "Programmation",
       hour: "08:00 AM",
-      step: ["Integrate API", "Slicing Home Screen"],
+      step: ["Intégrer l'API", "Découpe de l'écran d'accueil"],
     },
     {
-      task: "Developping Restaurant App",
+      task: "Développer l'application de restaurant",
       isFinished: true,
-      type: "Programming",
+      type: "Programmation",
       hour: "08:00 AM",
-      step: ["Integrate API", "Slicing Home Screen"],
+      step: ["Intégrer l'API", "Découpe de l'écran d'accueil"],
     },
   ];
 

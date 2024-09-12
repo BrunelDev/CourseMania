@@ -28,7 +28,7 @@ function preventDefault(event) {
 export default function Leaderboard() {
   return (
     <React.Fragment>
-      <Title>Leader Board</Title>
+      <Title>Classement</Title>
       <Table size="small">
         <TableHead>
           <TableRow>

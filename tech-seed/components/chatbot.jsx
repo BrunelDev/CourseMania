@@ -9,7 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/chatBotDialog";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { CircleX } from "lucide-react";
 import { ChatInput } from "@/components/chatInput";
 import { PreparedMesssage } from "@/components/preparedMesssage";
@@ -30,7 +30,7 @@ export function ChatBot() {
       text: "Bonjour Light !",
     },
   ]);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const sendMessage = (message) => {
     let temp = messageList.slice();
     temp.push({
@@ -40,7 +40,12 @@ export function ChatBot() {
       text: message,
     });
     setMessageList(temp);
+    setMessage('');
   };
+  const endOfChatRef = useRef(null);
+  useEffect(() => {
+    endOfChatRef.current?.scrollIntoView({ behavior: "smooth"})
+  }, [message]);
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -72,6 +77,7 @@ export function ChatBot() {
               toBottomHeight={"10%"}
               dataSource={messageList}
             />
+            <div ref={endOfChatRef}/>
           </div>
 
           <div className="fixed bottom-0 py-1 bg-white w-screen sm:w-[400px]">
@@ -90,6 +96,7 @@ export function ChatBot() {
               value={message}
               setValue={setMessage}
               onSend={sendMessage}
+              onChange={(e) => setMessage(e.target.value)}
             />
           </div>
         </div>

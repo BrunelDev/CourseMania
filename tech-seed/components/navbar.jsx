@@ -68,7 +68,7 @@ export default function Navbar() {
             router.push("/cours");
           }}
         >
-          Cours
+          Nos Cours
         </li>
         <li
           className={`${isContactSelected && "text-[#1A906B] font-semibold"} cursor-pointer`}
@@ -77,7 +77,7 @@ export default function Navbar() {
             router.push("/contact");
           }}
         >
-          Contact
+          Nous Contacter
         </li>
         <li
           className={`${isFaqsSelected && "text-[#1A906B] font-semibold"} cursor-pointer`}
@@ -86,18 +86,18 @@ export default function Navbar() {
             router.push("/help");
           }}
         >
-          FAQs
+          Demander de l'aide
         </li>
       </ul>
 
       {/* Boutons de connexion / déconnexion */}
-      <div className="hidden xl:block flex items-center space-x-4">
+      <div className="hidden xl:block xl-flex items-center space-x-4">
         {isAuthenticated ? (
           <button
             className="bg-red-500 text-white px-4 py-2 rounded"
             onClick={() => setShowLogoutPopup(true)}
           >
-            Déconnexion
+           Se Déconnecter
           </button>
         ) : (
           <>
@@ -160,7 +160,7 @@ export default function Navbar() {
             setIsMenuOpen(false);
           }}
         >
-          Cours
+          Nos Cours
         </li>
         <li
           className={`cursor-pointer ${isContactSelected && "text-[#1A906B] font-semibold"}`}
@@ -170,7 +170,7 @@ export default function Navbar() {
             setIsMenuOpen(false);
           }}
         >
-          Contact
+          Nous Contacter
         </li>
         <li
           className={`cursor-pointer ${isFaqsSelected && "text-[#1A906B] font-semibold"}`}
@@ -180,7 +180,7 @@ export default function Navbar() {
             setIsMenuOpen(false);
           }}
         >
-          FAQs
+          Demander de l'aide
         </li>
         {isAuthenticated ? (
           <li className="mt-4 flex items-center">
@@ -203,7 +203,7 @@ export default function Navbar() {
       {showLogoutPopup && (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg shadow-lg">
-            <p className="mb-4">Voulez-vous vraiment vous déconnecter ?</p>
+            <p className="mb-4">Êtes-vous sûr de vouloir vous déconnecter ?</p>
             <div className="flex justify-between">
               <button
                 className="bg-red-500 text-white px-4 py-2 rounded"
