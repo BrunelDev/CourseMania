@@ -12,10 +12,10 @@ export default function About() {
                 <nav>
                     <Navbar />
                 </nav>
-                <header className="flex flex-col max-lg:mt-20 lg:flex-row px-6 lg:px-20 lg:mb-4">
+                <header className="flex flex-col lg:flex-row px-6 lg:px-20 lg:mb-4">
                     {/* About description */}
                     <div
-                        className="flex flex-col w-full lg:w-[600px] lg:h-[600px] mt-10 lg:mt-[200px] py-0"
+                        className="flex flex-col w-full lg:w-[600px] lg:h-[600px] mt-24 lg:mt-[170px] py-0"
                     >
                         <section className="text-left">
                             <h1 className="font-bold text-4xl sm:text-5xl lg:text-7xl text-[#1A906B]">A Propos</h1>
@@ -49,17 +49,12 @@ export default function About() {
                         className="w-full lg:w-80 h-80 bg-[#F2F2F2] mt-10 lg:mt-[360px] lg:ml-[170px] rounded-md"
                     >
                         <div className="flex justify-center lg:justify-start">
-                            <img src="Rectangle 14.png" alt="" className="ml-0 lg:ml-44 -mt-12" />
-                            <img src="Rectangle 13.png" alt="" className="-ml-16 lg:-ml-44" />
+                            <img src="Rectangle 14.png" alt="" className="ml-0 lg:ml-44 -mt-12 overflow-auto" />
+                            <img src="Rectangle 13.png" alt="" className="-ml-16 lg:-ml-44 overflow-auto" />
                         </div>
                     </div>
                 </header>
 
-                {/* Fin de la partis header */}
-                <div className="flex flex-col mt-20 px-6 lg:px-0">
-                    <div className="flex flex-col lg:flex-row justify-center lg:max-xl:mt-[125px]">
-                        <div className="bg-[#F2F2F2] w-full lg:w-[474px] h-[474px] rounded-md">
-                            <img src="Section Img.png" alt="" className="w-full lg:w-[434px] h-auto lg:h-[461px] mt-10 lg:ml-4" />
                 {/* Fin de la partis header */}
                 <div className="flex flex-col mt-20 px-6 lg:px-0">
                     <div className="flex flex-col lg:flex-row justify-center lg:max-xl:mt-[125px]">
@@ -83,7 +78,6 @@ export default function About() {
                             Internet regorge de contenus disponibles à tout moment, mais sans un apprentissage structuré et une pratique régulière, même les meilleures ressources en ligne peuvent ne pas suffire. Chez IZISKILL, nous croyons en l'importance d'un apprentissage pratique et guidé pour réussir dans votre carrière.
                             </p>
                             <br />
-                            <a href="" className="hover:bg-white-700 text-white font-bold">
                             <a href="" className="hover:bg-white-700 text-white font-bold">
                                 <button className="text-white bg-[#22B286] w-fit h-[52px] rounded-full">
                                     <span className="flex text-center ml-4">
@@ -155,57 +149,10 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                        <div className="mt-10 lg:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  justify-items-center space-y-10 lg:space-y-5">
-                            <ThemeCard
-                                title={"O1"}
-                                icon="Ellipse 8 (1).png"
-                                description={
-                                    "Formation certifiée : Bénéficiez de formations certifiées par des experts reconnus, garantissant la qualité et la pertinence des compétences acquises... "
-                                }
-                            />
-                            <ThemeCard
-                                title={"O2"}
-                                icon="Ellipse 8.png"
-                                description={
-                                    "Approche personnalisée : Accédez à des parcours d'apprentissage adaptés à vos besoins spécifiques pour une meilleure efficacité... "
-                                }
-                            />
-                            <ThemeCard
-                                title={"O3"}
-                                icon="Ellipse 8 (1).png"
-                                description={
-                                    "Ressources exclusives : Profitez de ressources pédagogiques de haute qualité pour approfondir vos connaissances et compétences... "
-                                }
-                            />
-                            <ThemeCard
-                                title={"O4"}
-                                icon="Ellipse 8.png"
-                                description={
-                                    "Support expert : Recevez un soutien continu de la part de professionnels expérimentés pour répondre à vos questions et vous guider tout au long de votre formation... "
-                                }
-                            />
-                            <ThemeCard
-                                title={"O5"}
-                                icon="Ellipse 8 (1).png"
-                                description={
-                                    "Réseautage : Connectez-vous avec d'autres professionnels et étudiants pour échanger des idées et opportunités... s"
-                                }
-                            />
-                            <ThemeCard
-                                title={"O6"}
-                                icon="Ellipse 8.png"
-                                description={
-                                    "Pratique immersive : Engagez-vous dans des projets pratiques pour appliquer vos compétences dans des scénarios réels... "
-                                }
-                            />
-                        </div>
-                    </div>
-                </div>
             </div>
             <br />
             <br />
             <Footer />
         </div>
-    );
     );
 }
