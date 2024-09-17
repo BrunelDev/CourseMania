@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React,{useState, useEffect} from "react";
 import Navbar from "@/components/navbar";
 import CourseCard from "@/components/courseCard";
 import { motion } from "framer-motion";

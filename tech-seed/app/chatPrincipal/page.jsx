@@ -1,41 +1,76 @@
 "use client"
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef } from "react";
 import Lien from "@/components/lien";
-import Days from "@/components/days"
+import Days from "@/components/days";
 import ChatMessage from "@/components/chatmessage";
-import { InputFile } from "@/components/inputFichier"
-import { InputFile } from "@/components/inputFichier"
-import InputWithButton from "@/components/inputRequest"
-import { IterationCw, Menu } from "lucide-react";
+import { InputFile } from "@/components/inputFichier";
+import InputWithButton from "@/components/inputRequest";
 import { IterationCw, Menu } from "lucide-react";
 import { Plus } from "lucide-react";
+import { type } from "os";
 
 
 export default function PrincipalPage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [messages, setMessages] = useState([
-        { message: "Bienvenue! Comment puis-je vous aider?", isUser: false }
+        { type: "text", message: "Bienvenue! Comment puis-je vous aider?", isUser: false,  }
     ]);
     const [inputMessage, setInputMessage] = useState('');
     const [isFirstMessageSent, setIsFirstMessageSent] = useState(false);
+    const [selectFile, setSelectFile] = useState(null);
+    const [fileName, setFileName] = useState("");
+    const [fileContent, setFileContent] = useState("");
+    const [isLastResponseIA, setIsLastResponseIA] = useState(false);
+    const [lastMessageIndex, setLastMessageIndex] = useState(null);
 
     const sendMessage = () => {
-        if (inputMessage.trim()) {
-            setMessages([...messages, { message: inputMessage, isUser: true }]);
-            setInputMessage(''); // Clear input field
+        // Ajouter le fichier en premier
+        if (selectFile) {
+            setMessages(prevMessages => [
+                ...prevMessages,
+                {type: "file", message: ` ${fileName}`, isUser: true }
+            ]);
+            handleFileContent(fileContent);
+            setSelectFile(null);
+            setFileName("");
+            setFileContent("");
+            setIsLastResponseIA(true);
+            setLastMessageIndex(messages.length+1);
             if (!isFirstMessageSent) {
                 setIsFirstMessageSent(true);
             }
+
+        }
+        // Ajouter le message texte ensuite
+        if (inputMessage.trim()) {
+            setMessages(prevMessages => [
+                ...prevMessages,
+                {type:"text", message: inputMessage, isUser: true }
+            ]);
+            setInputMessage(''); // Clear input field
+            setLastMessageIndex(messages.length+1);
+            if (!isFirstMessageSent) {
+                setIsFirstMessageSent(true);
+            }
+            setIsLastResponseIA(true)
         }
     };
-    const handleFileUpload = (file) => {
-        setMessages([...messages, {message: inputMessage, isUser: true}]);
-        handleFileContent(file.content);
-    };
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = () => {
+            setFileContent(reader.result); // Mise à jour du contenu du fichier
+            setFileName(file.name); // Mise à jour du nom du fichier
+            setSelectFile(file);
+          };
+          reader.readAsText(file);
+        }
+      };
     const handleFileContent = (fileContent) =>{
         setMessages((prevMessage) => [
             ...prevMessage,
-            {message: `contenu du fichier : ${fileContent.substring(0, 100)}...`, isUser: false}
+            {type: "file", message: `contenu du fichier : ${fileContent.substring(0, 100)}...`, isUser: false}
         ]
         )
     };
@@ -43,6 +78,16 @@ export default function PrincipalPage() {
         setInputMessage(e.target.innerText);
     };
     const endOfChat = useRef(null);
+
+    const handleRegenerate = (e) => {
+        if (lastMessageIndex !== null){
+            const regeneratedMessage = "Voici une nouvelle réponse générée !";
+            const updatedMessages = [...messages];
+            updatedMessages[lastMessageIndex] = {type:"text", message : regeneratedMessage, isUser : false};
+            setMessages(updatedMessages);
+            setIsLastResponseIA(true);
+        }
+    }
 
     useEffect(() => {
         endOfChat.current?.scrollIntoView({ behavior: "smooth" });
@@ -63,8 +108,8 @@ export default function PrincipalPage() {
                         <br />
                         <hr />
                         <a href="" className="hover:bg-white-700 text-white text-lg font-normal mt-5">
-                            <button className="text-white bg-[#22B286] w-fit h-[42px] rounded-full">
-                                <span className="text-center flex flex-row mx-3">
+                            <button className="text-white bg-[#22B286] w-fit h-fit rounded-full">
+                                <span className="text-center flex flex-row mx-3 my-1">
                                     <Plus />
                                     Nouvelle Discussion
                                 </span>
@@ -103,34 +148,35 @@ export default function PrincipalPage() {
                         <div className="flex flex-col items-center overflow-auto no-scrollbar ">
                             <div className="w-full h-[78%] rounded-lg shadow-md p-4 overflow-y-auto no-scrollbar break-words  pt-10">
                                 {messages.map((msg, index) => (
-                                    <ChatMessage key={index} message={msg.message} isUser={msg.isUser} />
+                                    <ChatMessage key={index} type={msg.type} message={msg.message} isUser={msg.isUser} />
                                 ))}
+                                {isLastResponseIA && <button className="bg-[#b3aea9] w-fit px-3 py-1 rounded-md ml-2 bottom-2" onClick={handleRegenerate}>Regénérer</button> }
                                 <div ref={endOfChat} />
                             </div>
 
                             <div className="fixed bottom-6 text-center  flex flex-col items-center w-full mt-2  ">
                                 {!isFirstMessageSent && (
-                                    <div className="space-x-6 mb-2 ">
-                                        <button className="hover:bg-white-700 font-bold  text-black bg-[#22B286] w-fit px-3 mt-2 lg:w-[180px] h-[40px] rounded-full" onClick={handleClick}>
-                                            <span className="text-center">
+                                    <div className="hidden sm:flex space-x-6 mb-2 ">
+                                        <button className="hover:bg-white-700 font-bold  text-black bg-[#22B286] w-fit px-3 mt-2 h-[40px] rounded-full" onClick={handleClick}>
+                                            <span className="text-center text-xs sm:text-base">
                                                 Pourquoi utiliser l'IA ?
                                             </span>
                                         </button>
-                                        <button className="hover:bg-white-700 font-bold  text-black bg-[#22B286] w-fit px-3 mt-2 lg:w-[180px] h-[40px] rounded-full" onClick={handleClick}>
-                                            <span className="text-center">
+                                        <button className="hover:bg-white-700 font-bold  text-black bg-[#22B286] w-fit px-3 mt-2 h-[40px] rounded-full" onClick={handleClick}>
+                                            <span className="text-center text-xs sm:text-base">
                                                 Qu'est ce que l'art ?
                                             </span>
                                         </button>
                                     
-                                        <button className="hover:bg-white-700 font-bold  text-black bg-[#22B286] w-fit px-3 mt-2 lg:w-[180px] h-[40px] rounded-full" onClick={handleClick}>
-                                            <span className="text-center">
+                                        <button className="hover:bg-white-700 font-bold  text-black bg-[#22B286] w-fit px-3 mt-2 h-[40px] rounded-full" onClick={handleClick}>
+                                            <span className="text-center text-xs sm:text-base">
                                                 Qui est Pythagore ?
                                             </span>
                                         </button>
                                     </div>
                                 )}
                                 <div className=" w-[96%] text-center lg:max-w-[700px] xl:max-w-[850px] mt-4">
-                                    <InputWithButton value={inputMessage} onChange={(e) => setInputMessage(e.target.value) } onClick={sendMessage} onFileUpload={handleFileUpload} />
+                                    <InputWithButton value={inputMessage} onChange={(e) => {setInputMessage(e.target.value); setIsLastResponseIA(false) }} onClick={sendMessage} onChangeFile={(e) => {handleFileChange(e); setIsLastResponseIA(false)}} content={fileName ? <p>Fichier sélectionné: {fileName} </p> :null } />
                                 </div>
                             </div>
                         </div>
